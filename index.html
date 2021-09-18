@@ -118,7 +118,9 @@
 <li>
 <em>Tidy:</em> The results produced by <code>marginaleffects</code> follow “tidy” principles. They are easy to process and program with.</li>
 <li>
-<em>User interface:</em> Related functions are incorporated in a simple, unified, and well-documented interface.</li>
+<em>User interface:</em> All functions share an extremely simple, unified, and well-documented interface.</li>
+<li>
+<em>Dependencies</em>: The package is designed to be nearly dependency-free. The only “heavy” dependency is <code>numDeriv</code>, a solid package which has been on the CRAN archive since 2006.</li>
 <li>
 <em>Safe:</em> User input is checked extensively before computation. When needed, functions fail gracefully with informative error messages.</li>
 <li><em>Active development</em></li>
@@ -126,7 +128,6 @@
 <p>Downsides of <code>marginaleffects</code> include:</p>
 <ul>
 <li>Weights and simultation-based inference are not (yet) supported.</li>
-<li>More dependencies.</li>
 <li>Newer package with a smaller (read: nonexistent) user base.</li>
 </ul>
 </div>
@@ -427,6 +428,19 @@
 <p>Beyond marginal effects, we can also use the <code>marginalmeans</code> function to estimate – you guessed it – marginal means. We use the <code>variables</code> argument to select the categorical variables that will form the “grid”:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Registered S3 methods overwritten by 'parameters':</span>
+<span class="co">#&gt;   method                           from      </span>
+<span class="co">#&gt;   as.double.parameters_kurtosis    datawizard</span>
+<span class="co">#&gt;   as.double.parameters_skewness    datawizard</span>
+<span class="co">#&gt;   as.double.parameters_smoothness  datawizard</span>
+<span class="co">#&gt;   as.numeric.parameters_kurtosis   datawizard</span>
+<span class="co">#&gt;   as.numeric.parameters_skewness   datawizard</span>
+<span class="co">#&gt;   as.numeric.parameters_smoothness datawizard</span>
+<span class="co">#&gt;   print.parameters_distribution    datawizard</span>
+<span class="co">#&gt;   print.parameters_kurtosis        datawizard</span>
+<span class="co">#&gt;   print.parameters_skewness        datawizard</span>
+<span class="co">#&gt;   summary.parameters_kurtosis      datawizard</span>
+<span class="co">#&gt;   summary.parameters_skewness      datawizard</span>
 <span class="co">#&gt;        type predicted std.error  conf.low conf.high       hp am     wt</span>
 <span class="co">#&gt; 1  response 23.259500 2.7059342 17.674726  28.84427 146.6875  0 1.5130</span>
 <span class="co">#&gt; 2  response 27.148334 2.8518051 21.262498  33.03417 146.6875  1 1.5130</span>

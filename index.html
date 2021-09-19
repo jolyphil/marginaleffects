@@ -225,6 +225,22 @@
 <td align="left"></td>
 </tr>
 <tr class="odd">
+<td align="left">crch</td>
+<td align="left">crch</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">hxlr</td>
+<td align="left">x</td>
+<td align="left">x</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
 <td align="left">estimatr</td>
 <td align="left">lm_robust</td>
 <td align="left">x</td>
@@ -471,11 +487,11 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Model type:  lm </span>
 <span class="co">#&gt; Prediction type:  response</span></code></pre></div>
-<p>The <code>plot_cme</code> plots “Conditional Marginal Effects,” that is, it plots the value of a marginal effect for different values of a regressor (often an interaction):</p>
+<p>The <code>plot_cme</code> plots “Conditional Marginal Effects,” that is, the marginal effects estimated at different values of a regressor (often an interaction):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"hp"</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"wt"</span>, <span class="st">"am"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-7-1.png" width="100%"></p>
-<p>Beyond marginal effects, we can also use the <code>marginalmeans</code> function to estimate – you guessed it – marginal means. We use the <code>variables</code> argument to select the categorical variables that will form the “grid”:</p>
+<p>Beyond marginal effects, we can also use the <code>marginalmeans</code> function to estimate – you guessed it – marginal means. We use the <code>variables</code> argument to select the categorical variables that will form a “grid” of predictor values over which to compute means/predictions:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;        type predicted std.error  conf.low conf.high       hp am     wt</span>

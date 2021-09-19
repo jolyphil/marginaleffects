@@ -149,7 +149,7 @@ of the variables in the <code>at</code> list.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># All rows are repeated twice, with different values of `hp`</span>
 <span class='va'>cd</span> <span class='op'>&lt;-</span> <span class='fu'>counterfactual</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>mtcars</span>, hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: Could not get model data.</span></div><div class='input'><span class='va'>cd</span><span class='op'>[</span><span class='va'>cd</span><span class='op'>$</span><span class='va'>rowid</span> <span class='op'>%in%</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>,<span class='op'>]</span>
+<span class='va'>cd</span><span class='op'>[</span><span class='va'>cd</span><span class='op'>$</span><span class='va'>rowid</span> <span class='op'>%in%</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>,<span class='op'>]</span>
 </div><div class='output co'>#&gt;    rowid  mpg cyl disp drat    wt  qsec vs am gear carb  hp
 #&gt; 1      1 21.0   6  160 3.90 2.620 16.46  0  1    4    4 100
 #&gt; 2      2 21.0   6  160 3.90 2.875 17.02  0  1    4    4 100

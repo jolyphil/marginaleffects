@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get predicted values from a model object (internal function) — get_predict • marginaleffects</title>
+<title>Method to raise model-specific warnings and errors — sanity_model_specific • marginaleffects</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get predicted values from a model object (internal function) — get_predict" />
-<meta property="og:description" content="Get predicted values from a model object (internal function)" />
+<meta property="og:title" content="Method to raise model-specific warnings and errors — sanity_model_specific" />
+<meta property="og:description" content="Method to raise model-specific warnings and errors" />
 
 
 
@@ -108,40 +108,25 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get predicted values from a model object (internal function)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/get_predict.R'><code>R/get_predict.R</code></a>, <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/methods_MASS.R'><code>R/methods_MASS.R</code></a>, <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/methods_crch.R'><code>R/methods_crch.R</code></a>, and 1 more</small>
-    <div class="hidden name"><code>get_predict.Rd</code></div>
+    <h1>Method to raise model-specific warnings and errors</h1>
+    <small class="dont-index">Source: <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/sanity_model.R'><code>R/sanity_model.R</code></a>, <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/methods_nnet.R'><code>R/methods_nnet.R</code></a>, <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/methods_plm.R'><code>R/methods_plm.R</code></a></small>
+    <div class="hidden name"><code>sanity_model_specific.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get predicted values from a model object (internal function)</p>
+    <p>Method to raise model-specific warnings and errors</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_predict</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>newdata</span>, <span class='va'>type</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>sanity_model_specific</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for default</span>
-<span class='fu'>get_predict</span><span class='op'>(</span><span class='va'>model</span>, newdata <span class='op'>=</span> <span class='fu'>insight</span><span class='fu'>::</span><span class='fu'><a href='https://easystats.github.io/insight/reference/get_data.html'>get_data</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>, type <span class='op'>=</span> <span class='st'>"response"</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for polr</span>
-<span class='fu'>get_predict</span><span class='op'>(</span>
-  <span class='va'>model</span>,
-  newdata <span class='op'>=</span> <span class='fu'>insight</span><span class='fu'>::</span><span class='fu'><a href='https://easystats.github.io/insight/reference/get_data.html'>get_data</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>,
-  type <span class='op'>=</span> <span class='st'>"response"</span>,
-  group_name <span class='op'>=</span> <span class='st'>"1"</span>,
-  <span class='va'>...</span>
-<span class='op'>)</span>
-
-<span class='co'># S3 method for crch</span>
-<span class='fu'>get_predict</span><span class='op'>(</span><span class='va'>model</span>, newdata <span class='op'>=</span> <span class='cn'>NULL</span>, type <span class='op'>=</span> <span class='st'>"location"</span>, <span class='va'>...</span><span class='op'>)</span>
+<span class='fu'>sanity_model_specific</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for multinom</span>
-<span class='fu'>get_predict</span><span class='op'>(</span>
-  <span class='va'>model</span>,
-  newdata <span class='op'>=</span> <span class='fu'>insight</span><span class='fu'>::</span><span class='fu'><a href='https://easystats.github.io/insight/reference/get_data.html'>get_data</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>,
-  type <span class='op'>=</span> <span class='st'>"response"</span>,
-  group_name <span class='op'>=</span> <span class='st'>"1"</span>,
-  <span class='va'>...</span>
-<span class='op'>)</span></pre>
+<span class='fu'>sanity_model_specific</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='co'># S3 method for plm</span>
+<span class='fu'>sanity_model_specific</span><span class='op'>(</span><span class='va'>model</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,17 +136,6 @@
       <td><p>Model object</p></td>
     </tr>
     <tr>
-      <th>newdata</th>
-      <td><p>A dataset over which to compute marginal effects. <code>NULL</code> uses
-the original data used to fit the model.</p></td>
-    </tr>
-    <tr>
-      <th>type</th>
-      <td><p>Type(s) of prediction as string or vector This can
-differ based on the model type, but will typically be a string such as:
-"response", "link", "probs", or "zero".</p></td>
-    </tr>
-    <tr>
       <th>...</th>
       <td><p>Additional arguments are pushed forward to <code><a href='https://rdrr.io/r/stats/predict.html'>predict()</a></code>.</p></td>
     </tr>
@@ -169,10 +143,7 @@ differ based on the model type, but will typically be a string such as:
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector of predicted values of length equal to the number of rows
-in <code>newdata</code>. For models with multi-level outcomes (e.g., multinomial
-logit), this function returns a matrix of predicted values with column names
-equal to each of the levels/groups.</p>
+    <p>A warning, an error, or nothing</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

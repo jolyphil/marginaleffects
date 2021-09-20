@@ -253,12 +253,12 @@
 <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>  <span class="op">%&gt;%</span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>truth <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">x</span><span class="op">)</span> <span class="op">%&gt;%</span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">dydx</span>, <span class="va">truth</span><span class="op">)</span>
-<span class="co">#&gt;        dydx truth</span>
-<span class="co">#&gt; 1 -6.995991    -7</span>
-<span class="co">#&gt; 2 -2.995177    -3</span>
-<span class="co">#&gt; 3  1.005637     1</span>
-<span class="co">#&gt; 4  5.006451     5</span>
-<span class="co">#&gt; 5  9.007265     9</span></code></pre></div>
+<span class="co">#&gt;         dydx truth</span>
+<span class="co">#&gt; 1 -7.0058330    -7</span>
+<span class="co">#&gt; 2 -3.0031834    -3</span>
+<span class="co">#&gt; 3  0.9994662     1</span>
+<span class="co">#&gt; 4  5.0021158     5</span>
+<span class="co">#&gt; 5  9.0047655     9</span></code></pre></div>
 <p>We can also plot the result with the <code>plot_cme</code> function (see section below):</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"x"</span>, condition <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></code></pre></div>

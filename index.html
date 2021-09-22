@@ -226,9 +226,9 @@
 <span class="co">#&gt;       type predicted std.error conf.low conf.high       hp am wt</span>
 <span class="co">#&gt; 1 response  21.95621  2.038630 17.74868  26.16373 146.6875  0  2</span>
 <span class="co">#&gt; 2 response  16.60387  1.083201 14.36826  18.83949 146.6875  0  4</span></code></pre></div>
-<p>We can plot the adjusted predictions with the <code>plot_cmm</code> function:</p>
+<p>We can plot the adjusted predictions with the <code>plot_cap</code> function:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/plot_cmm.html">plot_cmm</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"hp"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="reference/plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"hp"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-10-1.png" width="100%"></p>
 <p>Or you can work with the output of the <code>predictions</code> or <code>marginaleffects</code> directly to create your own plots. For example:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -246,7 +246,7 @@
 <p>And of course, categorical variables work too:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>
-<span class="fu"><a href="reference/plot_cmm.html">plot_cmm</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="reference/plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-12-1.png" width="100%"></p>
 <p>There is <em>much</em> more you can do with <code>marginaleffects</code>. Please read the other articles on this website to learn more:</p>
 <ul>

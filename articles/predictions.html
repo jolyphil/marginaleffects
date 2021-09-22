@@ -272,17 +272,17 @@ hp
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">length</span> <span class="op">&lt;</span> <span class="fl">240</span><span class="op">)</span>
 
 <span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">certified_fresh</span> <span class="op">~</span> <span class="va">length</span> <span class="op">*</span> <span class="va">style</span>, data <span class="op">=</span> <span class="va">dat</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></code></pre></div>
-<p>We can plot adjusted predictions, conditional on the <code>length</code> variable using the <code>plot_cmm</code> function:</p>
+<p>We can plot adjusted predictions, conditional on the <code>length</code> variable using the <code>plot_cap</code> function:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">certified_fresh</span> <span class="op">~</span> <span class="va">length</span>, data <span class="op">=</span> <span class="va">dat</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span>
 
-<span class="fu"><a href="../reference/plot_cmm.html">plot_cmm</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="st">"length"</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="st">"length"</span><span class="op">)</span></code></pre></div>
 <p><img src="predictions_files/figure-html/unnamed-chunk-8-1.png" width="576"></p>
 <p>We can also introduce another condition which will display a categorical variable like <code>style</code> in different colors. This can be useful in models with interactions:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">certified_fresh</span> <span class="op">~</span> <span class="va">length</span> <span class="op">*</span> <span class="va">style</span>, data <span class="op">=</span> <span class="va">dat</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span>
 
-<span class="fu"><a href="../reference/plot_cmm.html">plot_cmm</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"length"</span>, <span class="st">"style"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"length"</span>, <span class="st">"style"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="predictions_files/figure-html/unnamed-chunk-9-1.png" width="576"></p>
 <p>Of course, you can also design your own plots or tables by working with the <code>predictions</code> output directly:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">

@@ -41,10 +41,13 @@
   <a href="../articles/mfx.html">Marginal effects</a>
 </li>
 <li>
-  <a href="../articles/marginalmeans.html">Marginal means</a>
+  <a href="../articles/predictions.html">Adjusted predictions</a>
 </li>
 <li>
   <a href="../articles/contrasts.html">Contrasts</a>
+</li>
+<li>
+  <a href="../articles/marginalmeans.html">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -82,8 +85,8 @@
 <blockquote>
 <p>The reponse predicted by a model for some combination of the regressors’ values, such as their means or factor levels (a.k.a. “reference grid”).</p>
 </blockquote>
-<p>An adjusted prediction is thus a regression-adjusted mean of the response variable, for given values of the predictors. This differs from “Fitted Values” (a.k.a. “Predictions”) because the combination of regressor values under consideration does not necessarily correspond to any specific observation in the dataset (although it could).</p>
-<p>By default, the <code>predictions</code> function returns predicted/estimated responses for each of the observations in the dataset:</p>
+<p>An adjusted prediction is thus the regression-adjusted response variable (or link, or other fitted value), for a given combination (or grid) of predictors. This grid may may or may not correspond to the actual observations in a dataset.</p>
+<p>By default, <code>predictions</code> calculates the regression-adjusted predicted values for a single hypothetical unit of observation with all regressors set at their means or modes:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/">marginaleffects</a></span><span class="op">)</span>
 
@@ -92,7 +95,7 @@
 <span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 <span class="co">#&gt;       type predicted std.error conf.low conf.high       hp cyl</span>
 <span class="co">#&gt; 1 response  16.60307  1.278754 13.98366  19.22248 146.6875   8</span></code></pre></div>
-<p>Unless otherwise instructed, <code>predictions</code> calculates regression-adjusted predicted values for a unit with all regressors set at their means or modes. In most cases, this is too limiting, and researchers will want to specify a grid of “typical” values over which to compute adjusted predictions.</p>
+<p>In many cases, this is too limiting, and researchers will want to specify a grid of “typical” values over which to compute adjusted predictions.</p>
 <div id="typical-predictions" class="section level1">
 <h1 class="hasAnchor">
 <a href="#typical-predictions" class="anchor"></a>Typical Predictions</h1>

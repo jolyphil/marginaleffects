@@ -41,10 +41,13 @@
   <a href="../articles/mfx.html">Marginal effects</a>
 </li>
 <li>
-  <a href="../articles/marginalmeans.html">Marginal means</a>
+  <a href="../articles/predictions.html">Adjusted predictions</a>
 </li>
 <li>
   <a href="../articles/contrasts.html">Contrasts</a>
+</li>
+<li>
+  <a href="../articles/marginalmeans.html">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -64,7 +67,8 @@
 
       
 
-      </header><script src="marginalmeans_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="marginalmeans_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="marginalmeans_files/kePrint-0.0.1/kePrint.js"></script><link href="marginalmeans_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Marginal Means</h1>
@@ -77,15 +81,43 @@
 
     
     
+<p>In the context of this package, “marginal means” refer to the values obtained by this three step process:</p>
+<ol style="list-style-type: decimal">
+<li>Construct a “grid” of predictor values with all combinations of categorical variables, and where numeric variables are held at their means.</li>
+<li>Calculate adjusted predictions for each cell in that grid.</li>
+<li>Take the average of those adjusted predictions across one dimension of the grid to obtain the marginal means.</li>
+</ol>
+<p>For example, consider a model with a numeric, a factor, and a logical predictor:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/">marginaleffects</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rvlenth/emmeans">emmeans</a></span><span class="op">)</span>
 
 <span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">mtcars</span>
 <span class="va">dat</span><span class="op">$</span><span class="va">cyl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span>
 <span class="va">dat</span><span class="op">$</span><span class="va">am</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">am</span><span class="op">)</span>
-<span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">am</span>, data <span class="op">=</span> <span class="va">dat</span> <span class="op">)</span>
-
+<span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">am</span>, data <span class="op">=</span> <span class="va">dat</span><span class="op">)</span></code></pre></div>
+<p>Using the <code>predictions</code> function, we set the <code>hp</code> variable at its mean and compute predictions for all combinations for <code>am</code> and <code>cyl</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"cyl"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;       type predicted std.error conf.low conf.high       hp    am cyl</span>
+<span class="co">#&gt; 1 response  21.03914  1.213043 18.55019  23.52810 146.6875  TRUE   6</span>
+<span class="co">#&gt; 2 response  16.88129  1.272938 14.26944  19.49314 146.6875 FALSE   6</span>
+<span class="co">#&gt; 3 response  24.96372  1.176830 22.54907  27.37838 146.6875  TRUE   4</span>
+<span class="co">#&gt; 4 response  20.80587  1.756564 17.20169  24.41004 146.6875 FALSE   4</span>
+<span class="co">#&gt; 5 response  21.43031  1.826126 17.68341  25.17721 146.6875  TRUE   8</span>
+<span class="co">#&gt; 6 response  17.27245  1.116885 14.98079  19.56411 146.6875 FALSE   8</span></code></pre></div>
+<p>For illustration purposes, it is useful to reshape the above results:</p>
+<p>The marginal means of <code>am</code> and <code>cyl</code> are obtained by taking the mean of the adjusted predictions across cells. The <code>marginalmeans</code> function gives us the same results easily:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
+<span class="co">#&gt;   term value predicted std.error</span>
+<span class="co">#&gt; 1  cyl     4  22.88479 1.3566479</span>
+<span class="co">#&gt; 2  cyl     6  18.96022 1.0729360</span>
+<span class="co">#&gt; 3  cyl     8  19.35138 1.3770817</span>
+<span class="co">#&gt; 4   am FALSE  18.31987 0.7853925</span>
+<span class="co">#&gt; 5   am  TRUE  22.47772 0.8343346</span></code></pre></div>
+<p>The same results can be obtained using the <a href="https://cran.r-project.org/web/packages/emmeans/index.html">very powerful <code>emmeans</code> package</a>:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rvlenth/emmeans">emmeans</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>
 <span class="co">#&gt;  cyl emmean   SE df lower.CL upper.CL</span>
 <span class="co">#&gt;  4     22.9 1.36 27     20.1     25.7</span>

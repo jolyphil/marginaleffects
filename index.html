@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marginal effects for a wide variety of models • marginaleffects</title>
+<title>Marginal effects, adjusted predictions, contrasts, and marginal means for a wide variety of models • marginaleffects</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/readable/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Marginal effects for a wide variety of models">
+<script src="pkgdown.js"></script><meta property="og:title" content="Marginal effects, adjusted predictions, contrasts, and marginal means for a wide variety of models">
 <meta property="og:description" content="Compute, summarize, and plot marginal effects, adjusted predictions, contrasts, and marginal means for a wide variety of models.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -41,10 +41,13 @@
   <a href="articles/mfx.html">Marginal effects</a>
 </li>
 <li>
-  <a href="articles/marginalmeans.html">Marginal means</a>
+  <a href="articles/predictions.html">Adjusted predictions</a>
 </li>
 <li>
   <a href="articles/contrasts.html">Contrasts</a>
+</li>
+<li>
+  <a href="articles/marginalmeans.html">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -76,7 +79,7 @@
 <div id="what" class="section level2">
 <h2 class="hasAnchor">
 <a href="#what" class="anchor"></a>What?</h2>
-<p>The <code>marginaleffects</code> package allows <code>R</code> users to compute and plot three principal quantities of interest for a <em>wide</em> variety of models:</p>
+<p>The <code>marginaleffects</code> package allows <code>R</code> users to compute and plot four principal quantities of interest for a <em>wide</em> variety of models:</p>
 <ul>
 <li>
 <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html"><em>Marginal Effect</em> (Vignette)</a>
@@ -85,15 +88,21 @@
 </ul>
 </li>
 <li>
-<a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html"><em>Marginal Mean</em> (Vignette)</a>
+<a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html">_Adjusted Predictions (Vignette)</a>
 <ul>
-<li>Response predicted by a model for some combination of the regressors’ values (a.k.a. “reference grid”), typically their means or factor levels.</li>
+<li>The outcome predicted by a model for some combination of the regressors’ values, such as their means or factor levels (a.k.a. “reference grid”).</li>
 </ul>
 </li>
 <li>
 <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html"><em>Contrast</em> (Vignette)</a>
 <ul>
-<li>The difference between two Marginal Means, calculated for meaningfully different regressor values (e.g., College graduates vs. Others).</li>
+<li>The difference between two adjusted predictions, calculated for meaningfully different regressor values (e.g., College graduates vs. Others).</li>
+</ul>
+</li>
+<li>
+<a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html"><em>Marginal Mean</em> (Vignette)</a>
+<ul>
+<li>Adjusted predictions of a model, averaged across a “reference grid” of categorical predictors.</li>
 </ul>
 </li>
 </ul>
@@ -103,7 +112,7 @@
 <a href="#why" class="anchor"></a>Why?</h2>
 <p>To calculate marginal effects we need to take derivatives of the regression equation. This can be challenging to do manually, especially when our models are non-linear, or when regressors are transformed or interacted. Computing the variance of a marginal effect is even more difficult.</p>
 <p>The <code>marginaleffects</code> package hopes to do most of this hard work for you.</p>
-<p>Many <code>R</code> packages advertise their ability to compute “marginal effects.” However, most of them do <em>not</em> actually compute marginal effects <em>as defined above</em>. Instead, they compute fitted values for different predictor values (i.e., “Marginal Means”), or differences in fitted values (i.e., “contrasts”). The rare packages that actually compute marginal effects are typically limited in the model types they support, and in the range of transformations they allow (interactions, polynomials, etc.).</p>
+<p>Many <code>R</code> packages advertise their ability to compute “marginal effects.” However, most of them do <em>not</em> actually compute marginal effects <em>as defined above</em>. Instead, they compute fitted values for different predictor values, or differences in fitted values. The rare packages that actually compute marginal effects are typically limited in the model types they support, and in the range of transformations they allow (interactions, polynomials, etc.).</p>
 <p>The main package in the <code>R</code> ecosystem to compute marginal effects is the trailblazing and powerful <a href="https://cran.r-project.org/web/packages/margins/index.html"><code>margins</code> and <code>prediction</code> packages by Thomas J. Leeper</a>, and the <a href="https://cran.r-project.org/web/packages/emmeans/index.html"><code>emmeans</code> package by Russell V. Lenth and contributors.</a> The <code>marginaleffects</code> package is (essentially) a clone of Leeper’s <code>margins</code> and <code>prediction</code> packages.</p>
 <p>So why did I write a clone?</p>
 <ul>
@@ -139,10 +148,23 @@
 <div id="supported-models" class="section level2">
 <h2 class="hasAnchor">
 <a href="#supported-models" class="anchor"></a>Supported models</h2>
-<p>This table shows the list of models supported by <code>marginaleffects</code>, and shows which numerical results – marginal effects (dY/dX) or standard errors (Std. Error) – have been checked against alternative software packages: Stata’s <code>margins</code> command and R’s <code>margins</code> package. Empty cells mean that the results of a model have not yet been validated against external software. Green cells indicate that the results of <a href="https://github.com/vincentarelbundock/marginaleffects/tree/main/tests/testthat">at least one model from the test suite</a> match to a reasonable tolerance. Red cells mean that <code>marginaleffects</code> results do <em>not</em> match those produced by alternative software packages. Obviously, caution is especially warranted when working with estimates from red cells.</p>
+<div id="adjusted-predictions" class="section level4">
+<h4 class="hasAnchor">
+<a href="#adjusted-predictions" class="anchor"></a>Adjusted predictions</h4>
+<p>Under the hood, <code>marginaleffects</code>’s <code>predictions</code> function uses the <code>insight</code> package to retrieve adjusted predictions from a wide variety of models. Currently, <code>insight</code> <a href="https://easystats.github.io/insight/">supports over 200 types of model objects</a>, and most of those should work out-of-the-box with the <code>predictions</code> function. If you run into problems, do not hesitate to report them on Github or via email.</p>
+</div>
+<div id="marginal-effects" class="section level4">
+<h4 class="hasAnchor">
+<a href="#marginal-effects" class="anchor"></a>Marginal effects</h4>
+<p>This table shows the list of models supported by the <code>marginaleffects</code> function, and shows which numerical results – marginal effects (dY/dX) or standard errors (Std. Error) – have been checked against alternative software packages: Stata’s <code>margins</code> command and R’s <code>margins</code> package. Empty cells mean that the results of a model have not yet been validated against external software. Green cells indicate that the results of <a href="https://github.com/vincentarelbundock/marginaleffects/tree/main/tests/testthat">at least one model from the test suite</a> match to a reasonable tolerance. Red cells mean that <code>marginaleffects</code> results do <em>not</em> match those produced by alternative software packages. Obviously, caution is especially warranted when working with estimates from red cells.</p>
 <p>I am <em>very</em> eager to add support for new models. Feel free to file a request on Github or – even better – submit some code.</p>
 <p>Warning: When using <code>marginaleffects</code> with different models, you will probably have to adjust the <code>type</code> argument. Refer to the documentation of your modeling package to see what <code>type</code> argument is allowed in the <code>predict</code> function.</p>
 <p><img src="reference/figures/README-supported_models.png" width="60%"></p>
+</div>
+<div id="contrasts-and-marginal-means" class="section level4">
+<h4 class="hasAnchor">
+<a href="#contrasts-and-marginal-means" class="anchor"></a>Contrasts and Marginal Means</h4>
+</div>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -164,19 +186,19 @@
 <code class="sourceCode R"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">mfx</span>, <span class="fl">4</span><span class="op">)</span>
-<span class="co">#&gt;   rowid     type term    dydx std.error  mpg  hp    wt am predicted</span>
-<span class="co">#&gt; 1     1 response   am  0.3252     1.682 21.0 110 2.620  1     22.49</span>
-<span class="co">#&gt; 2     2 response   am -0.5439     1.568 21.0 110 2.875  1     20.80</span>
-<span class="co">#&gt; 3     3 response   am  1.2007     2.348 22.8  93 2.320  1     25.26</span>
-<span class="co">#&gt; 4     4 response   am -1.7026     1.867 21.4 110 3.215  0     20.26</span></code></pre></div>
+<span class="co">#&gt;   rowid     type term       dydx std.error  mpg  hp    wt am predicted</span>
+<span class="co">#&gt; 1     1 response   am  0.3251736  1.682202 21.0 110 2.620  1  22.48857</span>
+<span class="co">#&gt; 2     2 response   am -0.5438639  1.568211 21.0 110 2.875  1  20.80186</span>
+<span class="co">#&gt; 3     3 response   am  1.2007132  2.347558 22.8  93 2.320  1  25.26465</span>
+<span class="co">#&gt; 4     4 response   am -1.7025805  1.867130 21.4 110 3.215  0  20.25549</span></code></pre></div>
 <p>The function <code>summary</code> calculates the “Average Marginal Effect,” that is, the average of all unit-specific marginal effects:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
 <span class="co">#&gt; Average marginal effects </span>
-<span class="co">#&gt;       type Term  Effect Std. Error z value Pr(&gt;|z|)   2.5 % 97.5 %</span>
-<span class="co">#&gt; 1 response   am -0.0481     1.8526  -0.026  0.97928 -3.6791  3.583</span>
-<span class="co">#&gt; 2 response   hp -0.0381     0.0128  -2.977  0.00291 -0.0631 -0.013</span>
-<span class="co">#&gt; 3 response   wt -3.9391     1.0860  -3.627  0.00029 -6.0675 -1.811</span>
+<span class="co">#&gt;       type Term   Effect Std. Error  z value   Pr(&gt;|z|)    2.5 %   97.5 %</span>
+<span class="co">#&gt; 1 response   am -0.04811    1.85260 -0.02597 0.97928233 -3.67913  3.58291</span>
+<span class="co">#&gt; 2 response   hp -0.03807    0.01279 -2.97717 0.00290923 -0.06314 -0.01301</span>
+<span class="co">#&gt; 3 response   wt -3.93909    1.08596 -3.62728 0.00028642 -6.06754 -1.81065</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Model type:  lm </span>
 <span class="co">#&gt; Prediction type:  response</span></code></pre></div>
@@ -184,42 +206,42 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"hp"</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"wt"</span>, <span class="st">"am"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-7-1.png" width="100%"></p>
-<p>Beyond marginal effects, we can also use the <code>marginalmeans</code> function to estimate – you guessed it – marginal means. We use the <code>variables</code> argument to select the categorical variables that will form a “grid” of predictor values over which to compute means/predictions:</p>
+<p>Beyond marginal effects, we can also use the <code>predictions</code> function to estimate – you guessed it – adjusted predicted values. We use the <code>variables</code> argument to select the categorical variables that will form a “grid” of predictor values over which to compute means/predictions:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;        type predicted std.error conf.low conf.high    hp am    wt</span>
-<span class="co">#&gt; 1  response    23.259    2.7059   17.675     28.84 146.7  0 1.513</span>
-<span class="co">#&gt; 2  response    27.148    2.8518   21.262     33.03 146.7  1 1.513</span>
-<span class="co">#&gt; 3  response    20.504    1.3245   17.771     23.24 146.7  0 2.542</span>
-<span class="co">#&gt; 4  response    21.556    1.0724   19.342     23.77 146.7  1 2.542</span>
-<span class="co">#&gt; 5  response    18.410    0.6151   17.141     19.68 146.7  0 3.325</span>
-<span class="co">#&gt; 6  response    17.305    1.5528   14.100     20.51 146.7  1 3.325</span>
-<span class="co">#&gt; 7  response    17.541    0.7294   16.035     19.05 146.7  0 3.650</span>
-<span class="co">#&gt; 8  response    15.539    2.1453   11.111     19.97 146.7  1 3.650</span>
-<span class="co">#&gt; 9  response    12.793    2.9785    6.646     18.94 146.7  0 5.424</span>
-<span class="co">#&gt; 10 response     5.902    5.8150   -6.100     17.90 146.7  1 5.424</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;        type predicted std.error  conf.low conf.high       hp am     wt</span>
+<span class="co">#&gt; 1  response 23.259500 2.7059342 17.674726  28.84427 146.6875  0 1.5130</span>
+<span class="co">#&gt; 2  response 27.148334 2.8518051 21.262498  33.03417 146.6875  1 1.5130</span>
+<span class="co">#&gt; 3  response 20.504387 1.3244556 17.770845  23.23793 146.6875  0 2.5425</span>
+<span class="co">#&gt; 4  response 21.555612 1.0723852 19.342318  23.76891 146.6875  1 2.5425</span>
+<span class="co">#&gt; 5  response 18.410286 0.6151016 17.140779  19.67979 146.6875  0 3.3250</span>
+<span class="co">#&gt; 6  response 17.304709 1.5528055 14.099876  20.50954 146.6875  1 3.3250</span>
+<span class="co">#&gt; 7  response 17.540532 0.7293676 16.035192  19.04587 146.6875  0 3.6500</span>
+<span class="co">#&gt; 8  response 15.539158 2.1453449 11.111383  19.96693 146.6875  1 3.6500</span>
+<span class="co">#&gt; 9  response 12.793013 2.9784942  6.645703  18.94032 146.6875  0 5.4240</span>
+<span class="co">#&gt; 10 response  5.901966 5.8149853 -6.099574  17.90351 146.6875  1 5.4240</span></code></pre></div>
 <p>The <a href="https://vincentarelbundock.github.io/marginaleffects/reference/typical.html"><code>typical</code> function gives us an even more powerful way</a> to customize the grid:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="reference/typical.html">typical</a></span><span class="op">(</span>am <span class="op">=</span> <span class="fl">0</span>, wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;       type predicted std.error conf.low conf.high    hp am wt</span>
-<span class="co">#&gt; 1 response     21.96     2.039    17.75     26.16 146.7  0  2</span>
-<span class="co">#&gt; 2 response     16.60     1.083    14.37     18.84 146.7  0  4</span></code></pre></div>
-<p>We can plot the estimated means (a.k.a. regression-adjusted predictions) with the <code>plot_cmm</code> function:</p>
+<code class="sourceCode R"><span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="reference/typical.html">typical</a></span><span class="op">(</span>am <span class="op">=</span> <span class="fl">0</span>, wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;       type predicted std.error conf.low conf.high       hp am wt</span>
+<span class="co">#&gt; 1 response  21.95621  2.038630 17.74868  26.16373 146.6875  0  2</span>
+<span class="co">#&gt; 2 response  16.60387  1.083201 14.36826  18.83949 146.6875  0  4</span></code></pre></div>
+<p>We can plot the adjusted predictions with the <code>plot_cmm</code> function:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_cmm.html">plot_cmm</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"hp"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-10-1.png" width="100%"></p>
-<p>Or you can work with the output of the <code>marginalmeans</code> or <code>marginaleffects</code> directly to create your own plots. For example:</p>
+<p>Or you can work with the output of the <code>predictions</code> or <code>marginaleffects</code> directly to create your own plots. For example:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 
-<span class="fu"><a href="reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, 
+<span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, 
               newdata <span class="op">=</span> <span class="fu"><a href="reference/typical.html">typical</a></span><span class="op">(</span>am <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, 
                                 wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/fivenum.html">fivenum</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">wt</span><span class="op">)</span>, 
                                 hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">300</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hp</span>, y <span class="op">=</span> <span class="va">predicted</span>, ymin <span class="op">=</span> <span class="va">conf.low</span>, ymax <span class="op">=</span> <span class="va">conf.high</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_ribbon</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">wt</span><span class="op">)</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">wt</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">am</span><span class="op">)</span></code></pre></div>
+    <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">hp</span>, y <span class="op">=</span> <span class="va">predicted</span>, ymin <span class="op">=</span> <span class="va">conf.low</span>, ymax <span class="op">=</span> <span class="va">conf.high</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">geom_ribbon</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">wt</span><span class="op">)</span><span class="op">)</span>, alpha <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">geom_line</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">wt</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">am</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-11-1.png" width="100%"></p>
 <p>And of course, categorical variables work too:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
@@ -229,7 +251,7 @@
 <p>There is <em>much</em> more you can do with <code>marginaleffects</code>. Please read the other articles on this website to learn more:</p>
 <ul>
 <li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html"><em>Marginal Effect</em> (Vignette)</a></li>
-<li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html"><em>Marginal Mean</em> (Vignette)</a></li>
+<li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html"><em>Adjusted Predictions</em> (Vignette)</a></li>
 <li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html"><em>Contrast</em> (Vignette)</a></li>
 </ul>
 </div>

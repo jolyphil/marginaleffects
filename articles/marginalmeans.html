@@ -98,13 +98,13 @@
 <p>Using the <code>predictions</code> function, we set the <code>hp</code> variable at its mean and compute predictions for all combinations for <code>am</code> and <code>cyl</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"cyl"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;       type predicted std.error conf.low conf.high       hp    am cyl</span>
-<span class="co">#&gt; 1 response  21.03914  1.213043 18.55019  23.52810 146.6875  TRUE   6</span>
-<span class="co">#&gt; 2 response  16.88129  1.272938 14.26944  19.49314 146.6875 FALSE   6</span>
-<span class="co">#&gt; 3 response  24.96372  1.176830 22.54907  27.37838 146.6875  TRUE   4</span>
-<span class="co">#&gt; 4 response  20.80587  1.756564 17.20169  24.41004 146.6875 FALSE   4</span>
-<span class="co">#&gt; 5 response  21.43031  1.826126 17.68341  25.17721 146.6875  TRUE   8</span>
-<span class="co">#&gt; 6 response  17.27245  1.116885 14.98079  19.56411 146.6875 FALSE   8</span></code></pre></div>
+<span class="co">#&gt;          type predicted std.error conf.low conf.high       hp    am cyl</span>
+<span class="co">#&gt; 1 expectation  21.03914  1.213043 18.55019  23.52810 146.6875  TRUE   6</span>
+<span class="co">#&gt; 2 expectation  16.88129  1.272938 14.26944  19.49314 146.6875 FALSE   6</span>
+<span class="co">#&gt; 3 expectation  24.96372  1.176830 22.54907  27.37838 146.6875  TRUE   4</span>
+<span class="co">#&gt; 4 expectation  20.80587  1.756564 17.20169  24.41004 146.6875 FALSE   4</span>
+<span class="co">#&gt; 5 expectation  21.43031  1.826126 17.68341  25.17721 146.6875  TRUE   8</span>
+<span class="co">#&gt; 6 expectation  17.27245  1.116885 14.98079  19.56411 146.6875 FALSE   8</span></code></pre></div>
 <p>For illustration purposes, it is useful to reshape the above results:</p>
 <table class="table table">
 <thead>

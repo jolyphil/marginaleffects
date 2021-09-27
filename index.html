@@ -69,9 +69,9 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="the-marginaleffects-package-for-r" class="section level1">
+<div id="the-marginaleffects-package-for-r-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#the-marginaleffects-package-for-r" class="anchor"></a>The <code>marginaleffects</code> package for <code>R</code>
+<a href="#the-marginaleffects-package-for-r-" class="anchor"></a>The <code>marginaleffects</code> package for <code>R</code> <img src="https://user-images.githubusercontent.com/987057/134899484-e3392510-2e94-4c39-9830-53356fa5feed.png" align="right" alt="" width="120">
 </h1></div>
 <!-- badges: start -->
 
@@ -209,23 +209,23 @@
 <p>Beyond marginal effects, we can also use the <code>predictions</code> function to estimate – you guessed it – adjusted predicted values. We use the <code>variables</code> argument to select the categorical variables that will form a “grid” of predictor values over which to compute means/predictions:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;        type predicted std.error  conf.low conf.high       hp am     wt</span>
-<span class="co">#&gt; 1  response 23.259500 2.7059342 17.674726  28.84427 146.6875  0 1.5130</span>
-<span class="co">#&gt; 2  response 27.148334 2.8518051 21.262498  33.03417 146.6875  1 1.5130</span>
-<span class="co">#&gt; 3  response 20.504387 1.3244556 17.770845  23.23793 146.6875  0 2.5425</span>
-<span class="co">#&gt; 4  response 21.555612 1.0723852 19.342318  23.76891 146.6875  1 2.5425</span>
-<span class="co">#&gt; 5  response 18.410286 0.6151016 17.140779  19.67979 146.6875  0 3.3250</span>
-<span class="co">#&gt; 6  response 17.304709 1.5528055 14.099876  20.50954 146.6875  1 3.3250</span>
-<span class="co">#&gt; 7  response 17.540532 0.7293676 16.035192  19.04587 146.6875  0 3.6500</span>
-<span class="co">#&gt; 8  response 15.539158 2.1453449 11.111383  19.96693 146.6875  1 3.6500</span>
-<span class="co">#&gt; 9  response 12.793013 2.9784942  6.645703  18.94032 146.6875  0 5.4240</span>
-<span class="co">#&gt; 10 response  5.901966 5.8149853 -6.099574  17.90351 146.6875  1 5.4240</span></code></pre></div>
+<span class="co">#&gt;           type predicted std.error  conf.low conf.high       hp am     wt</span>
+<span class="co">#&gt; 1  expectation 23.259500 2.7059342 17.674726  28.84427 146.6875  0 1.5130</span>
+<span class="co">#&gt; 2  expectation 27.148334 2.8518051 21.262498  33.03417 146.6875  1 1.5130</span>
+<span class="co">#&gt; 3  expectation 20.504387 1.3244556 17.770845  23.23793 146.6875  0 2.5425</span>
+<span class="co">#&gt; 4  expectation 21.555612 1.0723852 19.342318  23.76891 146.6875  1 2.5425</span>
+<span class="co">#&gt; 5  expectation 18.410286 0.6151016 17.140779  19.67979 146.6875  0 3.3250</span>
+<span class="co">#&gt; 6  expectation 17.304709 1.5528055 14.099876  20.50954 146.6875  1 3.3250</span>
+<span class="co">#&gt; 7  expectation 17.540532 0.7293676 16.035192  19.04587 146.6875  0 3.6500</span>
+<span class="co">#&gt; 8  expectation 15.539158 2.1453449 11.111383  19.96693 146.6875  1 3.6500</span>
+<span class="co">#&gt; 9  expectation 12.793013 2.9784942  6.645703  18.94032 146.6875  0 5.4240</span>
+<span class="co">#&gt; 10 expectation  5.901966 5.8149853 -6.099574  17.90351 146.6875  1 5.4240</span></code></pre></div>
 <p>The <a href="https://vincentarelbundock.github.io/marginaleffects/reference/typical.html"><code>typical</code> function gives us an even more powerful way</a> to customize the grid:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="reference/typical.html">typical</a></span><span class="op">(</span>am <span class="op">=</span> <span class="fl">0</span>, wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;       type predicted std.error conf.low conf.high       hp am wt</span>
-<span class="co">#&gt; 1 response  21.95621  2.038630 17.74868  26.16373 146.6875  0  2</span>
-<span class="co">#&gt; 2 response  16.60387  1.083201 14.36826  18.83949 146.6875  0  4</span></code></pre></div>
+<span class="co">#&gt;          type predicted std.error conf.low conf.high       hp am wt</span>
+<span class="co">#&gt; 1 expectation  21.95621  2.038630 17.74868  26.16373 146.6875  0  2</span>
+<span class="co">#&gt; 2 expectation  16.60387  1.083201 14.36826  18.83949 146.6875  0  4</span></code></pre></div>
 <p>We can plot the adjusted predictions with the <code>plot_cap</code> function:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"hp"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
@@ -233,7 +233,8 @@
 <p>Or you can work with the output of the <code>predictions</code> or <code>marginaleffects</code> directly to create your own plots. For example:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
+<span class="co">#&gt; Warning in system("timedatectl", intern = TRUE): running command 'timedatectl'</span>
+<span class="co">#&gt; had status 1</span>
 <span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, 
               newdata <span class="op">=</span> <span class="fu"><a href="reference/typical.html">typical</a></span><span class="op">(</span>am <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, 
                                 wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/fivenum.html">fivenum</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">wt</span><span class="op">)</span>, 

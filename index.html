@@ -116,25 +116,32 @@
 <p>So why did I write a clone?</p>
 <ul>
 <li>
-<em>Speed:</em> <a href="https://vincentarelbundock.github.io/marginaleffects/articles/benchmark.html">In one benchmark,</a> computing unit-level standard errors is over 400x faster with <code>marginaleffects</code> (minutes vs. milliseconds).</li>
+<em>Powerful:</em> Marginal effects and contrasts can be computed for about 40 different kinds of models. Adjusted predictions and marginal means can be computed for about 100 model types.</li>
 <li>
-<em>Efficiency:</em> Smaller memory footprint (1.8GB vs 52MB in the same example).</li>
+<em>Extensible:</em> Adding support for new models is very easy, often requiring less than 10 lines of new code. Please submit <a href="https://github.com/vincentarelbundock/marginaleffects/issues">feature requests on Github.</a>
+</li>
 <li>
-<em>Extensibility:</em> Adding support for new models is very easy, often requiring less than 10 lines of new code. In the medium run, the goal is to add support for <em>several</em> more model types.</li>
+<em>Fast:</em> <a href="https://vincentarelbundock.github.io/marginaleffects/articles/benchmark.html">In one benchmark,</a> computing unit-level standard errors is over 400x faster with <code>marginaleffects</code> (minutes vs. milliseconds).</li>
 <li>
-<code>ggplot2</code> support for plotting (conditional) marginal effects.</li>
+<em>Efficient:</em> Smaller memory footprint (1.8GB vs 52MB in the same example).</li>
 <li>
-<em>Tidy:</em> The results produced by <code>marginaleffects</code> follow “tidy” principles. They are easy to process and program with.</li>
+<em>Valid:</em> When possible, numerical results are checked against alternative software like <code>Stata</code>, or other <code>R</code> packages.</li>
 <li>
-<em>User interface:</em> All functions share an extremely simple, unified, and well-documented interface.</li>
+<em>Beautiful:</em> <code>ggplot2</code> support for plotting (conditional) marginal effects and adjusted predictions.</li>
 <li>
-<em>Dependencies</em>: The package is built on very few dependencies. The only “true” dependencies are <code>numDeriv</code> which has been on the CRAN archive since 2006, and <code>insight</code> which is itself dependency-free.</li>
+<em>Tidy:</em> The results produced by <code>marginaleffects</code> follow “tidy” principles. They are easy to program with and feed to <a href="https://vincentarelbundock.github.io/marginaleffects/">other packages like <code>modelsummary</code>.</a>
+</li>
+<li>
+<em>Simple:</em> All functions share a simple, unified, and well-documented interface.</li>
+<li>
+<em>Thin:</em> The package requires few dependencies.</li>
 <li>
 <em>Safe:</em> User input is checked extensively before computation. When needed, functions fail gracefully with informative error messages.</li>
 <li><em>Active development</em></li>
 </ul>
 <p>Downsides of <code>marginaleffects</code> include:</p>
 <ul>
+<li>Functions to estimate contrasts and marginal means are considerably less flexible than <code>emmeans</code>.</li>
 <li>Simultation-based inference is not supported.</li>
 <li>Newer package with a smaller (read: nonexistent) user base.</li>
 </ul>
@@ -301,7 +308,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://codecov.io/gh/vincentarelbundock/marginaleffects?branch=main"><img src="https://codecov.io/gh/vincentarelbundock/marginaleffects/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://github.com/vincentarelbundock/marginaleffects/actions"><img src="https://github.com/vincentarelbundock/marginaleffects/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>

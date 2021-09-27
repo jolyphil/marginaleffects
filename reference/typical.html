@@ -144,7 +144,16 @@ must be true).</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>data.frame</code> with the values specified in the <code>at</code> list, and where each of the other variables is set at its mean or mode.</p>
+    <p>A <code>data.frame</code> in which each row corresponds to one combination of the named
+predictors supplied by the user via the <code>...</code> dots. Variables which are not
+explicitly defined are held at their mean or mode.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If <code>typical</code> is used in a <code>marginaleffects</code> or <code>predictions</code> call as the
+<code>newdata</code> argument, users do not need to specify the <code>model</code> or <code>data</code>
+argument. The data is extracted automatically from the model.</p>
+<p>If users supply a model, the data used to fit that model is retrieved using
+the <code><a href='https://easystats.github.io/insight/reference/get_data.html'>insight::get_data</a></code> function.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># The output only has 2 rows, and all the variables except `hp` are at their</span>
@@ -166,8 +175,7 @@ must be true).</p></td>
 <span class='fu'><a href='marginaleffects.html'>marginaleffects</a></span><span class='op'>(</span><span class='va'>mod</span>, newdata <span class='op'>=</span> <span class='fu'>typical</span><span class='op'>(</span>hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   rowid     type term        dydx  std.error  hp predicted
 #&gt; 1     1 response   hp -0.06822828 0.01011930 100  23.27603
-#&gt; 2     2 response   hp -0.06822828 0.01011878 110  22.59375</div><div class='input'>
-</div></pre>
+#&gt; 2     2 response   hp -0.06822828 0.01011878 110  22.59375</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

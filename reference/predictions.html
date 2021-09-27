@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Predictions — predictions • marginaleffects</title>
+<title>Adjusted Predictions — predictions • marginaleffects</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Predictions — predictions" />
-<meta property="og:description" content="Warning: This package is experimental." />
+<meta property="og:title" content="Adjusted Predictions — predictions" />
+<meta property="og:description" content="Compute model-adjusted predictions (fitted values) for a &quot;grid&quot; of regressor values." />
 
 
 
@@ -111,13 +111,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Predictions</h1>
+    <h1>Adjusted Predictions</h1>
     <small class="dont-index">Source: <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/predictions.R'><code>R/predictions.R</code></a></small>
     <div class="hidden name"><code>predictions.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Warning: This package is experimental.</p>
+    <p>Compute model-adjusted predictions (fitted values) for a "grid" of regressor values.</p>
     </div>
 
     <pre class="usage"><span class='fu'>predictions</span><span class='op'>(</span><span class='va'>model</span>, variables <span class='op'>=</span> <span class='cn'>NULL</span>, newdata <span class='op'>=</span> <span class='cn'>NULL</span>, conf.level <span class='op'>=</span> <span class='fl'>0.95</span>, <span class='va'>...</span><span class='op'>)</span></pre>
@@ -134,7 +134,7 @@
       <td><p>Character vector. Compute Adjusted Predictions for
 combinations of each of these variables. Factor levels are considered at
 each of their levels. Numeric variables variables are considered at Tukey's
-Five-Number Summaries.</p></td>
+Five-Number Summaries. <code>NULL</code> uses the original data used to fit the model.</p></td>
     </tr>
     <tr>
       <th>newdata</th>
@@ -154,6 +154,9 @@ confidence interval.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code>data.frame</code> with a <code>predicted</code> column with predictions.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

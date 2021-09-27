@@ -142,9 +142,16 @@ must be true).</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>data.frame</code> where each row of the original data is repeated
-multiple times for each of the values of the variables in the <code>at</code> list. See
-example below.</p>
+    <p>A <code>data.frame</code> where each row of the original data is repeated multiple
+times for each of the values of the variables in the <code>at</code> list. See example
+below.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If <code>counterfactual</code> is used in a <code>marginaleffects</code> or <code>predictions</code> call as
+the <code>newdata</code> argument, users do not need to specify the <code>model</code> or <code>data</code>
+argument. The data is extracted automatically from the model.</p>
+<p>If users supply a model, the data used to fit that model is retrieved using
+the <code><a href='https://easystats.github.io/insight/reference/get_data.html'>insight::get_data</a></code> function.</p>
 <p>If users supply a model, the data used to fit that model is retrieved using
 the <code><a href='https://easystats.github.io/insight/reference/get_data.html'>insight::get_data</a></code> function, and then replicated with different values
 of the variables in the <code>at</code> list.</p>
@@ -301,8 +308,7 @@ of the variables in the <code>at</code> list.</p>
 #&gt; 125    31 response   wt -3.87783074 0.632733322 3.570 100  20.20612
 #&gt; 126    31 response   wt -3.87783074 0.632733322 3.570 110  19.88839
 #&gt; 127    32 response   wt -3.87783074 0.632733322 2.780 100  23.26961
-#&gt; 128    32 response   wt -3.87783074 0.632733322 2.780 110  22.95188</div><div class='input'>
-</div></pre>
+#&gt; 128    32 response   wt -3.87783074 0.632733322 2.780 110  22.95188</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

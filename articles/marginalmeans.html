@@ -219,11 +219,191 @@ Marginal means of am
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Results are averaged over the levels of: cyl </span>
 <span class="co">#&gt; Confidence level used: 0.95</span></code></pre></div>
+<div id="tidy-summaries" class="section level1">
+<h1 class="hasAnchor">
+<a href="#tidy-summaries" class="anchor"></a>Tidy summaries</h1>
+<p>The <code>summary</code>, <code>tidy</code>, and <code>glance</code> functions are also available to summarize and manipulate the results:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">me</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
+
+<span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="co">#&gt;   term group estimate std.error statistic p.value conf.low conf.high</span>
+<span class="co">#&gt; 1  cyl     4 22.88479 1.3566479  16.86863       0 20.22581  25.54378</span>
+<span class="co">#&gt; 2  cyl     6 18.96022 1.0729360  17.67134       0 16.85730  21.06313</span>
+<span class="co">#&gt; 3  cyl     8 19.35138 1.3770817  14.05246       0 16.65235  22.05041</span>
+<span class="co">#&gt; 4   am FALSE 18.31987 0.7853925  23.32575       0 16.78053  19.85921</span>
+<span class="co">#&gt; 5   am  TRUE 22.47772 0.8343346  26.94090       0 20.84246  24.11299</span>
+<span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="co">#&gt;   r.squared adj.r.squared   sigma statistic      p.value df    logLik      AIC</span>
+<span class="co">#&gt; 1  0.824875     0.7989306 2.70253   31.7939 7.400614e-10  4 -74.50167 161.0033</span>
+<span class="co">#&gt;        BIC deviance df.residual nobs       F</span>
+<span class="co">#&gt; 1 169.7978  197.199          27   32 31.7939</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="co">#&gt; Estimated marginal means </span>
+<span class="co">#&gt;   Term Group  Mean Std. Error z value   Pr(&gt;|z|) 2.5 % 97.5 %</span>
+<span class="co">#&gt; 1  cyl     4 22.88     1.3566   16.87 &lt; 2.22e-16 20.23  25.54</span>
+<span class="co">#&gt; 2  cyl     6 18.96     1.0729   17.67 &lt; 2.22e-16 16.86  21.06</span>
+<span class="co">#&gt; 3  cyl     8 19.35     1.3771   14.05 &lt; 2.22e-16 16.65  22.05</span>
+<span class="co">#&gt; 4   am FALSE 18.32     0.7854   23.33 &lt; 2.22e-16 16.78  19.86</span>
+<span class="co">#&gt; 5   am  TRUE 22.48     0.8343   26.94 &lt; 2.22e-16 20.84  24.11</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Model type:  lm </span>
+<span class="co">#&gt; Prediction type:  expectation</span></code></pre></div>
+<p>Thanks to those tidiers, we can also present the results in the style of a regression table <a href="https://vincentarelbundock.github.io/modelsummary/">using the <code>modelsummary</code> package:</a></p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://vincentarelbundock.github.io/modelsummary/">"modelsummary"</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">me</span>, 
+             estimate <span class="op">=</span> <span class="st">"{estimate} ({std.error}){stars}"</span>,
+             title <span class="op">=</span> <span class="st">"Estimated Marginal Means"</span>,
+             statistic <span class="op">=</span> <span class="cn">NULL</span>,
+             group <span class="op">=</span> <span class="va">term</span> <span class="op">+</span> <span class="va">group</span> <span class="op">~</span> <span class="va">model</span><span class="op">)</span></code></pre></div>
+<table class="table table">
+<caption>
+Estimated Marginal Means
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cyl
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:center;">
+22.885 (1.357)***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:center;">
+18.960 (1.073)***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:center;">
+19.351 (1.377)***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+am
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:center;">
+18.320 (0.785)***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:left;box-shadow: 0px 1px">
+TRUE
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+22.478 (0.834)***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+0.825
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+0.799
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+161.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BIC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+169.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Log.Lik.
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+−74.502
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+31.794
+</td>
+</tr>
+</tbody>
+</table>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

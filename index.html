@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marginal effects, adjusted predictions, contrasts, and marginal means for a wide variety of models • marginaleffects</title>
+<title>Marginal Effects, Adjusted Predictions, Contrasts, and Marginal Means for a Wide Variety of Models. • marginaleffects</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/readable/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Marginal effects, adjusted predictions, contrasts, and marginal means for a wide variety of models">
+<script src="pkgdown.js"></script><meta property="og:title" content="Marginal Effects, Adjusted Predictions, Contrasts, and Marginal Means for a Wide Variety of Models.">
 <meta property="og:description" content="Compute, summarize, and plot marginal effects, adjusted predictions, contrasts, and marginal means for a wide variety of models.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -31,23 +31,23 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">marginaleffects</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="articles/mfx.html">Marginal effects</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html">Marginal effects</a>
 </li>
 <li>
-  <a href="articles/predictions.html">Adjusted predictions</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html">Adjusted predictions</a>
 </li>
 <li>
-  <a href="articles/contrasts.html">Contrasts</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html">Contrasts</a>
 </li>
 <li>
-  <a href="articles/marginalmeans.html">Marginal means</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -112,7 +112,7 @@
 <p>To calculate marginal effects we need to take derivatives of the regression equation. This can be challenging to do manually, especially when our models are non-linear, or when regressors are transformed or interacted. Computing the variance of a marginal effect is even more difficult.</p>
 <p>The <code>marginaleffects</code> package hopes to do most of this hard work for you.</p>
 <p>Many <code>R</code> packages advertise their ability to compute “marginal effects.” However, most of them do <em>not</em> actually compute marginal effects <em>as defined above</em>. Instead, they compute “adjusted predictions” for different regressor values, or differences in adjusted predictions (i.e., “contrasts”). The rare packages that actually compute marginal effects are typically limited in the model types they support, and in the range of transformations they allow (interactions, polynomials, etc.).</p>
-<p>The main packages in the <code>R</code> ecosystem to compute marginal effects are the trailblazing and powerful <a href="https://cran.r-project.org/web/packages/margins/index.html"><code>margins</code> package by Thomas J. Leeper</a>, and the <a href="https://cran.r-project.org/web/packages/emmeans/index.html"><code>emmeans</code> package by Russell V. Lenth and contributors.</a> The <code>marginaleffects</code> package is (essentially) a clone of <code>margins</code>, with some additional features from <code>emmeans</code>.</p>
+<p>The main packages in the <code>R</code> ecosystem to compute marginal effects are the trailblazing and powerful <a href="https://cran.r-project.org/package=margins"><code>margins</code> by Thomas J. Leeper</a>, and <a href="https://cran.r-project.org/package=emmeans"><code>emmeans</code> by Russell V. Lenth and contributors.</a> The <code>marginaleffects</code> package is essentially a clone of <code>margins</code>, with some additional features from <code>emmeans</code>.</p>
 <p>So why did I write a clone?</p>
 <ul>
 <li>
@@ -142,7 +142,7 @@
 <div id="how" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how" class="anchor"></a>How?</h2>
-<p>By using <a href="https://cran.r-project.org/web/packages/numDeriv/index.html">the <code>numDeriv</code> package</a> to compute gradients and jacobians, and <a href="https://easystats.github.io/insight/">the <code>insight</code> package</a> to extract information from model objects. That’s it. That’s the secret sauce.</p>
+<p>By using <a href="https://cran.r-project.org/package=numDeriv">the <code>numDeriv</code> package</a> to compute gradients and jacobians, and <a href="https://easystats.github.io/insight/">the <code>insight</code> package</a> to extract information from model objects. That’s it. That’s the secret sauce.</p>
 </div>
 <div id="supported-models" class="section level2">
 <h2 class="hasAnchor">

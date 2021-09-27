@@ -31,23 +31,23 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">marginaleffects</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../articles/mfx.html">Marginal effects</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html">Marginal effects</a>
 </li>
 <li>
-  <a href="../articles/predictions.html">Adjusted predictions</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html">Adjusted predictions</a>
 </li>
 <li>
-  <a href="../articles/contrasts.html">Contrasts</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html">Contrasts</a>
 </li>
 <li>
-  <a href="../articles/marginalmeans.html">Marginal means</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -84,13 +84,13 @@
 <div id="definition" class="section level1">
 <h1 class="hasAnchor">
 <a href="#definition" class="anchor"></a>Definition</h1>
-<p>A “marginal effect” (MFX) is a measure of the association between a change in a regressor, and a change in the response variable. More formally, <a href="https://cran.r-project.org/web/packages/margins/index.html">the excellent <code>margins</code> vignette</a> defines the concept as follows:</p>
+<p>A “marginal effect” (MFX) is a measure of the association between a change in a regressor, and a change in the response variable. More formally, <a href="https://cran.r-project.org/package=margins">the excellent <code>margins</code> vignette</a> defines the concept as follows:</p>
 <blockquote>
 <p>Marginal effects are partial derivatives of the regression equation with respect to each variable in the model for each unit in the data.</p>
 </blockquote>
 <p>Put differently, the marginal effect measures the association between a change in a regressor <span class="math inline">\(x\)</span>, and a change in the response <span class="math inline">\(y\)</span>. Put differently, differently, the marginal effect is the slope of the prediction function, measured at a specific value of the regressor <span class="math inline">\(x\)</span>.</p>
 <p>Marginal effects are extremely useful, because they are intuitive and easy to interpret. They are often the main quantity of interest in an empirical analysis.</p>
-<p>In scientific practice, the “Marginal Effect” falls in the same toolbox as the <a href="articles/contrast.html">“Contrast.”</a> Both try to answer a counterfactual question: What would happen to <span class="math inline">\(y\)</span> if <span class="math inline">\(x\)</span> were different? They allow us to model the “effect” of a change/difference in the regressor <span class="math inline">\(x\)</span> on the response <span class="math inline">\(y\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>In scientific practice, the “Marginal Effect” falls in the same toolbox as the <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrast.html">“Contrast.”</a> Both try to answer a counterfactual question: What would happen to <span class="math inline">\(y\)</span> if <span class="math inline">\(x\)</span> were different? They allow us to model the “effect” of a change/difference in the regressor <span class="math inline">\(x\)</span> on the response <span class="math inline">\(y\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <p>To illustrate the concept, consider this quadratic function:</p>
 <p><span class="math display">\[y = -x^2\]</span></p>
 <p>From the definition above, we know that the marginal effect is the partial derivative of <span class="math inline">\(y\)</span> with respect to <span class="math inline">\(x\)</span>:</p>
@@ -257,11 +257,11 @@
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>truth <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">x</span><span class="op">)</span> <span class="op">%&gt;%</span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">dydx</span>, <span class="va">truth</span><span class="op">)</span>
 <span class="co">#&gt;        dydx truth</span>
-<span class="co">#&gt; 1 -6.994358    -7</span>
-<span class="co">#&gt; 2 -2.996387    -3</span>
-<span class="co">#&gt; 3  1.001584     1</span>
-<span class="co">#&gt; 4  4.999555     5</span>
-<span class="co">#&gt; 5  8.997526     9</span></code></pre></div>
+<span class="co">#&gt; 1 -6.998276    -7</span>
+<span class="co">#&gt; 2 -2.997247    -3</span>
+<span class="co">#&gt; 3  1.003783     1</span>
+<span class="co">#&gt; 4  5.004813     5</span>
+<span class="co">#&gt; 5  9.005843     9</span></code></pre></div>
 <p>We can also plot the result with the <code>plot_cme</code> function (see section below):</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"x"</span>, condition <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></code></pre></div>

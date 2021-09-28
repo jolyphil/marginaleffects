@@ -206,10 +206,8 @@ differ based on the model type, but will typically be a string such as:
 #&gt; 3     3 response   hp 0.0028317695 0.0037551909  1  93 2.320 0.967103810
 #&gt; 4     4 response   hp 0.0019335745 0.0024498352  0 110 3.215 0.038895584
 #&gt; 5     5 response   hp 0.0029913468 0.0033764304  0 175 3.440 0.076483825
-#&gt; 6     6 response   hp 0.0001475603 0.0003451131  0 105 3.460 0.003566962</div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>mfx</span><span class='op'>)</span>
-<span class='op'>}</span>
-
+#&gt; 6     6 response   hp 0.0001475603 0.0003451131  0 105 3.460 0.003566962</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>mfx</span><span class='op'>)</span>
+</div><div class='img'><img src='meffects-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># typical marginal effects</span>
 <span class='fu'><a href='marginaleffects.html'>marginaleffects</a></span><span class='op'>(</span><span class='va'>mod</span>,
                 newdata <span class='op'>=</span> <span class='fu'><a href='typical.html'>typical</a></span><span class='op'>(</span>hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>

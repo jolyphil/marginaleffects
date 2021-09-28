@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • marginaleffects</title>
+<title>Print a marginaleffects summary — print.marginaleffects.summary • marginaleffects</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Print a marginaleffects summary — print.marginaleffects.summary" />
+<meta property="og:description" content="Print a marginaleffects summary" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,126 +109,42 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Print a <code>marginaleffects</code> summary</h1>
+    <small class="dont-index">Source: <a href='https://github.com/vincentarelbundock/marginaleffects/blob/master/R/summary.R'><code>R/summary.R</code></a></small>
+    <div class="hidden name"><code>print.marginaleffects.summary.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Print a <code>marginaleffects</code> summary</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='co'># S3 method for marginaleffects.summary</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>x</span>, digits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='fl'>3L</span>, <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"digits"</span><span class='op'>)</span> <span class='op'>-</span> <span class='fl'>3L</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="counterfactual.html">counterfactual()</a></code> </p>
-        </td>
-        <td><p>Generate "counterfactual" datasets for use in <code>marginaleffects</code>'s <code>newdata</code> argument</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="marginaleffects.html">marginaleffects()</a></code> </p>
-        </td>
-        <td><p>Marginal effects using numerical derivatives</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="marginalmeans.html">marginalmeans()</a></code> </p>
-        </td>
-        <td><p>Marginal Means</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot.marginaleffects.html">plot(<i>&lt;marginaleffects&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Point-range plot of average marginal effects</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_cap.html">plot_cap()</a></code> </p>
-        </td>
-        <td><p>Conditional adjusted predictions plot</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_cme.html">plot_cme()</a></code> </p>
-        </td>
-        <td><p>Conditional marginal effects plot</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predictions.html">predictions()</a></code> </p>
-        </td>
-        <td><p>Adjusted Predictions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.marginaleffects.summary.html">print(<i>&lt;marginaleffects.summary&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Print a <code>marginaleffects</code> summary</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="print.marginalmeans.summary.html">print(<i>&lt;marginalmeans.summary&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Print a <code>marginalmeans</code> summary</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary.marginaleffects.html">summary(<i>&lt;marginaleffects&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summarize a <code>marginaleffects</code> object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary.marginalmeans.html">summary(<i>&lt;marginalmeans&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summarize a <code>marginalmeans</code> object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="supported_models.html">supported_models</a></code> </p>
-        </td>
-        <td><p>List of model types supported by the <code>marginaleffects</code> package</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tidy.marginaleffects.html">tidy(<i>&lt;marginaleffects&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Tidy a <code>marginaleffects</code> object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tidy.marginalmeans.html">tidy(<i>&lt;marginalmeans&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Tidy a <code>marginalmeans</code> object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="typical.html">typical()</a></code> </p>
-        </td>
-        <td><p>Generate "typical" datasets for use in <code>marginaleffects</code>'s <code>newdata</code> argument</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>an object produced by the <code>marginaleffects</code> function.</p></td>
+    </tr>
+    <tr>
+      <th>digits</th>
+      <td><p>the number of significant digits to use when printing.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments are pushed forward to <code><a href='https://rdrr.io/r/stats/predict.html'>predict()</a></code>.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Printed summary of a <code>marginalmeans</code> object</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

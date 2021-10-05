@@ -162,7 +162,10 @@ differ based on the model type, but will typically be a string such as:
 combination.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function begins by calling the <code>predictions</code> function to
+    <p><code>marginalmeans</code> can only compute standard errors for linear models, or for
+predictions on the link scale, that is, with the <code>type</code> argument set to
+"link".</p>
+<p>This function begins by calling the <code>predictions</code> function to
 obtain a grid of predictors, including cells for all combinations of all
 categorical variables used to fit <code>model</code>, with numeric variables held at
 their means. Then, it computes marginal means for the variables listed in

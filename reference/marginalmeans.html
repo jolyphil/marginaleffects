@@ -123,6 +123,7 @@
     <pre class="usage"><span class='fu'>marginalmeans</span><span class='op'>(</span>
   <span class='va'>model</span>,
   variables <span class='op'>=</span> <span class='cn'>NULL</span>,
+  variables_grid <span class='op'>=</span> <span class='cn'>NULL</span>,
   vcov <span class='op'>=</span> <span class='fu'>insight</span><span class='fu'>::</span><span class='fu'><a href='https://easystats.github.io/insight/reference/get_varcov.html'>get_varcov</a></span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>,
   type <span class='op'>=</span> <span class='st'>"response"</span>
 <span class='op'>)</span></pre>
@@ -136,9 +137,18 @@
     </tr>
     <tr>
       <th>variables</th>
-      <td><p>predictors over which to compute marginal means (character
-vector). <code>NULL</code> calculates marginal means for all logical, character, or
-factor variables in the dataset used to fit <code>model</code>.</p></td>
+      <td><p>Categorical predictors over which to compute marginal means
+(character vector). <code>NULL</code> calculates marginal means for all logical,
+character, or factor variables in the dataset used to fit <code>model</code>.</p></td>
+    </tr>
+    <tr>
+      <th>variables_grid</th>
+      <td><p>Categorical predictors used to construct the
+prediction grid over which adjusted predictions are averaged (character
+vector). <code>NULL</code> creates a grid with all combinations of all categorical
+predictors. This grid can be very large when there are many variables and
+many response levels, so it is advisable to select a limited number of
+variables in the <code>variables</code> and <code>variables_grid</code> arguments.</p></td>
     </tr>
     <tr>
       <th>vcov</th>
@@ -162,17 +172,21 @@ differ based on the model type, but will typically be a string such as:
 combination.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>marginalmeans</code> can only compute standard errors for linear models, or for
+    <p>This function begins by calling the <code>predictions</code> function to obtain a
+grid of predictors, and adjusted predictions for each cell. The grid
+includes all combinations of the categorical variables listed in the
+<code>variables</code> and <code>variables_grid</code> arguments, or all combinations of the
+categorical variables used to fit the model if <code>variables_grid</code> is <code>NULL</code>.
+In the prediction grid, numeric variables are held at their means.</p>
+<p>After constructing the grid and filling the grid with adjusted predictions,
+<code>marginalmeans</code> computes marginal means for the variables listed in the
+<code>variables</code> argument, by average across all categories in the grid.</p>
+<p><code>marginalmeans</code> can only compute standard errors for linear models, or for
 predictions on the link scale, that is, with the <code>type</code> argument set to
 "link".</p>
-<p>This function begins by calling the <code>predictions</code> function to
-obtain a grid of predictors, including cells for all combinations of all
-categorical variables used to fit <code>model</code>, with numeric variables held at
-their means. Then, it computes marginal means for the variables listed in
-the <code>variables</code> argument.</p>
 <p>The <code>marginaleffects</code> website compares the output of this function to the
-popular <code>emmeans</code> package, which provides similar functionality and more
-advanced options: https://vincentarelbundock.github.io/marginaleffects/</p>
+popular <code>emmeans</code> package, which provides similar but more advanced
+functionality: https://vincentarelbundock.github.io/marginaleffects/</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://vincentarelbundock.github.io/marginaleffects/'>marginaleffects</a></span><span class='op'>)</span>

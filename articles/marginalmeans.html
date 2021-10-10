@@ -424,25 +424,16 @@ F
 <span class="op">}</span><span class="op">)</span></code></pre></div>
 <p>Try to compute marginal means, but realize that you are trying to get marginal means for the wrong type of prediction:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
-<span class="co">#&gt; Error in sanity_type(model, type): The only prediction type supported for "multinom" models is: "probs". Please set a different value for the `type` argument.</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></code></pre></div>
 <p>Try to compute marginal means, but realize that your grid won’t fit in memory:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, type <span class="op">=</span> <span class="st">"probs"</span><span class="op">)</span>
-<span class="co">#&gt; Error in typical(model = structure(list(n = c(43, 0, 3), nunits = 47L, : You are trying to create a prediction grid with more than 1 billion rows, which is likely to exceed the memory and computational power available on your local machine. Presumably this is because you are considering many variables with many levels. All of the functions in the `marginaleffects` package include arguments to specify a restricted list of variables over which to create a prediction grid.</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, type <span class="op">=</span> <span class="st">"probs"</span><span class="op">)</span></code></pre></div>
 <p>Use the <code>variables</code> and <code>variables_grid</code> arguments to compute marginal means over a more reasonably sized grid:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>,
               type <span class="op">=</span> <span class="st">"probs"</span>,
               variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"V1"</span><span class="op">)</span>,
-              variables_grid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"V"</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;   term value predicted</span>
-<span class="co">#&gt; 1    x     a 0.3333333</span>
-<span class="co">#&gt; 2    x     b 0.3333333</span>
-<span class="co">#&gt; 3    x     c 0.3333333</span>
-<span class="co">#&gt; 4   V1     i 0.3333333</span>
-<span class="co">#&gt; 5   V1     h 0.3333333</span>
-<span class="co">#&gt; 6   V1     g 0.3333333</span></code></pre></div>
+              variables_grid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"V"</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
 

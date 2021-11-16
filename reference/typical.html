@@ -156,26 +156,29 @@ argument. The data is extracted automatically from the model.</p>
 the <code><a href='https://easystats.github.io/insight/reference/get_data.html'>insight::get_data</a></code> function.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># The output only has 2 rows, and all the variables except `hp` are at their</span>
-<span class='co'># mean or mode.</span>
-<span class='fu'>typical</span><span class='op'>(</span>newdata <span class='op'>=</span> <span class='va'>mtcars</span>, hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;        mpg    cyl     disp     drat      wt     qsec     vs      am   gear
-#&gt; 1 20.09062 6.1875 230.7219 3.596563 3.21725 17.84875 0.4375 0.40625 3.6875
-#&gt; 2 20.09062 6.1875 230.7219 3.596563 3.21725 17.84875 0.4375 0.40625 3.6875
-#&gt;     carb  hp
-#&gt; 1 2.8125 100
-#&gt; 2 2.8125 110</div><div class='input'>
-<span class='co'># We get the same result by feeding a model instead of a data.frame</span>
-<span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>mpg</span> <span class='op'>~</span> <span class='va'>hp</span>, <span class='va'>mtcars</span><span class='op'>)</span>
-<span class='fu'>typical</span><span class='op'>(</span>model <span class='op'>=</span> <span class='va'>mod</span>, hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;    hp
-#&gt; 1 100
-#&gt; 2 110</div><div class='input'>
-<span class='co'># Use in `marginaleffects` to compute "Typical Marginal Effects"</span>
-<span class='fu'><a href='marginaleffects.html'>marginaleffects</a></span><span class='op'>(</span><span class='va'>mod</span>, newdata <span class='op'>=</span> <span class='fu'>typical</span><span class='op'>(</span>hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;   rowid     type term        dydx  std.error  hp predicted
-#&gt; 1     1 response   hp -0.06822828 0.01011930 100  23.27603
-#&gt; 2     2 response   hp -0.06822828 0.01011878 110  22.59375</div></pre>
+    <pre class="examples"><span class='r-in'><span class='co'># The output only has 2 rows, and all the variables except `hp` are at their</span></span>
+<span class='r-in'><span class='co'># mean or mode.</span></span>
+<span class='r-in'><span class='fu'>typical</span><span class='op'>(</span>newdata <span class='op'>=</span> <span class='va'>mtcars</span>, hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>        mpg    cyl     disp     drat      wt     qsec     vs      am   gear</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 20.09062 6.1875 230.7219 3.596563 3.21725 17.84875 0.4375 0.40625 3.6875</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 20.09062 6.1875 230.7219 3.596563 3.21725 17.84875 0.4375 0.40625 3.6875</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>     carb  hp</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 2.8125 100</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 2.8125 110</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># We get the same result by feeding a model instead of a data.frame</span></span>
+<span class='r-in'><span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>mpg</span> <span class='op'>~</span> <span class='va'>hp</span>, <span class='va'>mtcars</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>typical</span><span class='op'>(</span>model <span class='op'>=</span> <span class='va'>mod</span>, hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    hp</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 100</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 110</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Use in `marginaleffects` to compute "Typical Marginal Effects"</span></span>
+<span class='r-in'><span class='fu'><a href='marginaleffects.html'>marginaleffects</a></span><span class='op'>(</span><span class='va'>mod</span>, newdata <span class='op'>=</span> <span class='fu'>typical</span><span class='op'>(</span>hp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>110</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   rowid     type term        dydx  std.error  hp predicted</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1     1 response   hp -0.06822828 0.01011930 100  23.27603</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2     2 response   hp -0.06822828 0.01011878 110  22.59375</span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

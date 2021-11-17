@@ -102,9 +102,9 @@
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
 <span class="co">#&gt; Average marginal effects </span>
 <span class="co">#&gt;       type Term    Effect</span>
-<span class="co">#&gt; 1 response   hp  0.008939</span>
-<span class="co">#&gt; 2 response  mpg  0.191646</span>
-<span class="co">#&gt; 3 response   vs -0.131792</span>
+<span class="co">#&gt; 1 response   hp  0.008891</span>
+<span class="co">#&gt; 2 response  mpg  0.190376</span>
+<span class="co">#&gt; 3 response   vs -0.135257</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Model type:  brmsfit </span>
 <span class="co">#&gt; Prediction type:  response</span></code></pre></div>
@@ -112,19 +112,19 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">110</span>, <span class="fl">130</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;   rowid     type term         dydx      conf.low  conf.high      mpg     vs  hp</span>
-<span class="co">#&gt; 1     1 response   hp  0.005277499  5.713093e-08 0.01563132 20.09062 0.4375 110</span>
-<span class="co">#&gt; 2     2 response   hp  0.028246899  1.623075e-03 0.06104133 20.09062 0.4375 130</span>
-<span class="co">#&gt; 3     1 response  mpg  0.130211979  1.363326e-06 0.38933348 20.09062 0.4375 110</span>
-<span class="co">#&gt; 4     2 response  mpg  0.656929024  6.826836e-02 1.37896108 20.09062 0.4375 130</span>
-<span class="co">#&gt; 5     1 response   vs -0.061686799 -4.848518e-01 0.25421129 20.09062 0.4375 110</span>
-<span class="co">#&gt; 6     2 response   vs -0.059948294 -1.000659e+00 0.96182273 20.09062 0.4375 130</span>
-<span class="co">#&gt;   predicted</span>
-<span class="co">#&gt; 1 0.0663215</span>
-<span class="co">#&gt; 2 0.3654657</span>
-<span class="co">#&gt; 3 0.0663215</span>
-<span class="co">#&gt; 4 0.3654657</span>
-<span class="co">#&gt; 5 0.0663215</span>
-<span class="co">#&gt; 6 0.3654657</span></code></pre></div>
+<span class="co">#&gt; 1     1 response   hp  0.005417668  9.751375e-07 0.01642068 20.09062 0.4375 110</span>
+<span class="co">#&gt; 2     2 response   hp  0.027906771  1.552959e-03 0.05749591 20.09062 0.4375 130</span>
+<span class="co">#&gt; 3     1 response  mpg  0.133227892  2.149755e-05 0.41782852 20.09062 0.4375 110</span>
+<span class="co">#&gt; 4     2 response  mpg  0.650261660  7.608570e-02 1.30706341 20.09062 0.4375 130</span>
+<span class="co">#&gt; 5     1 response   vs -0.062744871 -4.776285e-01 0.27871665 20.09062 0.4375 110</span>
+<span class="co">#&gt; 6     2 response   vs -0.068139887 -9.592951e-01 1.00804786 20.09062 0.4375 130</span>
+<span class="co">#&gt;    predicted</span>
+<span class="co">#&gt; 1 0.06634644</span>
+<span class="co">#&gt; 2 0.36577838</span>
+<span class="co">#&gt; 3 0.06634644</span>
+<span class="co">#&gt; 4 0.36577838</span>
+<span class="co">#&gt; 5 0.06634644</span>
+<span class="co">#&gt; 6 0.36577838</span></code></pre></div>
 <p>The <code>get_posterior_draws</code> produces a dataset with <code>drawid</code> and <code>draw</code> columns.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_posterior_draws.html">get_posterior_draws</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
@@ -133,20 +133,20 @@
 <span class="co">#&gt; [1] 384000     13</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">draws</span><span class="op">)</span>
-<span class="co">#&gt;   drawid        draw rowid     type term         dydx     conf.low  conf.high</span>
-<span class="co">#&gt; 1      1 0.438789477     1 response   hp 0.0261983668 1.165462e-04 0.06190301</span>
-<span class="co">#&gt; 2      1 0.438789477     2 response   hp 0.0261983668 1.165462e-04 0.06190301</span>
-<span class="co">#&gt; 3      1 0.196287652     3 response   hp 0.0305875419 3.288367e-03 0.06397709</span>
-<span class="co">#&gt; 4      1 0.170794272     4 response   hp 0.0271266889 8.561994e-05 0.06176859</span>
-<span class="co">#&gt; 5      1 0.527052745     5 response   hp 0.0298330859 3.246232e-03 0.06347205</span>
-<span class="co">#&gt; 6      1 0.002289656     6 response   hp 0.0003730318 1.297545e-18 0.00191616</span>
+<span class="co">#&gt;   drawid         draw rowid     type term         dydx     conf.low   conf.high</span>
+<span class="co">#&gt; 1      1 0.5007215628     1 response   hp 0.0258044514 9.427303e-06 0.057315192</span>
+<span class="co">#&gt; 2      1 0.5007215628     2 response   hp 0.0258044514 9.427303e-06 0.057315192</span>
+<span class="co">#&gt; 3      1 0.2334361208     3 response   hp 0.0306199408 3.678601e-03 0.062356282</span>
+<span class="co">#&gt; 4      1 0.1391855240     4 response   hp 0.0268376987 3.131498e-04 0.058729271</span>
+<span class="co">#&gt; 5      1 0.4930327374     5 response   hp 0.0294994320 2.009673e-03 0.058916008</span>
+<span class="co">#&gt; 6      1 0.0008522208     6 response   hp 0.0003475321 3.983621e-15 0.001677937</span>
 <span class="co">#&gt;   am  mpg vs  hp   predicted</span>
-<span class="co">#&gt; 1  1 21.0  0 110 0.595239331</span>
-<span class="co">#&gt; 2  1 21.0  0 110 0.595239331</span>
-<span class="co">#&gt; 3  1 22.8  1  93 0.468830517</span>
-<span class="co">#&gt; 4  0 21.4  1 110 0.336405547</span>
-<span class="co">#&gt; 5  0 18.7  0 175 0.525139493</span>
-<span class="co">#&gt; 6  0 18.1  1 105 0.004794296</span></code></pre></div>
+<span class="co">#&gt; 1  1 21.0  0 110 0.599041028</span>
+<span class="co">#&gt; 2  1 21.0  0 110 0.599041028</span>
+<span class="co">#&gt; 3  1 22.8  1  93 0.462564650</span>
+<span class="co">#&gt; 4  0 21.4  1 110 0.332401718</span>
+<span class="co">#&gt; 5  0 18.7  0 175 0.525548921</span>
+<span class="co">#&gt; 6  0 18.1  1 105 0.004086748</span></code></pre></div>
 <p>We can use this dataset to plot our results. For example, to plot the posterior density of the marginal effect when the <code>vs</code> variable is equal to 0 or 1:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="st">"mpg"</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>vs <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> |&gt;

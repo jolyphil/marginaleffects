@@ -86,46 +86,20 @@
 <p>The response predicted by a model for some combination of the regressors’ values, such as their means or factor levels (a.k.a. “reference grid”).</p>
 </blockquote>
 <p>An adjusted prediction is thus the regression-adjusted response variable (or link, or other fitted value), for a given combination (or grid) of predictors. This grid may or may not correspond to the actual observations in a dataset.</p>
-<p>By default, <code>predictions</code> calculates the regression-adjusted predicted values for a single hypothetical unit of observation with all regressors set at their means or modes:</p>
+<p>By default, <code>predictions</code> calculates the regression-adjusted predicted values for every observation in the original dataset:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/">marginaleffects</a></span><span class="op">)</span>
 
 <span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>
 
-<span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
-<span class="co">#&gt;        type predicted std.error  conf.low conf.high  mpg  hp cyl</span>
-<span class="co">#&gt; 1  response  20.03819 1.2041405 17.571621  22.50476 21.0 110   6</span>
-<span class="co">#&gt; 2  response  20.03819 1.2041405 17.571621  22.50476 21.0 110   6</span>
-<span class="co">#&gt; 3  response  26.41451 0.9619738 24.443993  28.38502 22.8  93   4</span>
-<span class="co">#&gt; 4  response  20.03819 1.2041405 17.571621  22.50476 21.4 110   6</span>
-<span class="co">#&gt; 5  response  15.92247 0.9924560 13.889518  17.95543 18.7 175   8</span>
-<span class="co">#&gt; 6  response  20.15839 1.2186288 17.662138  22.65463 18.1 105   6</span>
-<span class="co">#&gt; 7  response  14.23975 1.0055264 12.180026  16.29948 14.3 245   8</span>
-<span class="co">#&gt; 8  response  27.15971 1.0004977 25.110284  29.20914 24.4  62   4</span>
-<span class="co">#&gt; 9  response  26.36643 0.9675663 24.384459  28.34840 22.8  95   4</span>
-<span class="co">#&gt; 10 response  19.72569 1.1892191 17.289682  22.16169 19.2 123   6</span>
-<span class="co">#&gt; 11 response  19.72569 1.1892191 17.289682  22.16169 17.8 123   6</span>
-<span class="co">#&gt; 12 response  15.80228 0.9537705 13.848567  17.75599 16.4 180   8</span>
-<span class="co">#&gt; 13 response  15.80228 0.9537705 13.848567  17.75599 17.3 180   8</span>
-<span class="co">#&gt; 14 response  15.80228 0.9537705 13.848567  17.75599 15.2 180   8</span>
-<span class="co">#&gt; 15 response  15.20131 0.8433723 13.473737  16.92888 10.4 205   8</span>
-<span class="co">#&gt; 16 response  14.96092 0.8455811 13.228824  16.69301 10.4 215   8</span>
-<span class="co">#&gt; 17 response  14.60034 0.8997942 12.757191  16.44348 14.7 230   8</span>
-<span class="co">#&gt; 18 response  27.06356 0.9826500 25.050688  29.07642 32.4  66   4</span>
-<span class="co">#&gt; 19 response  27.40010 1.0595843 25.229639  29.57056 30.4  52   4</span>
-<span class="co">#&gt; 20 response  27.08759 0.9867814 25.066264  29.10892 33.9  65   4</span>
-<span class="co">#&gt; 21 response  26.31835 0.9741021 24.322994  28.31371 21.5  97   4</span>
-<span class="co">#&gt; 22 response  16.52344 1.2407559 13.981869  19.06502 15.5 150   8</span>
-<span class="co">#&gt; 23 response  16.52344 1.2407559 13.981869  19.06502 15.2 150   8</span>
-<span class="co">#&gt; 24 response  14.23975 1.0055264 12.180026  16.29948 13.3 245   8</span>
-<span class="co">#&gt; 25 response  15.92247 0.9924560 13.889518  17.95543 19.2 175   8</span>
-<span class="co">#&gt; 26 response  27.06356 0.9826500 25.050688  29.07642 27.3  66   4</span>
-<span class="co">#&gt; 27 response  26.46258 0.9573409 24.501560  28.42361 26.0  91   4</span>
-<span class="co">#&gt; 28 response  25.93373 1.0577189 23.767091  28.10037 30.4 113   4</span>
-<span class="co">#&gt; 29 response  13.78302 1.1914783 11.342383  16.22365 15.8 264   8</span>
-<span class="co">#&gt; 30 response  18.47567 1.4400751 15.525807  21.42553 19.7 175   6</span>
-<span class="co">#&gt; 31 response  12.07626 2.1126445  7.748702  16.40381 15.0 335   8</span>
-<span class="co">#&gt; 32 response  26.02989 1.0319401 23.916052  28.14372 21.4 109   4</span></code></pre></div>
+<span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;       type predicted std.error conf.low conf.high  mpg  hp cyl</span>
+<span class="co">#&gt; 1 response  20.03819 1.2041405 17.57162  22.50476 21.0 110   6</span>
+<span class="co">#&gt; 2 response  20.03819 1.2041405 17.57162  22.50476 21.0 110   6</span>
+<span class="co">#&gt; 3 response  26.41451 0.9619738 24.44399  28.38502 22.8  93   4</span>
+<span class="co">#&gt; 4 response  20.03819 1.2041405 17.57162  22.50476 21.4 110   6</span>
+<span class="co">#&gt; 5 response  15.92247 0.9924560 13.88952  17.95543 18.7 175   8</span>
+<span class="co">#&gt; 6 response  20.15839 1.2186288 17.66214  22.65463 18.1 105   6</span></code></pre></div>
 <p>In many cases, this is too limiting, and researchers will want to specify a grid of “typical” values over which to compute adjusted predictions.</p>
 <div id="typical-predictions" class="section level1">
 <h1 class="hasAnchor">
@@ -280,7 +254,11 @@ hp
 <span class="co">#&gt; 3 146.6875   8</span></code></pre></div>
 <p>We can also use this <code>typical</code> function in a <code>predictions</code> call (omitting the <code>model</code> argument):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;       type predicted std.error conf.low conf.high       hp cyl</span>
+<span class="co">#&gt; 1 response  16.60307  1.278754 13.98366  19.22248 146.6875   8</span>
+
+<span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;       type predicted std.error conf.low conf.high       hp cyl</span>
 <span class="co">#&gt; 1 response  25.12392  1.368888 22.31988  27.92796 146.6875   4</span>
 <span class="co">#&gt; 2 response  19.15627  1.247190 16.60151  21.71102 146.6875   6</span>
@@ -333,72 +311,14 @@ hp
 <p>Typical values include <code>"response"</code> and <code>"link"</code>, but users should refer to the documentation of the <code>predict</code> of the package they used to fit the model to know what values are allowable. documentation.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">am</span> <span class="op">~</span> <span class="va">mpg</span>, family <span class="op">=</span> <span class="va">binomial</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>
-<span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"response"</span>, <span class="st">"link"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;        type    predicted  std.error     conf.low   conf.high am  mpg</span>
-<span class="co">#&gt; 1  response  0.461095120 0.11584004  0.255472348  0.68086859  1 21.0</span>
-<span class="co">#&gt; 2      link -0.155934724 0.46618259 -1.069635814  0.75776637  1 21.0</span>
-<span class="co">#&gt; 3  response  0.461095120 0.11584004  0.255472348  0.68086859  1 21.0</span>
-<span class="co">#&gt; 4      link -0.155934724 0.46618259 -1.069635814  0.75776637  1 21.0</span>
-<span class="co">#&gt; 5      link  0.396716018 0.55070478 -0.682645511  1.47607755  1 22.8</span>
-<span class="co">#&gt; 6  response  0.597898393 0.13239819  0.335671108  0.81397939  1 22.8</span>
-<span class="co">#&gt; 7      link -0.033123448 0.47858176 -0.971126454  0.90487956  0 21.4</span>
-<span class="co">#&gt; 8  response  0.491719895 0.11961263  0.274656033  0.71195122  0 21.4</span>
-<span class="co">#&gt; 9  response  0.296900874 0.10051954  0.141136915  0.52040864  0 18.7</span>
-<span class="co">#&gt; 10     link -0.862099561 0.48152901 -1.805879073  0.08167995  0 18.7</span>
-<span class="co">#&gt; 11 response  0.259933066 0.09782666  0.114757993  0.48760319  0 18.1</span>
-<span class="co">#&gt; 12     link -1.046316475 0.50853949 -2.043035555 -0.04959739  0 18.1</span>
-<span class="co">#&gt; 13     link -2.213023596 0.80529066 -3.791364278 -0.63468291  0 14.3</span>
-<span class="co">#&gt; 14 response  0.098587047 0.07156428  0.022066862  0.34644946  0 14.3</span>
-<span class="co">#&gt; 15     link  0.887961122 0.67187891 -0.428897340  2.20481958  0 24.4</span>
-<span class="co">#&gt; 16 response  0.708469241 0.13877026  0.394389667  0.90068148  0 24.4</span>
-<span class="co">#&gt; 17     link  0.396716018 0.55070478 -0.682645511  1.47607755  0 22.8</span>
-<span class="co">#&gt; 18 response  0.597898393 0.13239819  0.335671108  0.81397939  0 22.8</span>
-<span class="co">#&gt; 19 response  0.329911476 0.10294328  0.165031007  0.55084620  0 19.2</span>
-<span class="co">#&gt; 20     link -0.708585466 0.46565945 -1.621261213  0.20409028  0 19.2</span>
-<span class="co">#&gt; 21     link -1.138424932 0.52492327 -2.167255640 -0.10959422  0 17.8</span>
-<span class="co">#&gt; 22 response  0.242609663 0.09645476  0.102729723  0.47262883  0 17.8</span>
-<span class="co">#&gt; 23     link -1.568264398 0.62124828 -2.785888659 -0.35064014  0 16.4</span>
-<span class="co">#&gt; 24 response  0.172463956 0.08866464  0.058091507  0.41322720  0 16.4</span>
-<span class="co">#&gt; 25     link -1.291939027 0.55591360 -2.381509660 -0.20236839  0 17.3</span>
-<span class="co">#&gt; 26 response  0.215524791 0.09399046  0.084593588  0.44957986  0 17.3</span>
-<span class="co">#&gt; 27 response  0.126011040 0.07954955  0.033816714  0.37261888  0 15.2</span>
-<span class="co">#&gt; 28     link -1.936698226 0.72230926 -3.352398371 -0.52099808  0 15.2</span>
-<span class="co">#&gt; 29 response  0.031970977 0.03719899  0.003121812  0.25833275  0 10.4</span>
-<span class="co">#&gt; 30     link -3.410433537 1.20195133 -5.766214860 -1.05465221  0 10.4</span>
-<span class="co">#&gt; 31     link -3.410433537 1.20195133 -5.766214860 -1.05465221  0 10.4</span>
-<span class="co">#&gt; 32 response  0.031970977 0.03719899  0.003121812  0.25833275  0 10.4</span>
-<span class="co">#&gt; 33     link -2.090212320 0.76779977 -3.595072225 -0.58535242  0 14.7</span>
-<span class="co">#&gt; 34 response  0.110051778 0.07519860  0.026724870  0.35770193  0 14.7</span>
-<span class="co">#&gt; 35 response  0.965913953 0.04889028  0.606772878  0.99808210  1 32.4</span>
-<span class="co">#&gt; 36     link  3.344186642 1.48493517  0.433767187  6.25460610  1 32.4</span>
-<span class="co">#&gt; 37 response  0.938781324 0.07288546  0.560816544  0.99459915  1 30.4</span>
-<span class="co">#&gt; 38     link  2.730130262 1.26821394  0.244476614  5.21578391  1 30.4</span>
-<span class="co">#&gt; 39     link  3.804728927 1.64977936  0.571220791  7.03823706  1 33.9</span>
-<span class="co">#&gt; 40 response  0.978219711 0.03515005  0.639044818  0.99912310  1 33.9</span>
-<span class="co">#&gt; 41     link -0.002420629 0.48231577 -0.947742161  0.94290090  0 21.5</span>
-<span class="co">#&gt; 42 response  0.499394843 0.12057877  0.279339118  0.71968525  0 21.5</span>
-<span class="co">#&gt; 43     link -1.844589769 0.69586237 -3.208454961 -0.48072458  0 15.5</span>
-<span class="co">#&gt; 44 response  0.136509372 0.08202447  0.038848784  0.38208104  0 15.5</span>
-<span class="co">#&gt; 45 response  0.126011040 0.07954955  0.033816714  0.37261888  0 15.2</span>
-<span class="co">#&gt; 46     link -1.936698226 0.72230926 -3.352398371 -0.52099808  0 15.2</span>
-<span class="co">#&gt; 47     link -2.520051786 0.90244026 -4.288802204 -0.75130137  0 13.3</span>
-<span class="co">#&gt; 48 response  0.074464376 0.06219567  0.013535624  0.32053781  0 13.3</span>
-<span class="co">#&gt; 49     link -0.708585466 0.46565945 -1.621261213  0.20409028  0 19.2</span>
-<span class="co">#&gt; 50 response  0.329911476 0.10294328  0.165031007  0.55084620  0 19.2</span>
-<span class="co">#&gt; 51     link  1.778342873 0.94448192 -0.072807675  3.62949342  1 27.3</span>
-<span class="co">#&gt; 52 response  0.855492124 0.11676191  0.481806118  0.97415601  1 27.3</span>
-<span class="co">#&gt; 53 response  0.798863486 0.13123705  0.444823499  0.95166334  1 26.0</span>
-<span class="co">#&gt; 54     link  1.379206226 0.81675722 -0.221608511  2.98002096  1 26.0</span>
-<span class="co">#&gt; 55 response  0.938781324 0.07288546  0.560816544  0.99459915  1 30.4</span>
-<span class="co">#&gt; 56     link  2.730130262 1.26821394  0.244476614  5.21578391  1 30.4</span>
-<span class="co">#&gt; 57     link -1.752481312 0.67014339 -3.065938216 -0.43902441  1 15.8</span>
-<span class="co">#&gt; 58 response  0.147734505 0.08437710  0.044534341  0.39197346  1 15.8</span>
-<span class="co">#&gt; 59     link -0.555071371 0.45651019 -1.449814898  0.33967216  1 19.7</span>
-<span class="co">#&gt; 60 response  0.364688615 0.10576922  0.190030055  0.58411088  1 19.7</span>
-<span class="co">#&gt; 61 response  0.119402148 0.07783973  0.030796370  0.36653057  1 15.0</span>
-<span class="co">#&gt; 62     link -1.998103863 0.74030648 -3.449077905 -0.54712982  1 15.0</span>
-<span class="co">#&gt; 63 response  0.491719895 0.11961263  0.274656033  0.71195122  1 21.4</span>
-<span class="co">#&gt; 64     link -0.033123448 0.47858176 -0.971126454  0.90487956  1 21.4</span></code></pre></div>
+<span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"response"</span>, <span class="st">"link"</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;       type  predicted std.error   conf.low conf.high am  mpg</span>
+<span class="co">#&gt; 1 response  0.4610951 0.1158400  0.2554723 0.6808686  1 21.0</span>
+<span class="co">#&gt; 2     link -0.1559347 0.4661826 -1.0696358 0.7577664  1 21.0</span>
+<span class="co">#&gt; 3 response  0.4610951 0.1158400  0.2554723 0.6808686  1 21.0</span>
+<span class="co">#&gt; 4     link -0.1559347 0.4661826 -1.0696358 0.7577664  1 21.0</span>
+<span class="co">#&gt; 5     link  0.3967160 0.5507048 -0.6826455 1.4760775  1 22.8</span>
+<span class="co">#&gt; 6 response  0.5978984 0.1323982  0.3356711 0.8139794  1 22.8</span></code></pre></div>
 <p>Users who need more control over the type of adjusted predictions to compute, including a host of options for back-transformation, may want to consider the <a href="https://cran.r-project.org/package=emmeans"><code>emmeans</code> package.</a></p>
 <p>We can also plot predictions on different outcome scales:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">

@@ -109,29 +109,29 @@
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
 <span class="co">#&gt; Average marginal effects </span>
 <span class="co">#&gt;       type Term    Effect</span>
-<span class="co">#&gt; 1 response   hp  0.008747</span>
-<span class="co">#&gt; 2 response  mpg  0.188050</span>
-<span class="co">#&gt; 3 response   vs -0.137899</span>
+<span class="co">#&gt; 1 response   hp  0.007273</span>
+<span class="co">#&gt; 2 response  mpg  0.158912</span>
+<span class="co">#&gt; 3 response   vs -0.120712</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Model type:  brmsfit </span>
 <span class="co">#&gt; Prediction type:  response</span></code></pre></div>
 <p>Compute marginal effects with some regressors fixed at user-specified values, and other regressors held at their means:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">110</span>, <span class="fl">130</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;   rowid     type term        dydx      conf.low  conf.high      mpg     vs  hp</span>
-<span class="co">#&gt; 1     1 response   hp  0.00538797  4.794106e-07 0.01544389 20.09062 0.4375 110</span>
-<span class="co">#&gt; 2     2 response   hp  0.02751342  2.136843e-03 0.05754395 20.09062 0.4375 130</span>
-<span class="co">#&gt; 3     1 response  mpg  0.13243710  9.972646e-06 0.39406931 20.09062 0.4375 110</span>
-<span class="co">#&gt; 4     2 response  mpg  0.64233982  9.991058e-02 1.32575915 20.09062 0.4375 130</span>
-<span class="co">#&gt; 5     1 response   vs -0.06276607 -4.839797e-01 0.24582711 20.09062 0.4375 110</span>
-<span class="co">#&gt; 6     2 response   vs -0.08139184 -9.542909e-01 0.98824154 20.09062 0.4375 130</span>
+<span class="co">#&gt;   rowid     type term         dydx      conf.low  conf.high      mpg     vs  hp</span>
+<span class="co">#&gt; 1     1 response  mpg  0.093482897  3.689693e-06 0.39419732 20.09062 0.4375 110</span>
+<span class="co">#&gt; 2     1 response   vs -0.006115532 -5.266599e-01 0.24187229 20.09062 0.4375 110</span>
+<span class="co">#&gt; 3     1 response   hp  0.003886212  1.700500e-07 0.01557768 20.09062 0.4375 110</span>
+<span class="co">#&gt; 4     2 response  mpg  0.593019311  7.862432e-02 1.34696027 20.09062 0.4375 130</span>
+<span class="co">#&gt; 5     2 response   vs -0.078695334 -1.071680e+00 0.85982502 20.09062 0.4375 130</span>
+<span class="co">#&gt; 6     2 response   hp  0.025372590  2.235067e-03 0.05976154 20.09062 0.4375 130</span>
 <span class="co">#&gt;    predicted</span>
-<span class="co">#&gt; 1 0.06751706</span>
-<span class="co">#&gt; 2 0.36490909</span>
-<span class="co">#&gt; 3 0.06751706</span>
-<span class="co">#&gt; 4 0.36490909</span>
-<span class="co">#&gt; 5 0.06751706</span>
-<span class="co">#&gt; 6 0.36490909</span></code></pre></div>
+<span class="co">#&gt; 1 0.06812019</span>
+<span class="co">#&gt; 2 0.06812019</span>
+<span class="co">#&gt; 3 0.06812019</span>
+<span class="co">#&gt; 4 0.37055747</span>
+<span class="co">#&gt; 5 0.37055747</span>
+<span class="co">#&gt; 6 0.37055747</span></code></pre></div>
 <p>The <code>get_posterior_draws</code> produces a dataset with <code>drawid</code> and <code>draw</code> columns.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_posterior_draws.html">get_posterior_draws</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
@@ -140,20 +140,20 @@
 <span class="co">#&gt; [1] 384000     13</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">draws</span><span class="op">)</span>
-<span class="co">#&gt;       type drawid        draw rowid term         dydx     conf.low   conf.high</span>
-<span class="co">#&gt; 1 response      1 0.841296687     1   hp 0.0254689658 1.564780e-04 0.058963762</span>
-<span class="co">#&gt; 2 response      1 0.841296687     2   hp 0.0254689658 1.564780e-04 0.058963762</span>
-<span class="co">#&gt; 3 response      1 0.354812756     3   hp 0.0298482078 2.106043e-03 0.060200803</span>
-<span class="co">#&gt; 4 response      1 0.445710540     4   hp 0.0262987441 4.055526e-04 0.058854429</span>
-<span class="co">#&gt; 5 response      1 0.840507324     5   hp 0.0292582188 3.000161e-03 0.061261081</span>
-<span class="co">#&gt; 6 response      1 0.003289669     6   hp 0.0003541835 4.654259e-16 0.001821682</span>
-<span class="co">#&gt;   am  mpg vs  hp  predicted</span>
-<span class="co">#&gt; 1  1 21.0  0 110 0.60100569</span>
-<span class="co">#&gt; 2  1 21.0  0 110 0.60100569</span>
-<span class="co">#&gt; 3  1 22.8  1  93 0.45995630</span>
-<span class="co">#&gt; 4  0 21.4  1 110 0.32792006</span>
-<span class="co">#&gt; 5  0 18.7  0 175 0.52855361</span>
-<span class="co">#&gt; 6  0 18.1  1 105 0.00478844</span></code></pre></div>
+<span class="co">#&gt;       type drawid         draw rowid term       dydx     conf.low  conf.high am</span>
+<span class="co">#&gt; 1 response      1 0.6191930271     1  mpg  0.6559368  0.003416097 1.66515719  1</span>
+<span class="co">#&gt; 2 response      1 0.6191930271     1   vs -0.3429422 -0.986163060 0.21453910  1</span>
+<span class="co">#&gt; 3 response      1 0.5359581535     1   hp  0.0225911  0.000109611 0.05734862  1</span>
+<span class="co">#&gt; 4 response      1 0.4662183579     2  mpg  0.6559368  0.003416097 1.66515719  1</span>
+<span class="co">#&gt; 5 response      1 1.2592355338     2   vs -0.3429422 -0.986163060 0.21453910  1</span>
+<span class="co">#&gt; 6 response      1 0.0001744159     2   hp  0.0225911  0.000109611 0.05734862  1</span>
+<span class="co">#&gt;   mpg vs  hp predicted</span>
+<span class="co">#&gt; 1  21  0 110 0.6034144</span>
+<span class="co">#&gt; 2  21  0 110 0.6034144</span>
+<span class="co">#&gt; 3  21  0 110 0.6034144</span>
+<span class="co">#&gt; 4  21  0 110 0.6034144</span>
+<span class="co">#&gt; 5  21  0 110 0.6034144</span>
+<span class="co">#&gt; 6  21  0 110 0.6034144</span></code></pre></div>
 <p>We can use this dataset to plot our results. For example, to plot the posterior density of the marginal effect when the <code>vs</code> variable is equal to 0 or 1:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, 
@@ -229,16 +229,16 @@
                                       civil_liberties <span class="op">=</span> <span class="fl">.5</span>,
                                       region <span class="op">=</span> <span class="st">"Middle East and North Africa"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">pred</span>
-<span class="co">#&gt;         type predicted  std.error   conf.low conf.high party_autonomy</span>
-<span class="co">#&gt; 1   response 0.6210441 0.04569329 0.52646567 0.7102216           TRUE</span>
-<span class="co">#&gt; 2 prediction 0.6211446 0.19961970 0.21057383 0.9491849           TRUE</span>
-<span class="co">#&gt; 3   response 0.3702684 0.04589951 0.28426756 0.4616501          FALSE</span>
-<span class="co">#&gt; 4 prediction 0.3683573 0.19914315 0.05084485 0.7978599          FALSE</span>
-<span class="co">#&gt;   civil_liberties                       region</span>
-<span class="co">#&gt; 1             0.5 Middle East and North Africa</span>
-<span class="co">#&gt; 2             0.5 Middle East and North Africa</span>
-<span class="co">#&gt; 3             0.5 Middle East and North Africa</span>
-<span class="co">#&gt; 4             0.5 Middle East and North Africa</span></code></pre></div>
+<span class="co">#&gt;         type predicted   conf.low conf.high party_autonomy civil_liberties</span>
+<span class="co">#&gt; 1   response 0.6219782 0.53185729 0.7137691           TRUE             0.5</span>
+<span class="co">#&gt; 2 prediction 0.6439854 0.24108719 0.9685680           TRUE             0.5</span>
+<span class="co">#&gt; 3   response 0.3692581 0.28664282 0.4627307          FALSE             0.5</span>
+<span class="co">#&gt; 4 prediction 0.3540909 0.03194937 0.7514673          FALSE             0.5</span>
+<span class="co">#&gt;                         region</span>
+<span class="co">#&gt; 1 Middle East and North Africa</span>
+<span class="co">#&gt; 2 Middle East and North Africa</span>
+<span class="co">#&gt; 3 Middle East and North Africa</span>
+<span class="co">#&gt; 4 Middle East and North Africa</span></code></pre></div>
 <p>Extract posterior draws and plot them:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pred</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_posterior_draws.html">get_posterior_draws</a></span><span class="op">(</span><span class="va">pred</span><span class="op">)</span>
@@ -260,8 +260,8 @@
                                          region <span class="op">=</span> <span class="st">"Middle East and North Africa"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">mfx</span>
 <span class="co">#&gt;   rowid     type               term      dydx  conf.low conf.high</span>
-<span class="co">#&gt; 1     1 response    civil_liberties 0.8152897 0.6302967 1.0045474</span>
-<span class="co">#&gt; 2     1 response party_autonomyTRUE 0.2507758 0.1666480 0.3291001</span>
+<span class="co">#&gt; 1     1 response party_autonomyTRUE 0.2516837 0.1666480 0.3291001</span>
+<span class="co">#&gt; 2     1 response    civil_liberties 0.8153653 0.6302967 1.0045474</span>
 <span class="co">#&gt;   party_autonomy civil_liberties                       region predicted</span>
 <span class="co">#&gt; 1           TRUE             0.5 Middle East and North Africa 0.6210441</span>
 <span class="co">#&gt; 2           TRUE             0.5 Middle East and North Africa 0.6210441</span></code></pre></div>
@@ -307,9 +307,9 @@
                        variables <span class="op">=</span> <span class="st">"civil_liberties"</span><span class="op">)</span>
 <span class="va">mfx</span>
 <span class="co">#&gt;   rowid     type            term      dydx  conf.low conf.high civil_liberties</span>
-<span class="co">#&gt; 1     1 response civil_liberties 0.4930391 0.3664118 0.6353274             0.2</span>
-<span class="co">#&gt; 2     2 response civil_liberties 0.8075197 0.6145173 0.9866632             0.5</span>
-<span class="co">#&gt; 3     3 response civil_liberties 0.8058425 0.6816691 0.9351171             0.8</span>
+<span class="co">#&gt; 1     1 response civil_liberties 0.4898727 0.3664118 0.6353274             0.2</span>
+<span class="co">#&gt; 2     2 response civil_liberties 0.8084583 0.6145173 0.9866632             0.5</span>
+<span class="co">#&gt; 3     3 response civil_liberties 0.8061971 0.6816691 0.9351171             0.8</span>
 <span class="co">#&gt;   party_autonomy                       region predicted</span>
 <span class="co">#&gt; 1          FALSE Middle East and North Africa 0.1721819</span>
 <span class="co">#&gt; 2          FALSE Middle East and North Africa 0.3702684</span>

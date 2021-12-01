@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,23 +33,23 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">marginaleffects</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html">Marginal effects</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">Marginal effects</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html">Adjusted predictions</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html" class="external-link">Adjusted predictions</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html">Contrasts</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html" class="external-link">Contrasts</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html">Marginal means</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html" class="external-link">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -74,7 +76,7 @@
       <h1 data-toc-skip>Marginal Means</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/master/vignettes/marginalmeans.Rmd"><code>vignettes/marginalmeans.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/vignettes/marginalmeans.Rmd" class="external-link"><code>vignettes/marginalmeans.Rmd</code></a></small>
       <div class="hidden name"><code>marginalmeans.Rmd</code></div>
 
     </div>
@@ -89,15 +91,15 @@
 </ol>
 <p>For example, consider a model with a numeric, a factor, and a logical predictor:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/">marginaleffects</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/" class="external-link">marginaleffects</a></span><span class="op">)</span>
 
 <span class="va">dat</span> <span class="op">&lt;-</span> <span class="va">mtcars</span>
-<span class="va">dat</span><span class="op">$</span><span class="va">cyl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span>
-<span class="va">dat</span><span class="op">$</span><span class="va">am</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">am</span><span class="op">)</span>
-<span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">am</span>, data <span class="op">=</span> <span class="va">dat</span><span class="op">)</span></code></pre></div>
+<span class="va">dat</span><span class="op">$</span><span class="va">cyl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span>
+<span class="va">dat</span><span class="op">$</span><span class="va">am</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/logical.html" class="external-link">as.logical</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">am</span><span class="op">)</span>
+<span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">+</span> <span class="va">cyl</span> <span class="op">+</span> <span class="va">am</span>, data <span class="op">=</span> <span class="va">dat</span><span class="op">)</span></code></pre></div>
 <p>Using the <code>predictions</code> function, we set the <code>hp</code> variable at its mean and compute predictions for all combinations for <code>am</code> and <code>cyl</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"cyl"</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"cyl"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;       type predicted std.error conf.low conf.high       hp    am cyl</span>
 <span class="co">#&gt; 1 response  21.03914  1.213043 18.55019  23.52810 146.6875  TRUE   6</span>
 <span class="co">#&gt; 2 response  16.88129  1.272938 14.26944  19.49314 146.6875 FALSE   6</span>
@@ -106,7 +108,7 @@
 <span class="co">#&gt; 5 response  21.43031  1.826126 17.68341  25.17721 146.6875  TRUE   8</span>
 <span class="co">#&gt; 6 response  17.27245  1.116885 14.98079  19.56411 146.6875 FALSE   8</span></code></pre></div>
 <p>For illustration purposes, it is useful to reshape the above results:</p>
-<table class="table table">
+<table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
@@ -201,10 +203,10 @@ Marginal means of am
 <span class="co">#&gt; 3  cyl     8  19.35138 1.3770817</span>
 <span class="co">#&gt; 4   am FALSE  18.31987 0.7853925</span>
 <span class="co">#&gt; 5   am  TRUE  22.47772 0.8343346</span></code></pre></div>
-<p>The same results can be obtained using the <a href="https://cran.r-project.org/package=emmeans">very powerful <code>emmeans</code> package</a>:</p>
+<p>The same results can be obtained using the <a href="https://cran.r-project.org/package=emmeans" class="external-link">very powerful <code>emmeans</code> package</a>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rvlenth/emmeans">emmeans</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rvlenth/emmeans" class="external-link">emmeans</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html" class="external-link">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>
 <span class="co">#&gt;  cyl emmean   SE df lower.CL upper.CL</span>
 <span class="co">#&gt;  4     22.9 1.36 27     20.1     25.7</span>
 <span class="co">#&gt;  6     19.0 1.07 27     16.8     21.2</span>
@@ -212,21 +214,21 @@ Marginal means of am
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Results are averaged over the levels of: am </span>
 <span class="co">#&gt; Confidence level used: 0.95</span>
-<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html" class="external-link">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span>
 <span class="co">#&gt;  am    emmean    SE df lower.CL upper.CL</span>
 <span class="co">#&gt;  FALSE   18.3 0.785 27     16.7     19.9</span>
 <span class="co">#&gt;   TRUE   22.5 0.834 27     20.8     24.2</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Results are averaged over the levels of: cyl </span>
 <span class="co">#&gt; Confidence level used: 0.95</span></code></pre></div>
-<div id="tidy-summaries" class="section level1">
-<h1 class="hasAnchor">
-<a href="#tidy-summaries" class="anchor"></a>Tidy summaries</h1>
+<div class="section level1">
+<h1 id="tidy-summaries">Tidy summaries<a class="anchor" aria-label="anchor" href="#tidy-summaries"></a>
+</h1>
 <p>The <code>summary</code>, <code>tidy</code>, and <code>glance</code> functions are also available to summarize and manipulate the results:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">me</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 
-<span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
 <span class="co">#&gt;   term group estimate std.error statistic p.value conf.low conf.high</span>
 <span class="co">#&gt; 1  cyl     4 22.88479 1.3566479  16.86863       0 20.22581  25.54378</span>
 <span class="co">#&gt; 2  cyl     6 18.96022 1.0729360  17.67134       0 16.85730  21.06313</span>
@@ -234,13 +236,13 @@ Marginal means of am
 <span class="co">#&gt; 4   am FALSE 18.31987 0.7853925  23.32575       0 16.78053  19.85921</span>
 <span class="co">#&gt; 5   am  TRUE 22.47772 0.8343346  26.94090       0 20.84246  24.11299</span>
 
-<span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="fu"><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">glance</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
 <span class="co">#&gt;   r.squared adj.r.squared   sigma statistic      p.value df    logLik      AIC</span>
 <span class="co">#&gt; 1  0.824875     0.7989306 2.70253   31.7939 7.400614e-10  4 -74.50167 161.0033</span>
 <span class="co">#&gt;        BIC deviance df.residual nobs       F</span>
 <span class="co">#&gt; 1 169.7978  197.199          27   32 31.7939</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
 <span class="co">#&gt; Estimated marginal means </span>
 <span class="co">#&gt;   Term Group  Mean Std. Error z value   Pr(&gt;|z|) 2.5 % 97.5 %</span>
 <span class="co">#&gt; 1  cyl     4 22.88     1.3566   16.87 &lt; 2.22e-16 20.23  25.54</span>
@@ -251,16 +253,16 @@ Marginal means of am
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Model type:  lm </span>
 <span class="co">#&gt; Prediction type:  response</span></code></pre></div>
-<p>Thanks to those tidiers, we can also present the results in the style of a regression table <a href="https://vincentarelbundock.github.io/modelsummary/">using the <code>modelsummary</code> package:</a></p>
+<p>Thanks to those tidiers, we can also present the results in the style of a regression table <a href="https://vincentarelbundock.github.io/modelsummary/" class="external-link">using the <code>modelsummary</code> package:</a></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://vincentarelbundock.github.io/modelsummary/">"modelsummary"</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://vincentarelbundock.github.io/modelsummary/" class="external-link">"modelsummary"</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html">modelsummary</a></span><span class="op">(</span><span class="va">me</span>,
+<span class="fu"><a href="https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html" class="external-link">modelsummary</a></span><span class="op">(</span><span class="va">me</span>,
              title <span class="op">=</span> <span class="st">"Estimated Marginal Means"</span>,
              estimate <span class="op">=</span> <span class="st">"{estimate} ({std.error}){stars}"</span>,
              statistic <span class="op">=</span> <span class="cn">NULL</span>,
              group <span class="op">=</span> <span class="va">term</span> <span class="op">+</span> <span class="va">group</span> <span class="op">~</span> <span class="va">model</span><span class="op">)</span></code></pre></div>
-<table class="table table">
+<table class="table table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 Estimated Marginal Means
 </caption>
@@ -399,28 +401,28 @@ F
 </tbody>
 </table>
 </div>
-<div id="case-study-multinomial-logit" class="section level1">
-<h1 class="hasAnchor">
-<a href="#case-study-multinomial-logit" class="anchor"></a>Case study: Multinomial Logit</h1>
+<div class="section level1">
+<h1 id="case-study-multinomial-logit">Case study: Multinomial Logit<a class="anchor" aria-label="anchor" href="#case-study-multinomial-logit"></a>
+</h1>
 <p>This example requires version 0.2.0 of the <code>marginaleffects</code> package.</p>
 <p>To begin, we generate data and estimate a large model:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">nnet</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/">marginaleffects</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/" class="external-link">nnet</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/" class="external-link">marginaleffects</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">1839</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1839</span><span class="op">)</span>
 <span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">1200</span>
-<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>, <span class="va">n</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
-<span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>length <span class="op">=</span> <span class="va">n</span><span class="op">)</span>
-<span class="va">y</span><span class="op">[</span><span class="va">x</span> <span class="op">==</span> <span class="st">"a"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="st">"a"</span><span class="op">)</span>, <span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">y</span><span class="op">[</span><span class="va">x</span> <span class="op">==</span> <span class="st">"b"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="st">"b"</span><span class="op">)</span>, <span class="cn">TRUE</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fl">4</span>, <span class="fl">2</span> <span class="op">/</span> <span class="fl">4</span>, <span class="fl">1</span> <span class="op">/</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span>
-<span class="va">y</span><span class="op">[</span><span class="va">x</span> <span class="op">==</span> <span class="st">"c"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="st">"c"</span><span class="op">)</span>, <span class="cn">TRUE</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fl">5</span>, <span class="fl">3</span> <span class="op">/</span> <span class="fl">5</span>, <span class="fl">2</span> <span class="op">/</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span>
+<span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>, <span class="va">n</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+<span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">vector</a></span><span class="op">(</span>length <span class="op">=</span> <span class="va">n</span><span class="op">)</span>
+<span class="va">y</span><span class="op">[</span><span class="va">x</span> <span class="op">==</span> <span class="st">"a"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="st">"a"</span><span class="op">)</span>, <span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">y</span><span class="op">[</span><span class="va">x</span> <span class="op">==</span> <span class="st">"b"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="st">"b"</span><span class="op">)</span>, <span class="cn">TRUE</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fl">4</span>, <span class="fl">2</span> <span class="op">/</span> <span class="fl">4</span>, <span class="fl">1</span> <span class="op">/</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span>
+<span class="va">y</span><span class="op">[</span><span class="va">x</span> <span class="op">==</span> <span class="st">"c"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="st">"c"</span><span class="op">)</span>, <span class="cn">TRUE</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fl">5</span>, <span class="fl">3</span> <span class="op">/</span> <span class="fl">5</span>, <span class="fl">2</span> <span class="op">/</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span>
 
-<span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">)</span>
-<span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">7</span><span class="op">:</span><span class="fl">9</span><span class="op">]</span>, <span class="va">n</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">dat</span>, <span class="va">tmp</span><span class="op">)</span>
-<span class="va">void</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/capture.output.html">capture.output</a></span><span class="op">(</span><span class="op">{</span>
-    <span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/nnet/man/multinom.html">multinom</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">.</span>, <span class="va">dat</span><span class="op">)</span>
+<span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">)</span>
+<span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">replicate</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">7</span><span class="op">:</span><span class="fl">9</span><span class="op">]</span>, <span class="va">n</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="va">dat</span>, <span class="va">tmp</span><span class="op">)</span>
+<span class="va">void</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/capture.output.html" class="external-link">capture.output</a></span><span class="op">(</span><span class="op">{</span>
+    <span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/nnet/man/multinom.html" class="external-link">multinom</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">.</span>, <span class="va">dat</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span></code></pre></div>
 <p>Try to compute marginal means, but realize that you are trying to get marginal means for the wrong type of prediction:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
@@ -432,8 +434,8 @@ F
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>,
               type <span class="op">=</span> <span class="st">"probs"</span>,
-              variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"V1"</span><span class="op">)</span>,
-              variables_grid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"V"</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+              variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"V1"</span><span class="op">)</span>,
+              variables_grid <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"V"</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
   </div>
 
@@ -448,11 +450,13 @@ F
 
 
       <footer><div class="copyright">
-  <p>Developed by Vincent Arel-Bundock.</p>
+  <p></p>
+<p>Developed by Vincent Arel-Bundock.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -460,6 +464,8 @@ F
 
   
 
+
+  
 
   </body>
 </html>

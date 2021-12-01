@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,23 +33,23 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">marginaleffects</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html">Marginal effects</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">Marginal effects</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html">Adjusted predictions</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html" class="external-link">Adjusted predictions</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html">Contrasts</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html" class="external-link">Contrasts</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html">Marginal means</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html" class="external-link">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -73,31 +75,31 @@
       <h1 data-toc-skip>Contrasts</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/master/vignettes/contrasts.Rmd"><code>vignettes/contrasts.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/vignettes/contrasts.Rmd" class="external-link"><code>vignettes/contrasts.Rmd</code></a></small>
       <div class="hidden name"><code>contrasts.Rmd</code></div>
 
     </div>
 
     
     
-<p><a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html">In a previous vignette</a>, we introduced the “marginal effect” as a partial derivative. Since derivatives are only properly defined for continuous variables, we cannot use them to interpret the effects of changes in categorical variables. For this, we turn to <em>contrasts</em> between <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html">Adjusted predictions.</a> In the context of this package, a “Contrast” is defined as:</p>
+<p><a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">In a previous vignette</a>, we introduced the “marginal effect” as a partial derivative. Since derivatives are only properly defined for continuous variables, we cannot use them to interpret the effects of changes in categorical variables. For this, we turn to <em>contrasts</em> between <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html" class="external-link">Adjusted predictions.</a> In the context of this package, a “Contrast” is defined as:</p>
 <blockquote>
 <p>The difference between two adjusted predictions, calculated for meaningfully different regressor values (e.g., College graduates vs. Others).</p>
 </blockquote>
-<div id="simple-contrasts" class="section level1">
-<h1 class="hasAnchor">
-<a href="#simple-contrasts" class="anchor"></a>Simple contrasts</h1>
+<div class="section level1">
+<h1 id="simple-contrasts">Simple contrasts<a class="anchor" aria-label="anchor" href="#simple-contrasts"></a>
+</h1>
 <p>Consider a simple model with a logical and a factor variable:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/">marginaleffects</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/" class="external-link">marginaleffects</a></span><span class="op">)</span>
 
 <span class="va">tmp</span> <span class="op">&lt;-</span> <span class="va">mtcars</span>
-<span class="va">tmp</span><span class="op">$</span><span class="va">am</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/logical.html">as.logical</a></span><span class="op">(</span><span class="va">tmp</span><span class="op">$</span><span class="va">am</span><span class="op">)</span>
-<span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">am</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">tmp</span><span class="op">)</span></code></pre></div>
+<span class="va">tmp</span><span class="op">$</span><span class="va">am</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/logical.html" class="external-link">as.logical</a></span><span class="op">(</span><span class="va">tmp</span><span class="op">$</span><span class="va">am</span><span class="op">)</span>
+<span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">am</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">tmp</span><span class="op">)</span></code></pre></div>
 <p>The <code>marginaleffects</code> function automatically computes contrasts for each level of the categorical variables, relative to the baseline category (<code>FALSE</code> for logicals, and the reference level for factors), while holding all other values at their mode or mean:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
 <span class="co">#&gt; Average marginal effects </span>
 <span class="co">#&gt;       type         Term  Effect Std. Error z value   Pr(&gt;|z|)     2.5 % 97.5 %</span>
 <span class="co">#&gt; 1 response       amTRUE   2.560      1.298   1.973    0.04851   0.01675  5.103</span>
@@ -109,9 +111,9 @@
 <p>The summary printed above says that moving from the reference category <code>4</code> to the level <code>6</code> on the <code>cyl</code> factor variable is associated with a change of -6.156 in the adjusted prediction. Similarly, the contrast from <code>FALSE</code> to <code>TRUE</code> on the <code>am</code> variable is equal to 2.560.</p>
 <p>We can obtain the same results using the <code>emmeans</code> package:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rvlenth/emmeans">emmeans</a></span><span class="op">)</span>
-<span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/contrast.html">contrast</a></span><span class="op">(</span><span class="va">emm</span>, method <span class="op">=</span> <span class="st">"revpairwise"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rvlenth/emmeans" class="external-link">emmeans</a></span><span class="op">)</span>
+<span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html" class="external-link">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/contrast.html" class="external-link">contrast</a></span><span class="op">(</span><span class="va">emm</span>, method <span class="op">=</span> <span class="st">"revpairwise"</span><span class="op">)</span>
 <span class="co">#&gt;  contrast estimate   SE df t.ratio p.value</span>
 <span class="co">#&gt;  6 - 4       -6.16 1.54 28  -4.009  0.0012</span>
 <span class="co">#&gt;  8 - 4      -10.07 1.45 28  -6.933  &lt;.0001</span>
@@ -120,20 +122,20 @@
 <span class="co">#&gt; Results are averaged over the levels of: am </span>
 <span class="co">#&gt; P value adjustment: tukey method for comparing a family of 3 estimates</span>
 
-<span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/contrast.html">contrast</a></span><span class="op">(</span><span class="va">emm</span>, method <span class="op">=</span> <span class="st">"revpairwise"</span><span class="op">)</span>
+<span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html" class="external-link">emmeans</a></span><span class="op">(</span><span class="va">mod</span>, specs <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/contrast.html" class="external-link">contrast</a></span><span class="op">(</span><span class="va">emm</span>, method <span class="op">=</span> <span class="st">"revpairwise"</span><span class="op">)</span>
 <span class="co">#&gt;  contrast     estimate  SE df t.ratio p.value</span>
 <span class="co">#&gt;  TRUE - FALSE     2.56 1.3 28   1.973  0.0585</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Results are averaged over the levels of: cyl</span></code></pre></div>
 </div>
-<div id="contrasts-with-interactions" class="section level1">
-<h1 class="hasAnchor">
-<a href="#contrasts-with-interactions" class="anchor"></a>Contrasts with interactions</h1>
+<div class="section level1">
+<h1 id="contrasts-with-interactions">Contrasts with interactions<a class="anchor" aria-label="anchor" href="#contrasts-with-interactions"></a>
+</h1>
 <p>In models with multiplicative interactions, the contrasts of a categorical variable will depend on the values of the interacted variable:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mod_int</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">am</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">tmp</span><span class="op">)</span></code></pre></div>
-<p>We can now use the <code>newdata</code> argument of the <code>marginaleffects</code> function to compute contrasts for different values of the other regressors. As in <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html">the marginal effects vignette</a>, the <code>typical</code> function can be handy. Since we only care about the logical <code>am</code> contrast, we use the <code>variables</code> to indicate the subset of results to report:</p>
+<code class="sourceCode R"><span class="va">mod_int</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">am</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">tmp</span><span class="op">)</span></code></pre></div>
+<p>We can now use the <code>newdata</code> argument of the <code>marginaleffects</code> function to compute contrasts for different values of the other regressors. As in <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">the marginal effects vignette</a>, the <code>typical</code> function can be handy. Since we only care about the logical <code>am</code> contrast, we use the <code>variables</code> to indicate the subset of results to report:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod_int</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="va">tmp</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span>, variables <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span>
 <span class="co">#&gt;   rowid     type   term     dydx std.error    am cyl predicted</span>
@@ -142,8 +144,8 @@
 <span class="co">#&gt; 3     3 response amTRUE 0.350000  2.315925 FALSE   8    15.050</span></code></pre></div>
 <p>Once again, we obtain the same results with <code>emmeans</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html">emmeans</a></span><span class="op">(</span><span class="va">mod_int</span>, specs <span class="op">=</span> <span class="st">"am"</span>, by <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/contrast.html">contrast</a></span><span class="op">(</span><span class="va">emm</span>, method <span class="op">=</span> <span class="st">"revpairwise"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html" class="external-link">emmeans</a></span><span class="op">(</span><span class="va">mod_int</span>, specs <span class="op">=</span> <span class="st">"am"</span>, by <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/contrast.html" class="external-link">contrast</a></span><span class="op">(</span><span class="va">emm</span>, method <span class="op">=</span> <span class="st">"revpairwise"</span><span class="op">)</span>
 <span class="co">#&gt; cyl = 4:</span>
 <span class="co">#&gt;  contrast     estimate   SE df t.ratio p.value</span>
 <span class="co">#&gt;  TRUE - FALSE     5.17 2.05 26   2.521  0.0182</span>
@@ -156,10 +158,10 @@
 <span class="co">#&gt;  contrast     estimate   SE df t.ratio p.value</span>
 <span class="co">#&gt;  TRUE - FALSE     0.35 2.32 26   0.151  0.8810</span></code></pre></div>
 </div>
-<div id="complex-queries" class="section level1">
-<h1 class="hasAnchor">
-<a href="#complex-queries" class="anchor"></a>Complex queries</h1>
-<p>As described above, the <code>marginaleffects</code> package includes limited support to compute contrasts. Users who require more powerful features are encouraged to consider alternative packages such as <a href="https://cran.r-project.org/package=emmeans">emmeans</a>, <a href="https://github.com/easystats/modelbased">modelbased</a>, or <a href="https://strengejacke.github.io/ggeffects/index.html">ggeffects.</a> These packages offer useful features such as automatic back-transforms, p value correction for multiple comparisons, and more.</p>
+<div class="section level1">
+<h1 id="complex-queries">Complex queries<a class="anchor" aria-label="anchor" href="#complex-queries"></a>
+</h1>
+<p>As described above, the <code>marginaleffects</code> package includes limited support to compute contrasts. Users who require more powerful features are encouraged to consider alternative packages such as <a href="https://cran.r-project.org/package=emmeans" class="external-link">emmeans</a>, <a href="https://github.com/easystats/modelbased" class="external-link">modelbased</a>, or <a href="https://strengejacke.github.io/ggeffects/index.html" class="external-link">ggeffects.</a> These packages offer useful features such as automatic back-transforms, p value correction for multiple comparisons, and more.</p>
 </div>
   </div>
 
@@ -174,11 +176,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Vincent Arel-Bundock.</p>
+  <p></p>
+<p>Developed by Vincent Arel-Bundock.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -186,6 +190,8 @@
 
   
 
+
+  
 
   </body>
 </html>

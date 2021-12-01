@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,23 +33,23 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">marginaleffects</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html">Marginal effects</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">Marginal effects</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html">Adjusted predictions</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html" class="external-link">Adjusted predictions</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html">Contrasts</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html" class="external-link">Contrasts</a>
 </li>
 <li>
-  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html">Marginal means</a>
+  <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html" class="external-link">Marginal means</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -73,7 +75,7 @@
       <h1 data-toc-skip>Benchmarks</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/master/vignettes/benchmark.Rmd"><code>vignettes/benchmark.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/vignettes/benchmark.Rmd" class="external-link"><code>vignettes/benchmark.Rmd</code></a></small>
       <div class="hidden name"><code>benchmark.Rmd</code></div>
 
     </div>
@@ -83,13 +85,13 @@
 <p>This image was updated on 2021-09-16. “TRUE” means that both functions calculate unit-specific standard errors. Note that the scale in the right panel goes from milliseconds to minutes.</p>
 <p><img src="https://user-images.githubusercontent.com/987057/133677041-d1e7e4a0-81cb-41a8-9704-5d3fd7e46fa2.png"></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-lib/bench">bench</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/leeper/margins">margins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/">marginaleffects</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bench.r-lib.org/" class="external-link">bench</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/leeper/margins" class="external-link">margins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/" class="external-link">marginaleffects</a></span><span class="op">)</span>
 
 <span class="va">margins_pkg</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">mod</span>, <span class="va">dat</span>, <span class="va">unit_ses</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="https://rdrr.io/pkg/margins/man/margins.html">margins</a></span><span class="op">(</span><span class="va">mod</span>, unit_ses <span class="op">=</span> <span class="va">unit_ses</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/margins/man/margins.html" class="external-link">margins</a></span><span class="op">(</span><span class="va">mod</span>, unit_ses <span class="op">=</span> <span class="va">unit_ses</span><span class="op">)</span>
 <span class="op">}</span>
 
 <span class="va">marginaleffects_pkg</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">mod</span>, <span class="va">dat</span>, <span class="va">unit_ses</span><span class="op">)</span> <span class="op">{</span>
@@ -97,27 +99,27 @@
 <span class="op">}</span>
 
 <span class="va">simulate</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">N</span><span class="op">)</span> <span class="op">{</span>
-    <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
-            x2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-            x1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-            x3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
-            x4 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span>
-    <span class="va">pr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Logistic.html">plogis</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">x1</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x2</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x3</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x4</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x3</span> <span class="op">*</span> <span class="va">dat</span><span class="op">$</span><span class="va">x4</span><span class="op">)</span>
-    <span class="va">dat</span><span class="op">$</span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="va">pr</span><span class="op">)</span>
-    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span>
+    <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>
+            x2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
+            x1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
+            x3 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>,
+            x4 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span><span class="op">)</span>
+    <span class="va">pr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Logistic.html" class="external-link">plogis</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">x1</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x2</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x3</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x4</span> <span class="op">+</span> <span class="va">dat</span><span class="op">$</span><span class="va">x3</span> <span class="op">*</span> <span class="va">dat</span><span class="op">$</span><span class="va">x4</span><span class="op">)</span>
+    <span class="va">dat</span><span class="op">$</span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html" class="external-link">rbinom</a></span><span class="op">(</span><span class="va">N</span>, <span class="fl">1</span>, <span class="va">pr</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span>
 <span class="op">}</span>
 
 <span class="va">fit</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">dat</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x1</span> <span class="op">+</span> <span class="va">x2</span> <span class="op">+</span> <span class="va">x3</span> <span class="op">*</span> <span class="va">x4</span>, data <span class="op">=</span> <span class="va">dat</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span>
+    <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x1</span> <span class="op">+</span> <span class="va">x2</span> <span class="op">+</span> <span class="va">x3</span> <span class="op">*</span> <span class="va">x4</span>, data <span class="op">=</span> <span class="va">dat</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span>
 <span class="op">}</span>
 
-<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/bench/man/press.html">press</a></span><span class="op">(</span>
-    N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">50</span>, <span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">400</span>, <span class="fl">800</span>, <span class="fl">1500</span>, <span class="fl">5000</span>, <span class="fl">10000</span><span class="op">)</span>,
-    unit_ses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">FALSE</span>, <span class="cn">TRUE</span><span class="op">)</span>,
+<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/press.html" class="external-link">press</a></span><span class="op">(</span>
+    N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">50</span>, <span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">400</span>, <span class="fl">800</span>, <span class="fl">1500</span>, <span class="fl">5000</span>, <span class="fl">10000</span><span class="op">)</span>,
+    unit_ses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">FALSE</span>, <span class="cn">TRUE</span><span class="op">)</span>,
     <span class="op">{</span>
-    <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/simulate.html">simulate</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>
+    <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/simulate.html" class="external-link">simulate</a></span><span class="op">(</span><span class="va">N</span><span class="op">)</span>
     <span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu">fit</span><span class="op">(</span><span class="va">dat</span><span class="op">)</span>
-    <span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/bench/man/mark.html">mark</a></span><span class="op">(</span>
+    <span class="fu">bench</span><span class="fu">::</span><span class="fu"><a href="http://bench.r-lib.org/reference/mark.html" class="external-link">mark</a></span><span class="op">(</span>
         check <span class="op">=</span> <span class="cn">FALSE</span>,
         max_iterations <span class="op">=</span> <span class="fl">3</span>,
         <span class="fu">margins_pkg</span><span class="op">(</span><span class="va">mod</span>, <span class="va">dat</span>, <span class="va">unit_ses</span><span class="op">)</span>,
@@ -125,12 +127,12 @@
     <span class="op">}</span>
 <span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">results</span><span class="op">$</span><span class="va">pkg</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">results</span><span class="op">$</span><span class="va">expression</span><span class="op">)</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">results</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">median</span>, linetype <span class="op">=</span> <span class="va">pkg</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">unit_ses</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">results</span><span class="op">$</span><span class="va">pkg</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">results</span><span class="op">$</span><span class="va">expression</span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">results</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">median</span>, linetype <span class="op">=</span> <span class="va">pkg</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">unit_ses</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span></code></pre></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -142,11 +144,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Vincent Arel-Bundock.</p>
+  <p></p>
+<p>Developed by Vincent Arel-Bundock.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -154,6 +158,8 @@
 
   
 
+
+  
 
   </body>
 </html>

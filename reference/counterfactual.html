@@ -117,135 +117,135 @@ of the variables in the <code>at</code> list.</p>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># Use in `marginaleffects` to compute "Counterfactual Average Marginal Effects"</span></span>
 <span class="r-in"><span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu">counterfactual</span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     rowid     type term        dydx   std.error    wt  hp predicted</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       1 response   hp -0.03177295 0.009029704 2.620 100  23.89006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       1 response   hp -0.03177295 0.009029704 2.620 110  23.57233</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       1 response   wt -3.87783074 0.632733547 2.620 100  23.89006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       1 response   wt -3.87783074 0.632733547 2.620 110  23.57233</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5       2 response   hp -0.03177295 0.009029704 2.875 100  22.90121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       2 response   hp -0.03177295 0.009029704 2.875 110  22.58348</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7       2 response   wt -3.87783074 0.632733322 2.875 100  22.90121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8       2 response   wt -3.87783074 0.632733322 2.875 110  22.58348</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       3 response   wt -3.87783074 0.632733097 2.320 110  24.73568</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10      3 response   wt -3.87783074 0.632733097 2.320 100  25.05341</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11      3 response   hp -0.03177295 0.009029704 2.320 110  24.73568</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12      3 response   hp -0.03177295 0.009029704 2.320 100  25.05341</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13      4 response   wt -3.87783074 0.632733322 3.215 110  21.26502</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14      4 response   wt -3.87783074 0.632733322 3.215 100  21.58275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15      4 response   hp -0.03177295 0.009029704 3.215 110  21.26502</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16      4 response   hp -0.03177295 0.009029704 3.215 100  21.58275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17      5 response   hp -0.03177295 0.009029704 3.440 100  20.71024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18      5 response   hp -0.03177295 0.009029704 3.440 110  20.39251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19      5 response   wt -3.87783074 0.632733322 3.440 100  20.71024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20      5 response   wt -3.87783074 0.632733322 3.440 110  20.39251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21      6 response   wt -3.87783074 0.632733547 3.460 100  20.63268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22      6 response   wt -3.87783074 0.632733547 3.460 110  20.31495</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23      6 response   hp -0.03177295 0.009029704 3.460 100  20.63268</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24      6 response   hp -0.03177295 0.009029704 3.460 110  20.31495</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25      7 response   wt -3.87783074 0.632733322 3.570 110  19.88839</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26      7 response   wt -3.87783074 0.632733322 3.570 100  20.20612</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27      7 response   hp -0.03177295 0.009029704 3.570 110  19.88839</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28      7 response   hp -0.03177295 0.009029704 3.570 100  20.20612</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29      8 response   wt -3.87783074 0.632733322 3.190 110  21.36197</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30      8 response   wt -3.87783074 0.632733322 3.190 100  21.67970</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31      8 response   hp -0.03177295 0.009029704 3.190 110  21.36197</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32      8 response   hp -0.03177295 0.009029704 3.190 100  21.67970</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33      9 response   hp -0.03177295 0.009029704 3.150 110  21.51708</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34      9 response   hp -0.03177295 0.009029704 3.150 100  21.83481</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35      9 response   wt -3.87783074 0.632733547 3.150 110  21.51708</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36      9 response   wt -3.87783074 0.632733547 3.150 100  21.83481</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37     10 response   wt -3.87783074 0.632733322 3.440 100  20.71024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38     10 response   wt -3.87783074 0.632733322 3.440 110  20.39251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39     10 response   hp -0.03177295 0.009029704 3.440 100  20.71024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40     10 response   hp -0.03177295 0.009029704 3.440 110  20.39251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41     11 response   hp -0.03177295 0.009029704 3.440 110  20.39251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42     11 response   hp -0.03177295 0.009029704 3.440 100  20.71024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43     11 response   wt -3.87783074 0.632733322 3.440 110  20.39251</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44     11 response   wt -3.87783074 0.632733322 3.440 100  20.71024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45     12 response   hp -0.03177295 0.009029704 4.070 110  17.94947</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46     12 response   hp -0.03177295 0.009029704 4.070 100  18.26720</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47     12 response   wt -3.87783074 0.632733547 4.070 110  17.94947</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48     12 response   wt -3.87783074 0.632733547 4.070 100  18.26720</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49     13 response   hp -0.03177295 0.009029704 3.730 110  19.26794</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50     13 response   hp -0.03177295 0.009029704 3.730 100  19.58567</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51     13 response   wt -3.87783074 0.632733547 3.730 110  19.26794</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52     13 response   wt -3.87783074 0.632733547 3.730 100  19.58567</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53     14 response   hp -0.03177295 0.009029704 3.780 100  19.39178</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54     14 response   hp -0.03177295 0.009029704 3.780 110  19.07405</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55     14 response   wt -3.87783074 0.632733322 3.780 100  19.39178</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56     14 response   wt -3.87783074 0.632733322 3.780 110  19.07405</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57     15 response   hp -0.03177295 0.009029704 5.250 100  13.69136</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58     15 response   hp -0.03177295 0.009029704 5.250 110  13.37363</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59     15 response   wt -3.87783074 0.632733547 5.250 100  13.69136</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60     15 response   wt -3.87783074 0.632733547 5.250 110  13.37363</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61     16 response   hp -0.03177295 0.009029704 5.424 110  12.69889</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 62     16 response   hp -0.03177295 0.009029704 5.424 100  13.01662</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 63     16 response   wt -3.87783074 0.632733322 5.424 110  12.69889</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 64     16 response   wt -3.87783074 0.632733322 5.424 100  13.01662</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 65     17 response   wt -3.87783074 0.632733547 5.345 110  13.00524</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 66     17 response   wt -3.87783074 0.632733547 5.345 100  13.32297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 67     17 response   hp -0.03177295 0.009029704 5.345 110  13.00524</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 68     17 response   hp -0.03177295 0.009029704 5.345 100  13.32297</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 69     18 response   hp -0.03177295 0.009029704 2.200 100  25.51875</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 70     18 response   hp -0.03177295 0.009029704 2.200 110  25.20102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 71     18 response   wt -3.87783074 0.632733322 2.200 100  25.51875</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72     18 response   wt -3.87783074 0.632733322 2.200 110  25.20102</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 73     19 response   hp -0.03177295 0.009029704 1.615 100  27.78728</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 74     19 response   hp -0.03177295 0.009029704 1.615 110  27.46955</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 75     19 response   wt -3.87783074 0.632733772 1.615 100  27.78728</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 76     19 response   wt -3.87783074 0.632733772 1.615 110  27.46955</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 77     20 response   wt -3.87783074 0.632733322 1.835 110  26.61643</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 78     20 response   wt -3.87783074 0.632733322 1.835 100  26.93416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 79     20 response   hp -0.03177295 0.009029704 1.835 110  26.61643</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 80     20 response   hp -0.03177295 0.009029704 1.835 100  26.93416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 81     21 response   wt -3.87783074 0.632733097 2.465 110  24.17339</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 82     21 response   wt -3.87783074 0.632733097 2.465 100  24.49112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 83     21 response   hp -0.03177295 0.009029704 2.465 110  24.17339</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 84     21 response   hp -0.03177295 0.009029704 2.465 100  24.49112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 85     22 response   hp -0.03177295 0.009029704 3.520 110  20.08228</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 86     22 response   hp -0.03177295 0.009029704 3.520 100  20.40001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 87     22 response   wt -3.87783074 0.632733322 3.520 110  20.08228</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 88     22 response   wt -3.87783074 0.632733322 3.520 100  20.40001</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 89     23 response   hp -0.03177295 0.009029704 3.435 100  20.72963</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 90     23 response   hp -0.03177295 0.009029704 3.435 110  20.41190</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 91     23 response   wt -3.87783074 0.632733547 3.435 100  20.72963</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 92     23 response   wt -3.87783074 0.632733547 3.435 110  20.41190</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 93     24 response   hp -0.03177295 0.009029704 3.840 110  18.84138</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 94     24 response   hp -0.03177295 0.009029704 3.840 100  19.15911</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 95     24 response   wt -3.87783074 0.632733996 3.840 110  18.84138</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 96     24 response   wt -3.87783074 0.632733996 3.840 100  19.15911</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 97     25 response   hp -0.03177295 0.009029704 3.845 110  18.82199</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 98     25 response   hp -0.03177295 0.009029704 3.845 100  19.13972</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 99     25 response   wt -3.87783074 0.632733322 3.845 110  18.82199</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 100    25 response   wt -3.87783074 0.632733322 3.845 100  19.13972</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101    26 response   wt -3.87783074 0.632733322 1.935 110  26.22864</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 102    26 response   wt -3.87783074 0.632733322 1.935 100  26.54637</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 103    26 response   hp -0.03177295 0.009029704 1.935 110  26.22864</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 104    26 response   hp -0.03177295 0.009029704 1.935 100  26.54637</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 105    27 response   wt -3.87783074 0.632733547 2.140 100  25.75142</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 106    27 response   wt -3.87783074 0.632733547 2.140 110  25.43369</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 107    27 response   hp -0.03177295 0.009029704 2.140 100  25.75142</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 108    27 response   hp -0.03177295 0.009029704 2.140 110  25.43369</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 109    28 response   hp -0.03177295 0.009029704 1.513 100  28.18282</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 110    28 response   hp -0.03177295 0.009029704 1.513 110  27.86509</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111    28 response   wt -3.87783074 0.632733322 1.513 100  28.18282</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 112    28 response   wt -3.87783074 0.632733322 1.513 110  27.86509</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 113    29 response   hp -0.03177295 0.009029704 3.170 110  21.43952</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114    29 response   hp -0.03177295 0.009029704 3.170 100  21.75725</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 115    29 response   wt -3.87783074 0.632733547 3.170 110  21.43952</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 116    29 response   wt -3.87783074 0.632733547 3.170 100  21.75725</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 117    30 response   wt -3.87783074 0.632733547 2.770 110  22.99065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 118    30 response   wt -3.87783074 0.632733547 2.770 100  23.30838</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 119    30 response   hp -0.03177295 0.009029704 2.770 110  22.99065</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 120    30 response   hp -0.03177295 0.009029704 2.770 100  23.30838</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 121    31 response   wt -3.87783074 0.632733322 3.570 100  20.20612</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 122    31 response   wt -3.87783074 0.632733322 3.570 110  19.88839</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 123    31 response   hp -0.03177295 0.009029704 3.570 100  20.20612</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 124    31 response   hp -0.03177295 0.009029704 3.570 110  19.88839</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 125    32 response   hp -0.03177295 0.009029704 2.780 100  23.26961</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 126    32 response   hp -0.03177295 0.009029704 2.780 110  22.95188</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 127    32 response   wt -3.87783074 0.632733322 2.780 100  23.26961</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 128    32 response   wt -3.87783074 0.632733322 2.780 110  22.95188</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     rowid     type term        dydx   std.error    wt  hp</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1       1 response   hp -0.03177295 0.009029704 2.620 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2       1 response   hp -0.03177295 0.009029704 2.620 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3       1 response   wt -3.87783074 0.632733547 2.620 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       1 response   wt -3.87783074 0.632733547 2.620 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       2 response   hp -0.03177295 0.009029704 2.875 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       2 response   hp -0.03177295 0.009029704 2.875 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7       2 response   wt -3.87783074 0.632733322 2.875 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8       2 response   wt -3.87783074 0.632733322 2.875 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9       3 response   wt -3.87783074 0.632733097 2.320 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10      3 response   wt -3.87783074 0.632733097 2.320 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11      3 response   hp -0.03177295 0.009029704 2.320 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12      3 response   hp -0.03177295 0.009029704 2.320 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13      4 response   wt -3.87783074 0.632733322 3.215 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14      4 response   wt -3.87783074 0.632733322 3.215 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15      4 response   hp -0.03177295 0.009029704 3.215 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16      4 response   hp -0.03177295 0.009029704 3.215 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17      5 response   hp -0.03177295 0.009029704 3.440 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18      5 response   hp -0.03177295 0.009029704 3.440 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19      5 response   wt -3.87783074 0.632733322 3.440 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20      5 response   wt -3.87783074 0.632733322 3.440 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21      6 response   wt -3.87783074 0.632733547 3.460 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22      6 response   wt -3.87783074 0.632733547 3.460 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23      6 response   hp -0.03177295 0.009029704 3.460 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24      6 response   hp -0.03177295 0.009029704 3.460 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25      7 response   wt -3.87783074 0.632733322 3.570 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26      7 response   wt -3.87783074 0.632733322 3.570 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27      7 response   hp -0.03177295 0.009029704 3.570 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28      7 response   hp -0.03177295 0.009029704 3.570 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29      8 response   wt -3.87783074 0.632733322 3.190 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30      8 response   wt -3.87783074 0.632733322 3.190 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31      8 response   hp -0.03177295 0.009029704 3.190 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32      8 response   hp -0.03177295 0.009029704 3.190 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33      9 response   hp -0.03177295 0.009029704 3.150 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34      9 response   hp -0.03177295 0.009029704 3.150 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35      9 response   wt -3.87783074 0.632733547 3.150 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36      9 response   wt -3.87783074 0.632733547 3.150 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37     10 response   wt -3.87783074 0.632733322 3.440 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38     10 response   wt -3.87783074 0.632733322 3.440 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39     10 response   hp -0.03177295 0.009029704 3.440 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40     10 response   hp -0.03177295 0.009029704 3.440 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41     11 response   hp -0.03177295 0.009029704 3.440 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42     11 response   hp -0.03177295 0.009029704 3.440 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43     11 response   wt -3.87783074 0.632733322 3.440 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44     11 response   wt -3.87783074 0.632733322 3.440 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45     12 response   hp -0.03177295 0.009029704 4.070 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46     12 response   hp -0.03177295 0.009029704 4.070 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47     12 response   wt -3.87783074 0.632733547 4.070 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48     12 response   wt -3.87783074 0.632733547 4.070 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49     13 response   hp -0.03177295 0.009029704 3.730 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50     13 response   hp -0.03177295 0.009029704 3.730 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51     13 response   wt -3.87783074 0.632733547 3.730 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52     13 response   wt -3.87783074 0.632733547 3.730 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53     14 response   hp -0.03177295 0.009029704 3.780 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54     14 response   hp -0.03177295 0.009029704 3.780 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55     14 response   wt -3.87783074 0.632733322 3.780 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56     14 response   wt -3.87783074 0.632733322 3.780 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57     15 response   hp -0.03177295 0.009029704 5.250 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58     15 response   hp -0.03177295 0.009029704 5.250 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59     15 response   wt -3.87783074 0.632733547 5.250 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60     15 response   wt -3.87783074 0.632733547 5.250 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61     16 response   hp -0.03177295 0.009029704 5.424 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62     16 response   hp -0.03177295 0.009029704 5.424 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63     16 response   wt -3.87783074 0.632733322 5.424 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64     16 response   wt -3.87783074 0.632733322 5.424 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65     17 response   wt -3.87783074 0.632733547 5.345 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66     17 response   wt -3.87783074 0.632733547 5.345 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67     17 response   hp -0.03177295 0.009029704 5.345 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68     17 response   hp -0.03177295 0.009029704 5.345 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69     18 response   hp -0.03177295 0.009029704 2.200 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70     18 response   hp -0.03177295 0.009029704 2.200 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71     18 response   wt -3.87783074 0.632733322 2.200 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72     18 response   wt -3.87783074 0.632733322 2.200 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73     19 response   hp -0.03177295 0.009029704 1.615 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74     19 response   hp -0.03177295 0.009029704 1.615 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75     19 response   wt -3.87783074 0.632733772 1.615 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76     19 response   wt -3.87783074 0.632733772 1.615 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77     20 response   wt -3.87783074 0.632733322 1.835 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78     20 response   wt -3.87783074 0.632733322 1.835 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79     20 response   hp -0.03177295 0.009029704 1.835 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80     20 response   hp -0.03177295 0.009029704 1.835 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81     21 response   wt -3.87783074 0.632733097 2.465 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82     21 response   wt -3.87783074 0.632733097 2.465 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83     21 response   hp -0.03177295 0.009029704 2.465 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84     21 response   hp -0.03177295 0.009029704 2.465 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85     22 response   hp -0.03177295 0.009029704 3.520 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86     22 response   hp -0.03177295 0.009029704 3.520 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87     22 response   wt -3.87783074 0.632733322 3.520 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88     22 response   wt -3.87783074 0.632733322 3.520 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89     23 response   hp -0.03177295 0.009029704 3.435 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90     23 response   hp -0.03177295 0.009029704 3.435 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91     23 response   wt -3.87783074 0.632733547 3.435 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92     23 response   wt -3.87783074 0.632733547 3.435 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93     24 response   hp -0.03177295 0.009029704 3.840 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94     24 response   hp -0.03177295 0.009029704 3.840 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95     24 response   wt -3.87783074 0.632733996 3.840 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96     24 response   wt -3.87783074 0.632733996 3.840 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97     25 response   hp -0.03177295 0.009029704 3.845 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98     25 response   hp -0.03177295 0.009029704 3.845 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99     25 response   wt -3.87783074 0.632733322 3.845 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100    25 response   wt -3.87783074 0.632733322 3.845 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101    26 response   wt -3.87783074 0.632733322 1.935 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102    26 response   wt -3.87783074 0.632733322 1.935 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103    26 response   hp -0.03177295 0.009029704 1.935 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104    26 response   hp -0.03177295 0.009029704 1.935 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105    27 response   wt -3.87783074 0.632733547 2.140 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106    27 response   wt -3.87783074 0.632733547 2.140 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107    27 response   hp -0.03177295 0.009029704 2.140 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108    27 response   hp -0.03177295 0.009029704 2.140 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109    28 response   hp -0.03177295 0.009029704 1.513 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110    28 response   hp -0.03177295 0.009029704 1.513 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111    28 response   wt -3.87783074 0.632733322 1.513 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112    28 response   wt -3.87783074 0.632733322 1.513 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113    29 response   hp -0.03177295 0.009029704 3.170 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114    29 response   hp -0.03177295 0.009029704 3.170 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115    29 response   wt -3.87783074 0.632733547 3.170 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116    29 response   wt -3.87783074 0.632733547 3.170 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117    30 response   wt -3.87783074 0.632733547 2.770 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118    30 response   wt -3.87783074 0.632733547 2.770 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119    30 response   hp -0.03177295 0.009029704 2.770 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120    30 response   hp -0.03177295 0.009029704 2.770 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121    31 response   wt -3.87783074 0.632733322 3.570 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122    31 response   wt -3.87783074 0.632733322 3.570 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123    31 response   hp -0.03177295 0.009029704 3.570 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124    31 response   hp -0.03177295 0.009029704 3.570 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125    32 response   hp -0.03177295 0.009029704 2.780 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126    32 response   hp -0.03177295 0.009029704 2.780 110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127    32 response   wt -3.87783074 0.632733322 2.780 100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128    32 response   wt -3.87783074 0.632733322 2.780 110</span>
 </code></pre></div>
     </div>
   </div>

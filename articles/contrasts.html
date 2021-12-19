@@ -138,10 +138,10 @@
 <p>We can now use the <code>newdata</code> argument of the <code>marginaleffects</code> function to compute contrasts for different values of the other regressors. As in <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">the marginal effects vignette</a>, the <code>typical</code> function can be handy. Since we only care about the logical <code>am</code> contrast, we use the <code>variables</code> to indicate the subset of results to report:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod_int</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="va">tmp</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span>, variables <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span>
-<span class="co">#&gt;   rowid     type   term     dydx std.error    am cyl predicted</span>
-<span class="co">#&gt; 1     1 response amTRUE 1.441667  2.315925 FALSE   6    19.125</span>
-<span class="co">#&gt; 2     2 response amTRUE 5.175000  2.052848 FALSE   4    22.900</span>
-<span class="co">#&gt; 3     3 response amTRUE 0.350000  2.315925 FALSE   8    15.050</span></code></pre></div>
+<span class="co">#&gt;   rowid     type   term     dydx std.error    am cyl</span>
+<span class="co">#&gt; 1     1 response amTRUE 1.441667  2.315925 FALSE   6</span>
+<span class="co">#&gt; 2     2 response amTRUE 5.175000  2.052848 FALSE   4</span>
+<span class="co">#&gt; 3     3 response amTRUE 0.350000  2.315925 FALSE   8</span></code></pre></div>
 <p>Once again, we obtain the same results with <code>emmeans</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html" class="external-link">emmeans</a></span><span class="op">(</span><span class="va">mod_int</span>, specs <span class="op">=</span> <span class="st">"am"</span>, by <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>

@@ -50,7 +50,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get levels of the outcome variable in grouped or multivariate models</h1>
-    <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/R/get_group_names.R" class="external-link"><code>R/get_group_names.R</code></a>, <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/R/methods_MASS.R" class="external-link"><code>R/methods_MASS.R</code></a>, <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/R/methods_brms.R" class="external-link"><code>R/methods_brms.R</code></a>, and 2 more</small>
+    <small class="dont-index">Source: <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/R/get_group_names.R" class="external-link"><code>R/get_group_names.R</code></a>, <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/R/methods_MASS.R" class="external-link"><code>R/methods_MASS.R</code></a>, <a href="https://github.com/vincentarelbundock/marginaleffects/blob/HEAD/R/methods_brms.R" class="external-link"><code>R/methods_brms.R</code></a>, and 3 more</small>
     <div class="hidden name"><code>get_group_names.Rd</code></div>
     </div>
 
@@ -74,7 +74,10 @@
 <span class="fu">get_group_names</span><span class="op">(</span><span class="va">model</span>, <span class="va">...</span><span class="op">)</span>
 
 <span class="co"># S3 method for clm</span>
-<span class="fu">get_group_names</span><span class="op">(</span><span class="va">model</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+<span class="fu">get_group_names</span><span class="op">(</span><span class="va">model</span>, <span class="va">...</span><span class="op">)</span>
+
+<span class="co"># S3 method for hurdle</span>
+<span class="fu">get_group_names</span><span class="op">(</span><span class="va">model</span>, type <span class="op">=</span> <span class="st">"count"</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -83,6 +86,10 @@
 <dd><p>Model object</p></dd>
 <dt>...</dt>
 <dd><p>Additional arguments are pushed forward to <code><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict()</a></code>.</p></dd>
+<dt>type</dt>
+<dd><p>Type(s) of prediction as string or vector This can
+differ based on the model type, but will typically be a string such as:
+"response", "link", "probs", or "zero".</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>

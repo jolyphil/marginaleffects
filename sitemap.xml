@@ -19,6 +19,9 @@
     <loc>/articles/index.html</loc>
   </url>
   <url>
+    <loc>/articles/lme4.html</loc>
+  </url>
+  <url>
     <loc>/articles/marginalmeans.html</loc>
   </url>
   <url>
@@ -26,6 +29,9 @@
   </url>
   <url>
     <loc>/articles/predictions.html</loc>
+  </url>
+  <url>
+    <loc>/articles/supported_models.html</loc>
   </url>
   <url>
     <loc>/authors.html</loc>

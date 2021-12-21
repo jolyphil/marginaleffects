@@ -108,10 +108,10 @@
 <code class="sourceCode R"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
 <span class="co">#&gt; Average marginal effects </span>
-<span class="co">#&gt;       type Term  Effect    2.5 % 97.5 %</span>
-<span class="co">#&gt; 1 response   hp  0.0075  0.00049 0.0220</span>
-<span class="co">#&gt; 2 response  mpg  0.1625  0.01027 0.4549</span>
-<span class="co">#&gt; 3 response   vs -0.1226 -0.70386 0.3999</span>
+<span class="co">#&gt;       type Term    Effect      2.5 % 97.5 %</span>
+<span class="co">#&gt; 1 response   hp  0.007414  0.0003448 0.0219</span>
+<span class="co">#&gt; 2 response  mpg  0.160242  0.0119799 0.4604</span>
+<span class="co">#&gt; 3 response   vs -0.119921 -0.7126411 0.4022</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Model type:  brmsfit </span>
 <span class="co">#&gt; Prediction type:  response</span></code></pre></div>
@@ -119,12 +119,12 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">110</span>, <span class="fl">130</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;   rowid     type term         dydx      conf.low  conf.high      mpg     vs  hp</span>
-<span class="co">#&gt; 1     1 response  mpg  0.086846406  6.242950e-05 0.39994233 20.09062 0.4375 110</span>
-<span class="co">#&gt; 2     1 response   vs -0.004657829 -4.992191e-01 0.20947506 20.09062 0.4375 110</span>
-<span class="co">#&gt; 3     1 response   hp  0.003633616  2.929790e-06 0.01582414 20.09062 0.4375 110</span>
-<span class="co">#&gt; 4     2 response  mpg  0.605446133  7.716359e-02 1.39419540 20.09062 0.4375 130</span>
-<span class="co">#&gt; 5     2 response   vs -0.072613759 -1.088157e+00 0.91040256 20.09062 0.4375 130</span>
-<span class="co">#&gt; 6     2 response   hp  0.025745963  3.130253e-03 0.06291242 20.09062 0.4375 130</span></code></pre></div>
+<span class="co">#&gt; 1     1 response  mpg  0.083687734  2.072742e-05 0.38617920 20.09062 0.4375 110</span>
+<span class="co">#&gt; 2     1 response   vs -0.004879411 -4.992506e-01 0.20414112 20.09062 0.4375 110</span>
+<span class="co">#&gt; 3     1 response   hp  0.003474750  7.981888e-07 0.01581363 20.09062 0.4375 110</span>
+<span class="co">#&gt; 4     2 response  mpg  0.580762081  6.335323e-02 1.35397766 20.09062 0.4375 130</span>
+<span class="co">#&gt; 5     2 response   vs -0.080032800 -9.769681e-01 0.92827072 20.09062 0.4375 130</span>
+<span class="co">#&gt; 6     2 response   hp  0.024585463  1.462812e-03 0.06021226 20.09062 0.4375 130</span></code></pre></div>
 <p>The <code>get_posterior_draws</code> produces a dataset with <code>drawid</code> and <code>draw</code> columns.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_posterior_draws.html">get_posterior_draws</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
@@ -134,12 +134,12 @@
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">draws</span><span class="op">)</span>
 <span class="co">#&gt;       type drawid         draw rowid term        dydx      conf.low  conf.high</span>
-<span class="co">#&gt; 1 response      1 0.6259773401     1  mpg  0.67103012  0.0067042057 1.71379684</span>
-<span class="co">#&gt; 2 response      1 0.6259773401     1   vs -0.33419175 -1.0205269578 0.21764883</span>
-<span class="co">#&gt; 3 response      1 0.4702709827     1   hp  0.02337035  0.0005027379 0.05973547</span>
-<span class="co">#&gt; 4 response      1 0.5323938946     2  mpg  0.67103012  0.0067042057 1.71379684</span>
-<span class="co">#&gt; 5 response      1 0.5117063910     2   vs -0.33419175 -1.0205269578 0.21764883</span>
-<span class="co">#&gt; 6 response      1 0.0003834111     2   hp  0.02337035  0.0005027379 0.05973547</span>
+<span class="co">#&gt; 1 response      1 9.661699e-01     1  mpg  0.66272096  7.357365e-04 1.71197325</span>
+<span class="co">#&gt; 2 response      1 9.661699e-01     1   vs -0.33711914 -1.042025e+00 0.22124016</span>
+<span class="co">#&gt; 3 response      1 7.599213e-01     1   hp  0.02320391  2.170679e-05 0.05926796</span>
+<span class="co">#&gt; 4 response      1 4.016728e-01     2  mpg  0.66272096  7.357365e-04 1.71197325</span>
+<span class="co">#&gt; 5 response      1 9.117171e-01     2   vs -0.33711914 -1.042025e+00 0.22124016</span>
+<span class="co">#&gt; 6 response      1 2.597814e-06     2   hp  0.02320391  2.170679e-05 0.05926796</span>
 <span class="co">#&gt;   am mpg vs  hp</span>
 <span class="co">#&gt; 1  1  21  0 110</span>
 <span class="co">#&gt; 2  1  21  0 110</span>
@@ -231,9 +231,9 @@
 <span class="va">pred</span>
 <span class="co">#&gt;         type predicted   conf.low conf.high party_autonomy civil_liberties</span>
 <span class="co">#&gt; 1   response 0.6219782 0.53185729 0.7137691           TRUE             0.5</span>
-<span class="co">#&gt; 2 prediction 0.6411971 0.25100748 0.9750715           TRUE             0.5</span>
+<span class="co">#&gt; 2 prediction 0.6370273 0.25254166 0.9711753           TRUE             0.5</span>
 <span class="co">#&gt; 3   response 0.3692581 0.28664282 0.4627307          FALSE             0.5</span>
-<span class="co">#&gt; 4 prediction 0.3505003 0.00200673 0.7322968          FALSE             0.5</span>
+<span class="co">#&gt; 4 prediction 0.3507244 0.02717299 0.7465236          FALSE             0.5</span>
 <span class="co">#&gt;                         region</span>
 <span class="co">#&gt; 1 Middle East and North Africa</span>
 <span class="co">#&gt; 2 Middle East and North Africa</span>

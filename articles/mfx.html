@@ -261,12 +261,12 @@
 <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>truth <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">x</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">dydx</span>, <span class="va">truth</span><span class="op">)</span>
-<span class="co">#&gt;         dydx truth</span>
-<span class="co">#&gt; 1 -6.9948284    -7</span>
-<span class="co">#&gt; 2 -2.9987294    -3</span>
-<span class="co">#&gt; 3  0.9973696     1</span>
-<span class="co">#&gt; 4  4.9934686     5</span>
-<span class="co">#&gt; 5  8.9895676     9</span></code></pre></div>
+<span class="co">#&gt;        dydx truth</span>
+<span class="co">#&gt; 1 -7.012671    -7</span>
+<span class="co">#&gt; 2 -3.004193    -3</span>
+<span class="co">#&gt; 3  1.004285     1</span>
+<span class="co">#&gt; 4  5.012763     5</span>
+<span class="co">#&gt; 5  9.021241     9</span></code></pre></div>
 <p>We can also plot the result with the <code>plot_cme</code> function (see section below):</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"x"</span>, condition <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></code></pre></div>
@@ -323,6 +323,26 @@
 <td align="left"></td>
 <td align="center">(0.002)</td>
 <td align="center">(3.174)</td>
+</tr>
+<tr class="odd">
+<td align="left">speciesChinstrap</td>
+<td align="center">-0.134</td>
+<td align="center">-632.250</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">(0.034)</td>
+<td align="center">(58.271)</td>
+</tr>
+<tr class="odd">
+<td align="left">speciesGentoo</td>
+<td align="center">0.275</td>
+<td align="center">206.747</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">(0.145)</td>
+<td align="center">(51.486)</td>
 </tr>
 <tr class="odd">
 <td align="left">bill_length_mm</td>

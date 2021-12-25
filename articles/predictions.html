@@ -318,13 +318,13 @@ hp
 <code class="sourceCode R"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">am</span> <span class="op">~</span> <span class="va">mpg</span>, family <span class="op">=</span> <span class="va">binomial</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>
 <span class="va">pred</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"response"</span>, <span class="st">"link"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pred</span><span class="op">)</span>
-<span class="co">#&gt;       type  predicted std.error   conf.low conf.high am  mpg</span>
-<span class="co">#&gt; 1 response  0.4610951 0.1158400  0.2554723 0.6808686  1 21.0</span>
-<span class="co">#&gt; 2     link -0.1559347 0.4661826 -1.0696358 0.7577664  1 21.0</span>
-<span class="co">#&gt; 3 response  0.4610951 0.1158400  0.2554723 0.6808686  1 21.0</span>
-<span class="co">#&gt; 4     link -0.1559347 0.4661826 -1.0696358 0.7577664  1 21.0</span>
-<span class="co">#&gt; 5     link  0.3967160 0.5507048 -0.6826455 1.4760775  1 22.8</span>
-<span class="co">#&gt; 6 response  0.5978984 0.1323982  0.3356711 0.8139794  1 22.8</span></code></pre></div>
+<span class="co">#&gt;       type predicted  std.error  conf.low conf.high am  mpg</span>
+<span class="co">#&gt; 1 response 0.4610951 0.11584004 0.2554723 0.6808686  1 21.0</span>
+<span class="co">#&gt; 2 response 0.4610951 0.11584004 0.2554723 0.6808686  1 21.0</span>
+<span class="co">#&gt; 3 response 0.5978984 0.13239819 0.3356711 0.8139794  1 22.8</span>
+<span class="co">#&gt; 4 response 0.4917199 0.11961263 0.2746560 0.7119512  0 21.4</span>
+<span class="co">#&gt; 5 response 0.2969009 0.10051954 0.1411369 0.5204086  0 18.7</span>
+<span class="co">#&gt; 6 response 0.2599331 0.09782666 0.1147580 0.4876032  0 18.1</span></code></pre></div>
 <p>Users who need more control over the type of adjusted predictions to compute, including a host of options for back-transformation, may want to consider the <a href="https://cran.r-project.org/package=emmeans" class="external-link"><code>emmeans</code> package.</a></p>
 <p>We can also plot predictions on different outcome scales:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">

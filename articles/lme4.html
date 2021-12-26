@@ -116,7 +116,6 @@
 <span class="va">pred2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">fit2</span>,
                      newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="va">ChickWeight</span><span class="op">$</span><span class="va">Chick</span>,
                                        Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; Random effect variances not available. Returned R2 does not account for random effects.</span>
 
 <span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">pred2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">predicted</span>, level <span class="op">=</span> <span class="va">Chick</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
@@ -134,7 +133,6 @@
                     newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="va">ChickWeight</span><span class="op">$</span><span class="va">Chick</span>,
                                       Diet <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,
                                       Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; Random effect variances not available. Returned R2 does not account for random effects.</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">pred</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">predicted</span>, level <span class="op">=</span> <span class="va">Chick</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>

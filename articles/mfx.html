@@ -126,20 +126,20 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
-<span class="co">#&gt;   rowid     type              term          dydx   std.error large_penguin</span>
-<span class="co">#&gt; 1     1 response    bill_length_mm -0.0009199341 0.000695138             0</span>
-<span class="co">#&gt; 2     1 response flipper_length_mm  0.0039334649 0.001106035             0</span>
-<span class="co">#&gt; 3     2 response    bill_length_mm -0.0026043673 0.001959132             0</span>
-<span class="co">#&gt; 4     2 response flipper_length_mm  0.0111357738 0.002230108             0</span>
-<span class="co">#&gt; 5     3 response    bill_length_mm -0.0108418910 0.007914942             0</span>
-<span class="co">#&gt; 6     3 response flipper_length_mm  0.0463575363 0.006006881             0</span>
+<span class="co">#&gt;   rowid     type           term          dydx    std.error large_penguin</span>
+<span class="co">#&gt; 1     1 response bill_length_mm -0.0009199341 0.0006951380             0</span>
+<span class="co">#&gt; 2     2 response bill_length_mm -0.0026043673 0.0019591323             0</span>
+<span class="co">#&gt; 3     3 response bill_length_mm -0.0108418910 0.0079149418             0</span>
+<span class="co">#&gt; 4     4 response bill_length_mm -0.0095652441 0.0076582721             0</span>
+<span class="co">#&gt; 5     5 response bill_length_mm -0.0056069848 0.0042915529             0</span>
+<span class="co">#&gt; 6     6 response bill_length_mm -0.0009293834 0.0007080235             0</span>
 <span class="co">#&gt;   bill_length_mm flipper_length_mm</span>
 <span class="co">#&gt; 1           39.1               181</span>
-<span class="co">#&gt; 2           39.1               181</span>
-<span class="co">#&gt; 3           39.5               186</span>
-<span class="co">#&gt; 4           39.5               186</span>
-<span class="co">#&gt; 5           40.3               195</span>
-<span class="co">#&gt; 6           40.3               195</span></code></pre></div>
+<span class="co">#&gt; 2           39.5               186</span>
+<span class="co">#&gt; 3           40.3               195</span>
+<span class="co">#&gt; 4           36.7               193</span>
+<span class="co">#&gt; 5           39.3               190</span>
+<span class="co">#&gt; 6           38.9               181</span></code></pre></div>
 </div>
 <div class="section level1">
 <h1 id="average-mfx">Average MFX<a class="anchor" aria-label="anchor" href="#average-mfx"></a>
@@ -191,13 +191,13 @@
                                        species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;   rowid     type              term          dydx    std.error bill_length_mm</span>
 <span class="co">#&gt; 1     1 response    bill_length_mm -0.0005758662 0.0003533902       43.92193</span>
-<span class="co">#&gt; 2     1 response flipper_length_mm  0.0024622958 0.0008480042       43.92193</span>
-<span class="co">#&gt; 3     2 response    bill_length_mm -0.0005758662 0.0003533902       43.92193</span>
+<span class="co">#&gt; 2     2 response    bill_length_mm -0.0005758662 0.0003533902       43.92193</span>
+<span class="co">#&gt; 3     1 response flipper_length_mm  0.0024622958 0.0008480042       43.92193</span>
 <span class="co">#&gt; 4     2 response flipper_length_mm  0.0024622958 0.0008480042       43.92193</span>
 <span class="co">#&gt;   flipper_length_mm species</span>
 <span class="co">#&gt; 1               180  Adelie</span>
-<span class="co">#&gt; 2               180  Adelie</span>
-<span class="co">#&gt; 3               180  Gentoo</span>
+<span class="co">#&gt; 2               180  Gentoo</span>
+<span class="co">#&gt; 3               180  Adelie</span>
 <span class="co">#&gt; 4               180  Gentoo</span></code></pre></div>
 <p>When variables are omitted from the <code>typical</code> call, they will automatically be set at their median or mode (depending on variable type).</p>
 </div>
@@ -210,13 +210,13 @@
 <p>We see that the rows 1, 2, and 3 of the original dataset have been replicated twice, with different values of the <code>flipper_length_mm</code> variable:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nd</span><span class="op">[</span><span class="va">nd</span><span class="op">$</span><span class="va">rowid</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,<span class="op">]</span>
-<span class="co">#&gt;     rowid bill_length_mm flipper_length_mm</span>
-<span class="co">#&gt; 1       1           39.1               160</span>
-<span class="co">#&gt; 2       2           39.5               160</span>
-<span class="co">#&gt; 3       3           40.3               160</span>
-<span class="co">#&gt; 343     1           39.1               180</span>
-<span class="co">#&gt; 344     2           39.5               180</span>
-<span class="co">#&gt; 345     3           40.3               180</span></code></pre></div>
+<span class="co">#&gt;     rowid_original bill_length_mm flipper_length_mm</span>
+<span class="co">#&gt; 1                1           39.1               160</span>
+<span class="co">#&gt; 2                2           39.5               160</span>
+<span class="co">#&gt; 3                3           40.3               160</span>
+<span class="co">#&gt; 343              1           39.1               180</span>
+<span class="co">#&gt; 344              2           39.5               180</span>
+<span class="co">#&gt; 345              3           40.3               180</span></code></pre></div>
 <p>Again, we can use this to compute average (or median, or anything else) marginal effects over the counterfactual individuals:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
@@ -225,10 +225,10 @@
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">term</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html" class="external-link">across</a></span><span class="op">(</span><span class="va">dydx</span><span class="op">:</span><span class="va">std.error</span>, <span class="va">median</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 3</span></span>
-<span class="co">#&gt;   term                     dydx  std.error</span>
-<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> bill_length_mm    -<span style="color: #BB0000;">0.000</span><span style="color: #BB0000; text-decoration: underline;">006</span><span style="color: #BB0000;">17</span> 0.000<span style="text-decoration: underline;">005</span>20</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> flipper_length_mm  0.000<span style="text-decoration: underline;">026</span>4  0.000<span style="text-decoration: underline;">022</span>5</span></code></pre></div>
+<span class="co">#&gt;   term                   dydx std.error</span>
+<span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> bill_length_mm    -<span style="color: #BB0000;">0.000</span><span style="color: #BB0000; text-decoration: underline;">133</span> 0.000<span style="text-decoration: underline;">057</span>6</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> flipper_length_mm  0.000<span style="text-decoration: underline;">569</span> 0.000<span style="text-decoration: underline;">442</span></span></code></pre></div>
 </div>
 <div class="section level1">
 <h1 id="conditional-mfx-plot">Conditional MFX (Plot)<a class="anchor" aria-label="anchor" href="#conditional-mfx-plot"></a>
@@ -262,11 +262,11 @@
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>truth <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">x</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">dydx</span>, <span class="va">truth</span><span class="op">)</span>
 <span class="co">#&gt;         dydx truth</span>
-<span class="co">#&gt; 1 -7.0045602    -7</span>
-<span class="co">#&gt; 2 -3.0034365    -3</span>
-<span class="co">#&gt; 3  0.9976872     1</span>
-<span class="co">#&gt; 4  4.9988109     5</span>
-<span class="co">#&gt; 5  8.9999346     9</span></code></pre></div>
+<span class="co">#&gt; 1 -7.0068184    -7</span>
+<span class="co">#&gt; 2 -3.0052060    -3</span>
+<span class="co">#&gt; 3  0.9964064     1</span>
+<span class="co">#&gt; 4  4.9980188     5</span>
+<span class="co">#&gt; 5  8.9996312     9</span></code></pre></div>
 <p>We can also plot the result with the <code>plot_cme</code> function (see section below):</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"x"</span>, condition <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></code></pre></div>

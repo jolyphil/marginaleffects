@@ -109,8 +109,12 @@
 <p>The rest of this page includes a “Getting Started” tutorial with simple examples. To go beyond these simple examples, please read the vignettes linked above, for each of the four quantities. In addition, you can consult these pages:</p>
 <ul>
 <li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/supported_models.html" class="external-link">List of supported models</a></li>
-<li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/brms.html" class="external-link">Case study: <code>brms</code> for Bayesian analysis</a></li>
-<li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/brms.html" class="external-link">Case study: <code>lme4</code> for Multi-level modeling</a></li>
+<li>Case studies:
+<ul>
+<li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/brms.html" class="external-link">Bayesian analyses with <code>brms</code></a></li>
+<li><a href="https://vincentarelbundock.github.io/marginaleffects/articles/lme4.html" class="external-link">Mixed effects models with <code>lme4</code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section level2">
@@ -184,11 +188,11 @@
 <code class="sourceCode R"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mfx</span>, <span class="fl">4</span><span class="op">)</span>
-<span class="co">#&gt;   rowid     type term        dydx  std.error mpg  hp    wt am</span>
-<span class="co">#&gt; 1     1 response   hp -0.03690556 0.01850168  21 110 2.620  1</span>
-<span class="co">#&gt; 2     1 response   wt -6.61454909 1.86622482  21 110 2.620  1</span>
-<span class="co">#&gt; 3     1 response   am  0.32517359 1.68220195  21 110 2.620  1</span>
-<span class="co">#&gt; 4     2 response   hp -0.02868936 0.01562768  21 110 2.875  1</span></code></pre></div>
+<span class="co">#&gt;   rowid     type term        dydx  std.error  mpg  hp    wt am</span>
+<span class="co">#&gt; 1     1 response   hp -0.03690556 0.01850168 21.0 110 2.620  1</span>
+<span class="co">#&gt; 2     2 response   hp -0.02868936 0.01562768 21.0 110 2.875  1</span>
+<span class="co">#&gt; 3     3 response   hp -0.04657166 0.02259121 22.8  93 2.320  1</span>
+<span class="co">#&gt; 4     4 response   hp -0.04227128 0.01328275 21.4 110 3.215  0</span></code></pre></div>
 <p>The function <code>summary</code> calculates the “Average Marginal Effect,” that is, the average of all unit-specific marginal effects:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>

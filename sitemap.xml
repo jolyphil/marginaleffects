@@ -55,9 +55,6 @@
     <loc>/reference/get_group_names.html</loc>
   </url>
   <url>
-    <loc>/reference/get_posterior_draws.html</loc>
-  </url>
-  <url>
     <loc>/reference/get_predict.html</loc>
   </url>
   <url>
@@ -86,6 +83,9 @@
   </url>
   <url>
     <loc>/reference/plot_cme.html</loc>
+  </url>
+  <url>
+    <loc>/reference/posteriordraws.html</loc>
   </url>
   <url>
     <loc>/reference/predictions.html</loc>

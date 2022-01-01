@@ -262,12 +262,12 @@
 <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/datagrid.html">datagrid</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>truth <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">x</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">dydx</span>, <span class="va">truth</span><span class="op">)</span>
-<span class="co">#&gt;         dydx truth</span>
-<span class="co">#&gt; 1 -7.0094447    -7</span>
-<span class="co">#&gt; 2 -3.0047704    -3</span>
-<span class="co">#&gt; 3  0.9999038     1</span>
-<span class="co">#&gt; 4  5.0045781     5</span>
-<span class="co">#&gt; 5  9.0092523     9</span></code></pre></div>
+<span class="co">#&gt;        dydx truth</span>
+<span class="co">#&gt; 1 -7.005342    -7</span>
+<span class="co">#&gt; 2 -3.002257    -3</span>
+<span class="co">#&gt; 3  1.000829     1</span>
+<span class="co">#&gt; 4  5.003914     5</span>
+<span class="co">#&gt; 5  9.007000     9</span></code></pre></div>
 <p>We can also plot the result with the <code>plot_cme</code> function (see section below):</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"x"</span>, condition <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></code></pre></div>
@@ -440,7 +440,8 @@
 <p>Add your new model class to the lists of supported models in:</p>
 <ul>
 <li>The <code>sanity_model</code> function of the <code>R/sanity.R</code> file.</li>
-<li>The supported models CSV table in <code>data-raw/supported_models.csv</code>. Then, run the <code>data-raw/supported_models.R</code> script to propagate your change throughout the package documentation.</li>
+<li>The supported models CSV table in <code>data-raw/supported_models.csv</code>
+</li>
 <li>The “Suggests” list in the <code>DESCRIPTION</code> file.</li>
 </ul>
 </div>

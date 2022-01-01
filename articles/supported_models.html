@@ -69,7 +69,8 @@
 
       
 
-      </header><script src="supported_models_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><script src="supported_models_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="supported_models_files/kePrint-0.0.1/kePrint.js"></script><link href="supported_models_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Supported Models</h1>
@@ -93,832 +94,1445 @@
 <p>This table shows the list of models supported by the <code>marginaleffects</code> function, and shows which numerical results – marginal effects (dY/dX) or standard errors (Std. Error) – have been checked against alternative software packages: Stata’s <code>margins</code> command and R’s <code>margins</code> package. Empty cells mean that the results of a model have not yet been validated against external software. Green cells indicate that the results of <a href="https://github.com/vincentarelbundock/marginaleffects/tree/main/tests/testthat" class="external-link">at least one model from the test suite</a> match to a reasonable tolerance. Red cells mean that <code>marginaleffects</code> results do <em>not</em> match those produced by alternative software packages. Obviously, caution is especially warranted when working with estimates from red cells.</p>
 <p>I am <em>very</em> eager to add support for new models. Feel free to file a request on Github or – even better – submit some code.</p>
 <p>Warning: When using <code>marginaleffects</code> with different models, you will probably have to adjust the <code>type</code> argument. Refer to the documentation of your modeling package to see what <code>type</code> argument is allowed in the <code>predict</code> function.</p>
-<div id="hzvczynzhu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-#hzvczynzhu .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#hzvczynzhu .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#hzvczynzhu .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#hzvczynzhu .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#hzvczynzhu .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#hzvczynzhu .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#hzvczynzhu .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#hzvczynzhu .gt_group_heading {
-  padding: 8px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#hzvczynzhu .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#hzvczynzhu .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#hzvczynzhu .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#hzvczynzhu .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#hzvczynzhu .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 12px;
-}
-
-#hzvczynzhu .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#hzvczynzhu .gt_first_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#hzvczynzhu .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#hzvczynzhu .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding: 4px;
-}
-
-#hzvczynzhu .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#hzvczynzhu .gt_sourcenote {
-  font-size: 90%;
-  padding: 4px;
-}
-
-#hzvczynzhu .gt_left {
-  text-align: left;
-}
-
-#hzvczynzhu .gt_center {
-  text-align: center;
-}
-
-#hzvczynzhu .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#hzvczynzhu .gt_font_normal {
-  font-weight: normal;
-}
-
-#hzvczynzhu .gt_font_bold {
-  font-weight: bold;
-}
-
-#hzvczynzhu .gt_font_italic {
-  font-style: italic;
-}
-
-#hzvczynzhu .gt_super {
-  font-size: 65%;
-}
-
-#hzvczynzhu .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 65%;
-}
-</style>
-<table class="table gt_table">
-<thead class="gt_col_headings">
+<table class="table table" style="margin-left: auto; margin-right: auto;">
+<thead>
 <tr>
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1">Package</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1">Function</th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2">
-        <span class="gt_column_spanner">Support</span>
-      </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2">
-        <span class="gt_column_spanner">Validity: Stata</span>
-      </th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="2">
-        <span class="gt_column_spanner">Validity: margins</span>
-      </th>
-    </tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="4">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="6">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Numerical equivalence
+</div>
+</th>
+</tr>
 <tr>
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">dY/dX</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Std. Error</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">dY/dX </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Std. Error </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">dY/dX  </th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Std. Error  </th>
-    </tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="2">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Supported
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Stata
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+margins
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+emtrends
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Package
+</th>
+<th style="text-align:left;">
+Function
+</th>
+<th style="text-align:center;">
+dY/dX
+</th>
+<th style="text-align:center;">
+SE
+</th>
+<th style="text-align:center;">
+dY/dX
+</th>
+<th style="text-align:center;">
+SE
+</th>
+<th style="text-align:center;">
+dY/dX
+</th>
+<th style="text-align:center;">
+SE
+</th>
+<th style="text-align:center;">
+dY/dX
+</th>
+<th style="text-align:center;">
+SE
+</th>
+</tr>
 </thead>
-<tbody class="gt_table_body">
+<tbody>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">stats</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">lm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+stats
+</td>
+<td style="text-align:left;">
+lm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+glm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">AER</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">ivreg</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+AER
+</td>
+<td style="text-align:left;">
+ivreg
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">tobit</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+tobit
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">aod</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">betabin</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+aod
+</td>
+<td style="text-align:left;">
+betabin
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">betareg</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">betareg</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+betareg
+</td>
+<td style="text-align:left;">
+betareg
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">bife</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">bife</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+bife
+</td>
+<td style="text-align:left;">
+bife
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">brglm2</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">brglmFit</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+brglm2
+</td>
+<td style="text-align:left;">
+brglmFit
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">brnb</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+brnb
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">brmultinom</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+brmultinom
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">brms</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">brm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+brms
+</td>
+<td style="text-align:left;">
+brm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">crch</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">crch</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+crch
+</td>
+<td style="text-align:left;">
+crch
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">hxlr</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+hxlr
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">estimatr</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">lm_robust</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+estimatr
+</td>
+<td style="text-align:left;">
+lm_robust
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">iv_robust</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+iv_robust
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">fixest</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">feols</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+fixest
+</td>
+<td style="text-align:left;">
+feols
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">feglm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+feglm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">fepois</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+fepois
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">gam</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">gam</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+gam
+</td>
+<td style="text-align:left;">
+gam
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">geepack</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">geeglm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+geepack
+</td>
+<td style="text-align:left;">
+geeglm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glmx</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glmx</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+glmx
+</td>
+<td style="text-align:left;">
+glmx
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">ivreg</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">ivreg</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+ivreg
+</td>
+<td style="text-align:left;">
+ivreg
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">lme4</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">lmer</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+lme4
+</td>
+<td style="text-align:left;">
+lmer
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glmer</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+glmer
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glmer.nb</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+glmer.nb
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">MASS</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glmmPQL</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+MASS
+</td>
+<td style="text-align:left;">
+glmmPQL
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glm.nb</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+glm.nb
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">polr</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+polr
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">rlm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+rlm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">mgcv</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">gam</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+mgcv
+</td>
+<td style="text-align:left;">
+gam
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">nlme</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">gls</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+nlme
+</td>
+<td style="text-align:left;">
+gls
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">nnet</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">multinom</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #FF6961;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+nnet
+</td>
+<td style="text-align:left;">
+multinom
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: red !important;">
+✖
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">ordinal</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">clm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+ordinal
+</td>
+<td style="text-align:left;">
+clm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">plm</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">plm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+plm
+</td>
+<td style="text-align:left;">
+plm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">pscl</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">hurdle</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+pscl
+</td>
+<td style="text-align:left;">
+hurdle
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: red !important;">
+✖
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">zeroinfl</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+zeroinfl
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">quantreg</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">rq</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+quantreg
+</td>
+<td style="text-align:left;">
+rq
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">rms</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">lrm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+rms
+</td>
+<td style="text-align:left;">
+lrm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">robustbase</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">glmrob</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+robustbase
+</td>
+<td style="text-align:left;">
+glmrob
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">lmrob</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+lmrob
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">rstanarm</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">stan_glm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+rstanarm
+</td>
+<td style="text-align:left;">
+stan_glm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">speedglm</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">speedglm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+speedglm
+</td>
+<td style="text-align:left;">
+speedglm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">speedlm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+speedlm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
+<td style="text-align:center;color: grey !important;">
+U
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">survey</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">svyglm</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
+<td style="text-align:left;">
+survey
+</td>
+<td style="text-align:left;">
+svyglm
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">survival</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">coxph</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+survival
+</td>
+<td style="text-align:left;">
+coxph
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 <tr>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">truncreg</td>
-<td class="gt_row gt_left" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;">truncreg</td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black; background-color: #C1E1C1;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
-<td class="gt_row gt_left" style="border-left-width: 1px; border-left-style: solid; border-left-color: black; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; border-top-width: 1px; border-top-style: solid; border-top-color: black;"></td>
+<td style="text-align:left;">
+truncreg
+</td>
+<td style="text-align:left;">
+truncreg
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: green !important;">
+✓
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
   </div>
 

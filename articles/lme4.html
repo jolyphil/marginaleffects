@@ -106,16 +106,16 @@
 <p>Predict weight of each chick over time:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pred1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">fit1</span>,
-                     newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="va">ChickWeight</span><span class="op">$</span><span class="va">Chick</span>,
-                                       Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span><span class="op">)</span>
+                     newdata <span class="op">=</span> <span class="fu"><a href="../reference/datagrid.html">datagrid</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="va">ChickWeight</span><span class="op">$</span><span class="va">Chick</span>,
+                                        Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">pred1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">predicted</span>, level <span class="op">=</span> <span class="va">Chick</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Predicted weight"</span>, x <span class="op">=</span> <span class="st">"Time"</span>, title <span class="op">=</span> <span class="st">"Linear growth model"</span><span class="op">)</span>
 
 <span class="va">pred2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">fit2</span>,
-                     newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="va">ChickWeight</span><span class="op">$</span><span class="va">Chick</span>,
-                                       Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span><span class="op">)</span>
+                     newdata <span class="op">=</span> <span class="fu"><a href="../reference/datagrid.html">datagrid</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="va">ChickWeight</span><span class="op">$</span><span class="va">Chick</span>,
+                                        Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span><span class="op">)</span>
 
 <span class="va">p2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">pred2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">predicted</span>, level <span class="op">=</span> <span class="va">Chick</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
@@ -140,9 +140,9 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pred</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span>
     <span class="va">fit2</span>,
-    newdata <span class="op">=</span> <span class="fu"><a href="../reference/typical.html">typical</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="cn">NA</span>,
-                      Diet <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,
-                      Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span>,
+    newdata <span class="op">=</span> <span class="fu"><a href="../reference/datagrid.html">datagrid</a></span><span class="op">(</span>Chick <span class="op">=</span> <span class="cn">NA</span>,
+                       Diet <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,
+                       Time <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">21</span><span class="op">)</span>,
     include_random <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">pred</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Time</span>, y <span class="op">=</span> <span class="va">predicted</span>, ymin <span class="op">=</span> <span class="va">conf.low</span>, ymax <span class="op">=</span> <span class="va">conf.high</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>

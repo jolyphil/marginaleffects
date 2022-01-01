@@ -140,8 +140,7 @@ differ based on the model type, but will typically be a string such as:
 <span class="r-plt img"><img src="meffects-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># typical marginal effects</span></span>
-<span class="r-in"><span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>,</span>
-<span class="r-in">                newdata <span class="op">=</span> <span class="fu"><a href="typical.html">typical</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   rowid     type term         dydx   std.error      wt  hp</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1 response   hp  0.001165863 0.001753306 3.21725 100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2     2 response   hp  0.001894129 0.002415076 3.21725 110</span>
@@ -149,8 +148,7 @@ differ based on the model type, but will typically be a string such as:
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4     2 response   wt -0.331939457 0.436422720 3.21725 110</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># counterfactual average marginal effects</span></span>
-<span class="r-in"><span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>,</span>
-<span class="r-in">                newdata <span class="op">=</span> <span class="fu"><a href="counterfactual.html">counterfactual</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span>, grid.type <span class="op">=</span> <span class="st">"counterfactual"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     rowid     type term          dydx    std.error rowid_original    wt  hp</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1       1 response   hp  1.204245e-02 9.995994e-03              1 2.620 100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2       2 response   hp  1.415558e-02 1.080248e-02              2 2.875 100</span>

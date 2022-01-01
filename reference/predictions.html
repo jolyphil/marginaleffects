@@ -98,6 +98,31 @@ differ based on the model type, but will typically be a string such as:
     <p>A <code>data.frame</code> with a <code>predicted</code> column with predictions.</p>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Predicted outcomes for every row of the original dataset</span></span>
+<span class="r-in"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">pred</span> <span class="op">&lt;-</span> <span class="fu">predictions</span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pred</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       type predicted std.error conf.low conf.high  mpg  hp cyl</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 response  20.03819 1.2041405 17.57162  22.50476 21.0 110   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 response  20.03819 1.2041405 17.57162  22.50476 21.0 110   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 response  26.41451 0.9619738 24.44399  28.38502 22.8  93   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 response  20.03819 1.2041405 17.57162  22.50476 21.4 110   6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 response  15.92247 0.9924560 13.88952  17.95543 18.7 175   8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 response  20.15839 1.2186288 17.66214  22.65463 18.1 105   6</span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># Predicted outcomes for user-specified values of the regressors</span></span>
+<span class="r-in"><span class="fu">predictions</span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">120</span><span class="op">)</span>, cyl <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       type predicted std.error conf.low conf.high  hp cyl</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 response  26.24623 0.9856325 24.22726  28.26521 100   4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 response  25.76546 1.1096486 23.49245  28.03847 120   4</span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># Plot of predicted outcomes for different values of the regressor</span></span>
+<span class="r-in"><span class="fu"><a href="plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="st">"hp"</span><span class="op">)</span></span>
+<span class="r-plt img"><img src="predictions-1.png" alt="" width="700" height="433"></span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

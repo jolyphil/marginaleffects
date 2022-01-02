@@ -93,11 +93,11 @@ function.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">*</span> <span class="va">wt</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">gear</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       type          term    estimate  std.error  statistic      p.value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 response factor(gear)4  0.82900152 1.11804097  0.7414769 4.584043e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 response factor(gear)5  1.81649741 1.54760505  1.1737474 2.404962e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 response            hp -0.03533001 0.01044818 -3.3814514 7.210400e-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 response            wt -3.52592595 0.73201579 -4.8167349 1.459264e-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       type term contrast    estimate  std.error  statistic      p.value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 response gear    4 - 3  0.82900152 1.11804097  0.7414769 4.584043e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 response gear    5 - 3  1.81649741 1.54760505  1.1737474 2.404962e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 response   hp          -0.03533001 0.01044818 -3.3814514 7.210400e-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 response   wt          -3.52592595 0.73201579 -4.8167349 1.459264e-06</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      conf.low   conf.high</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 -1.36231851  3.02032155</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 -1.21675276  4.84974757</span>

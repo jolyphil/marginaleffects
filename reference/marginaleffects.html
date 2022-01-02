@@ -117,19 +117,19 @@ differ based on the model type, but will typically be a string such as:
 <span class="r-in"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu">marginaleffects</span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Average marginal effects </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       type Term    Effect Std. Error z value   Pr(&gt;|z|)     2.5 %    97.5 %</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 response   hp  0.002654   0.001941   1.367    0.17158 -0.001151  0.006458</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 response   wt -0.435727   0.102024  -4.271 1.9474e-05 -0.635690 -0.235764</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Term    Effect Std. Error z value   Pr(&gt;|z|)     2.5 %    97.5 %</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   hp  0.002654   0.001941   1.367    0.17158 -0.001151  0.006458</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   wt -0.435727   0.102024  -4.271 1.9474e-05 -0.635690 -0.235764</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Model type:  glm </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Prediction type:  response </span>
 <span class="r-in"><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       type term     estimate   std.error statistic      p.value    conf.low</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 response   hp  0.002653558 0.001940937  1.367153 1.715775e-01 -0.00115061</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 response   wt -0.435726799 0.102023796 -4.270835 1.947425e-05 -0.63568977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      conf.high</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0.006457725</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -0.235763833</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       type term contrast     estimate   std.error statistic      p.value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 response   hp           0.002653558 0.001940937  1.367153 1.715775e-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 response   wt          -0.435726799 0.102023796 -4.270835 1.947425e-05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      conf.low    conf.high</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -0.00115061  0.006457725</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -0.63568977 -0.235763833</span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   rowid     type term         dydx    std.error am  hp    wt</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1 response   hp 0.0069892293 0.0058823494  1 110 2.620</span>

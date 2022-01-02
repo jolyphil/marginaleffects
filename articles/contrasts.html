@@ -101,10 +101,10 @@
 <code class="sourceCode R"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
 <span class="co">#&gt; Average marginal effects </span>
-<span class="co">#&gt;       type         Term  Effect Std. Error z value   Pr(&gt;|z|)     2.5 % 97.5 %</span>
-<span class="co">#&gt; 1 response       amTRUE   2.560      1.298   1.973    0.04851   0.01675  5.103</span>
-<span class="co">#&gt; 2 response factor(cyl)6  -6.156      1.536  -4.009 6.1077e-05  -9.16608 -3.146</span>
-<span class="co">#&gt; 3 response factor(cyl)8 -10.068      1.452  -6.933 4.1147e-12 -12.91359 -7.222</span>
+<span class="co">#&gt;   Term     Contrast  Effect Std. Error z value   Pr(&gt;|z|)     2.5 % 97.5 %</span>
+<span class="co">#&gt; 1   am TRUE - FALSE   2.560      1.298   1.973    0.04851   0.01675  5.103</span>
+<span class="co">#&gt; 2  cyl        6 - 4  -6.156      1.536  -4.009 6.1077e-05  -9.16608 -3.146</span>
+<span class="co">#&gt; 3  cyl        8 - 4 -10.068      1.452  -6.933 4.1147e-12 -12.91359 -7.222</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Model type:  lm </span>
 <span class="co">#&gt; Prediction type:  response</span></code></pre></div>
@@ -138,10 +138,10 @@
 <p>We can now use the <code>newdata</code> argument of the <code>marginaleffects</code> function to compute contrasts for different values of the other regressors. As in <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">the marginal effects vignette</a>, the <code>datagrid</code> function can be handy. Since we only care about the logical <code>am</code> contrast, we use the <code>variables</code> to indicate the subset of results to report:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod_int</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/datagrid.html">datagrid</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="va">tmp</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span>, variables <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span>
-<span class="co">#&gt;   rowid     type   term     dydx std.error    am cyl</span>
-<span class="co">#&gt; 1     1 response amTRUE 1.441667  2.315925 FALSE   6</span>
-<span class="co">#&gt; 2     2 response amTRUE 5.175000  2.052848 FALSE   4</span>
-<span class="co">#&gt; 3     3 response amTRUE 0.350000  2.315925 FALSE   8</span></code></pre></div>
+<span class="co">#&gt;   rowid     type term     contrast     dydx std.error    am cyl</span>
+<span class="co">#&gt; 1     1 response   am TRUE - FALSE 1.441667  2.315925 FALSE   6</span>
+<span class="co">#&gt; 2     2 response   am TRUE - FALSE 5.175000  2.052848 FALSE   4</span>
+<span class="co">#&gt; 3     3 response   am TRUE - FALSE 0.350000  2.315925 FALSE   8</span></code></pre></div>
 <p>Once again, we obtain the same results with <code>emmeans</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">emm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/emmeans/man/emmeans.html" class="external-link">emmeans</a></span><span class="op">(</span><span class="va">mod_int</span>, specs <span class="op">=</span> <span class="st">"am"</span>, by <span class="op">=</span> <span class="st">"cyl"</span><span class="op">)</span>

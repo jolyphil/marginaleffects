@@ -91,13 +91,18 @@
 <div class="section level1">
 <h1 id="marginal-effects-and-contrasts">Marginal effects and contrasts<a class="anchor" aria-label="anchor" href="#marginal-effects-and-contrasts"></a>
 </h1>
-<p>This table shows the list of models supported by the <code>marginaleffects</code> function, and shows which numerical results – marginal effects (dY/dX) or standard errors (Std. Error) – have been checked against alternative software packages: Stata’s <code>margins</code> command and R’s <code>margins</code> package. Empty cells mean that the results of a model have not yet been validated against external software. Green cells indicate that the results of <a href="https://github.com/vincentarelbundock/marginaleffects/tree/main/tests/testthat" class="external-link">at least one model from the test suite</a> match to a reasonable tolerance. Red cells mean that <code>marginaleffects</code> results do <em>not</em> match those produced by alternative software packages. Obviously, caution is especially warranted when working with estimates from red cells.</p>
-<p>I am <em>very</em> eager to add support for new models. Feel free to file a request on Github or – even better – submit some code.</p>
-<p>Warning: When using <code>marginaleffects</code> with different models, you will probably have to adjust the <code>type</code> argument. Refer to the documentation of your modeling package to see what <code>type</code> argument is allowed in the <code>predict</code> function.</p>
+<p>This table shows the list of model types for which the <code>marginaleffects</code> function can compute slopes and contrasts. There are three main alternative software packages to compute such slopes (1) <code>Stata</code>’s <code>margins</code> command, (2) <code>R</code>’s <code><a href="https://rdrr.io/pkg/margins/man/margins.html" class="external-link">margins::margins</a></code> function, and (3) <code>R</code>’s <code><a href="https://rdrr.io/pkg/emmeans/man/emtrends.html" class="external-link">emmeans::emtrends</a></code> function. The <a href="https://github.com/vincentarelbundock/marginaleffects/tree/main/tests/testthat" class="external-link">test suite hosted on Github</a> compares the numerical equivalence of results produced by <code>marginaleffects</code> to those produced by all 3 alternative software packages:</p>
+<ul>
+<li>✓: a green check means that the results of at least one model are equal to a reasonable tolerance.</li>
+<li>✖: a red cross means that the results are <em>not</em> identical, and that extra caution is warranted.</li>
+<li>U: a grey U means that computing slopes for a model type is <em>unsupported</em> by alternative packages, but supported by <code>marginaleffects</code>.</li>
+<li>An empty cell means means that no comparison has been made yet.</li>
+</ul>
+<p>I am <em>very</em> eager to add support for new models. Feel free to file a request or submit code on Github.</p>
 <table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="empty-cells: hide;border-bottom:hidden;" colspan="4">
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="2">
 </th>
 <th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="6">
 <div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
@@ -106,11 +111,9 @@ Numerical equivalence
 </th>
 </tr>
 <tr>
-<th style="empty-cells: hide;border-bottom:hidden;" colspan="2">
-</th>
 <th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
 <div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
-Supported
+Supported by marginaleffects
 </div>
 </th>
 <th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
@@ -135,12 +138,6 @@ Package
 </th>
 <th style="text-align:left;">
 Function
-</th>
-<th style="text-align:center;">
-dY/dX
-</th>
-<th style="text-align:center;">
-SE
 </th>
 <th style="text-align:center;">
 dY/dX
@@ -188,24 +185,12 @@ lm
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 glm
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -245,12 +230,6 @@ ivreg
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 U
 </td>
@@ -263,12 +242,6 @@ U
 </td>
 <td style="text-align:left;">
 tobit
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -296,12 +269,6 @@ aod
 <td style="text-align:left;">
 betabin
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -344,12 +311,6 @@ betareg
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -357,12 +318,6 @@ bife
 </td>
 <td style="text-align:left;">
 bife
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -388,12 +343,6 @@ brglm2
 <td style="text-align:left;">
 brglmFit
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -417,12 +366,6 @@ brglmFit
 <td style="text-align:left;">
 brnb
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -445,12 +388,6 @@ U
 </td>
 <td style="text-align:left;">
 brmultinom
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -476,12 +413,6 @@ brms
 <td style="text-align:left;">
 brm
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -501,12 +432,6 @@ crch
 </td>
 <td style="text-align:left;">
 crch
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -530,12 +455,6 @@ U
 </td>
 <td style="text-align:left;">
 hxlr
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -570,12 +489,6 @@ lm_robust
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 U
 </td>
@@ -591,12 +504,6 @@ U
 </td>
 <td style="text-align:left;">
 iv_robust
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -630,12 +537,6 @@ feols
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 U
 </td>
@@ -654,12 +555,6 @@ U
 </td>
 <td style="text-align:left;">
 feglm
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -690,12 +585,6 @@ fepois
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 U
 </td>
@@ -715,12 +604,6 @@ gam
 </td>
 <td style="text-align:left;">
 gam
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -746,12 +629,6 @@ geepack
 <td style="text-align:left;">
 geeglm
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -776,12 +653,6 @@ glmx
 <td style="text-align:left;">
 glmx
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -803,12 +674,6 @@ ivreg
 </td>
 <td style="text-align:left;">
 ivreg
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -854,10 +719,6 @@ lmer
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: grey !important;">
-</td>
-<td style="text-align:center;color: grey !important;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -883,10 +744,6 @@ glmer
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: grey !important;">
-</td>
-<td style="text-align:center;color: grey !important;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -894,23 +751,21 @@ glmer
 <td style="text-align:left;">
 glmer.nb
 </td>
+<td style="text-align:center;color: grey !important;">
+</td>
+<td style="text-align:center;color: grey !important;">
+</td>
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: grey !important;">
+<td style="text-align:center;color: green !important;">
+✓
 </td>
-<td style="text-align:center;color: grey !important;">
-</td>
-<td style="text-align:center;color: grey !important;">
-</td>
-<td style="text-align:center;color: grey !important;">
-</td>
-<td style="text-align:center;color: grey !important;">
-</td>
-<td style="text-align:center;color: grey !important;">
+<td style="text-align:center;color: green !important;">
+✓
 </td>
 </tr>
 <tr>
@@ -920,19 +775,15 @@ MASS
 <td style="text-align:left;">
 glmmPQL
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
+U
 </td>
 <td style="text-align:center;color: grey !important;">
+U
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -965,24 +816,12 @@ glm.nb
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
 polr
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -1009,12 +848,6 @@ U
 <td style="text-align:left;">
 rlm
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -1038,12 +871,6 @@ mgcv
 </td>
 <td style="text-align:left;">
 gam
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -1069,12 +896,6 @@ nlme
 <td style="text-align:left;">
 gls
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -1098,12 +919,6 @@ nnet
 </td>
 <td style="text-align:left;">
 multinom
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -1137,12 +952,6 @@ clm
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 U
 </td>
@@ -1162,12 +971,6 @@ plm
 </td>
 <td style="text-align:left;">
 plm
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -1192,12 +995,6 @@ pscl
 </td>
 <td style="text-align:left;">
 hurdle
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -1231,12 +1028,6 @@ zeroinfl
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 U
 </td>
@@ -1253,12 +1044,6 @@ quantreg
 </td>
 <td style="text-align:left;">
 rq
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -1286,12 +1071,6 @@ rms
 <td style="text-align:left;">
 lrm
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -1316,12 +1095,6 @@ robustbase
 <td style="text-align:left;">
 glmrob
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -1344,12 +1117,6 @@ U
 </td>
 <td style="text-align:left;">
 lmrob
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -1374,12 +1141,6 @@ rstanarm
 </td>
 <td style="text-align:left;">
 stan_glm
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -1411,12 +1172,6 @@ speedglm
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 </td>
 <td style="text-align:center;color: grey !important;">
@@ -1433,12 +1188,6 @@ U
 </td>
 <td style="text-align:left;">
 speedlm
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓
@@ -1463,12 +1212,6 @@ survey
 </td>
 <td style="text-align:left;">
 svyglm
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: grey !important;">
 </td>
@@ -1500,12 +1243,6 @@ coxph
 <td style="text-align:center;color: green !important;">
 ✓
 </td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
 <td style="text-align:center;color: grey !important;">
 U
 </td>
@@ -1525,12 +1262,6 @@ truncreg
 </td>
 <td style="text-align:left;">
 truncreg
-</td>
-<td style="text-align:center;color: green !important;">
-✓
-</td>
-<td style="text-align:center;color: green !important;">
-✓
 </td>
 <td style="text-align:center;color: green !important;">
 ✓

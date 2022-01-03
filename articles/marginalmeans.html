@@ -226,9 +226,9 @@ Marginal means of am
 </h1>
 <p>The <code>summary</code>, <code>tidy</code>, and <code>glance</code> functions are also available to summarize and manipulate the results:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">me</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">mm</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span>
 
-<span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">mm</span><span class="op">)</span>
 <span class="co">#&gt;   term group estimate std.error statistic p.value conf.low conf.high</span>
 <span class="co">#&gt; 1  cyl     4 22.88479 1.3566479  16.86863       0 20.22581  25.54378</span>
 <span class="co">#&gt; 2  cyl     6 18.96022 1.0729360  17.67134       0 16.85730  21.06313</span>
@@ -236,13 +236,13 @@ Marginal means of am
 <span class="co">#&gt; 4   am FALSE 18.31987 0.7853925  23.32575       0 16.78053  19.85921</span>
 <span class="co">#&gt; 5   am  TRUE 22.47772 0.8343346  26.94090       0 20.84246  24.11299</span>
 
-<span class="fu"><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">glance</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="fu"><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">glance</a></span><span class="op">(</span><span class="va">mm</span><span class="op">)</span>
 <span class="co">#&gt;   r.squared adj.r.squared   sigma statistic      p.value df    logLik      AIC</span>
 <span class="co">#&gt; 1  0.824875     0.7989306 2.70253   31.7939 7.400614e-10  4 -74.50167 161.0033</span>
 <span class="co">#&gt;        BIC deviance df.residual nobs       F</span>
 <span class="co">#&gt; 1 169.7978  197.199          27   32 31.7939</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">me</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mm</span><span class="op">)</span>
 <span class="co">#&gt; Estimated marginal means </span>
 <span class="co">#&gt;   Term Group  Mean Std. Error z value   Pr(&gt;|z|) 2.5 % 97.5 %</span>
 <span class="co">#&gt; 1  cyl     4 22.88     1.3566   16.87 &lt; 2.22e-16 20.23  25.54</span>
@@ -257,7 +257,7 @@ Marginal means of am
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://vincentarelbundock.github.io/modelsummary/" class="external-link">"modelsummary"</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html" class="external-link">modelsummary</a></span><span class="op">(</span><span class="va">me</span>,
+<span class="fu"><a href="https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html" class="external-link">modelsummary</a></span><span class="op">(</span><span class="va">mm</span>,
              title <span class="op">=</span> <span class="st">"Estimated Marginal Means"</span>,
              estimate <span class="op">=</span> <span class="st">"{estimate} ({std.error}){stars}"</span>,
              statistic <span class="op">=</span> <span class="cn">NULL</span>,
@@ -424,14 +424,12 @@ F
 <span class="va">void</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/capture.output.html" class="external-link">capture.output</a></span><span class="op">(</span><span class="op">{</span>
     <span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/nnet/man/multinom.html" class="external-link">multinom</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">.</span>, <span class="va">dat</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span></code></pre></div>
-<p>Try to compute marginal means, but realize that you are trying to get marginal means for the wrong type of prediction:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></code></pre></div>
 <p>Try to compute marginal means, but realize that your grid won’t fit in memory:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, type <span class="op">=</span> <span class="st">"probs"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>, type <span class="op">=</span> <span class="st">"probs"</span><span class="op">)</span>
+<span class="co">#&gt; Error in typical(model = structure(list(n = c(43, 0, 3), nunits = 47L, : You are trying to create a prediction grid with more than 1 billion rows, which is likely to exceed the memory and computational power available on your local machine. Presumably this is because you are considering many variables with many levels. All of the functions in the `marginaleffects` package include arguments to specify a restricted list of variables over which to create a prediction grid.</span></code></pre></div>
 <p>Use the <code>variables</code> and <code>variables_grid</code> arguments to compute marginal means over a more reasonably sized grid:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/marginalmeans.html">marginalmeans</a></span><span class="op">(</span><span class="va">mod</span>,
               type <span class="op">=</span> <span class="st">"probs"</span>,
               variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"V1"</span><span class="op">)</span>,

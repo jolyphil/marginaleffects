@@ -95,8 +95,14 @@ differ based on the model type, but will typically be a string such as:
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code>data.frame</code> with a <code>predicted</code> column with predictions.</p>
-    </div>
+    <p>A <code>data.frame</code> with one row per observation and several columns:</p><ul><li><p><code>rowid</code>: row number of the <code>newdata</code> data frame</p></li>
+<li><p><code>type</code>: prediction type, as defined by the <code>type</code> argument</p></li>
+<li><p><code>group</code>: (optional) value of the grouped outcome (e.g., categorical outcome models)</p></li>
+<li><p><code>predicted</code>: predicted outcome</p></li>
+<li><p><code>std.error</code>: standard errors computed by the <code><a href="https://easystats.github.io/insight/reference/get_predicted.html" class="external-link">insight::get_predicted</a></code> function or, if unavailable, via <code>marginaleffects</code> delta method functionality.</p></li>
+<li><p><code>conf.low</code>: lower bound of the confidence or highest density interval (for bayesian models)</p></li>
+<li><p><code>conf.high</code>: upper bound of the confidence or highest density interval (for bayesian models)</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>

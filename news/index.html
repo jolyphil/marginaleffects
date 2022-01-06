@@ -55,9 +55,11 @@
 
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.0.9000" id="marginaleffects-0209000">marginaleffects 0.2.0.9000<a class="anchor" aria-label="anchor" href="#marginaleffects-0209000"></a></h2>
-<p>Breaking change:</p>
+<p>Breaking changes:</p>
 <ul><li>
 <code>predictions</code> returns predictions for every observation in the original dataset instead of <code>newdata=datagrid()</code>.</li>
+<li>
+<code>marginalmeans</code> objects have new column names, as do the corresponding <code>tidy</code> and <code>summary</code> outputs.</li>
 </ul><p>Support for new models and packages:</p>
 <ul><li><code><a href="https://rdrr.io/pkg/brms/man/brm.html" class="external-link">brms::brm</a></code></li>
 <li><code>rstanarm::stanglm</code></li>
@@ -66,6 +68,8 @@
 </ul><p>New function:</p>
 <ul><li>
 <code>datagrid</code> supersedes <code>typical</code> and <code>counterfactual</code> with the <code>grid.type</code> argument. The <code>typical</code> and <code>counterfactual</code> functions will remain available and exported, but their use is not encouraged.</li>
+</ul><p><code>marginalmeans</code>:</p>
+<ul><li>Standard errors are now computed using the delta method for</li>
 </ul><p>Documentation:</p>
 <ul><li>Vignette on Bayesian models with <code>brms</code>
 </li>

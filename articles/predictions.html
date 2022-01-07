@@ -117,20 +117,20 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"hp"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;        type predicted std.error  conf.low conf.high cyl  hp</span>
-<span class="co">#&gt; 1  response  21.43244 1.6083883 18.137810  24.72708   6  52</span>
-<span class="co">#&gt; 2  response  27.40010 1.0595843 25.229639  29.57056   4  52</span>
+<span class="co">#&gt; 1  response  27.40010 1.0595843 25.229639  29.57056   4  52</span>
+<span class="co">#&gt; 2  response  21.43244 1.6083883 18.137810  24.72708   6  52</span>
 <span class="co">#&gt; 3  response  18.87925 2.5641372 13.626851  24.13165   8  52</span>
-<span class="co">#&gt; 4  response  20.37474 1.2562453 17.801433  22.94804   6  96</span>
-<span class="co">#&gt; 5  response  26.34239 0.9707174 24.353966  28.33081   4  96</span>
+<span class="co">#&gt; 4  response  26.34239 0.9707174 24.353966  28.33081   4  96</span>
+<span class="co">#&gt; 5  response  20.37474 1.2562453 17.801433  22.94804   6  96</span>
 <span class="co">#&gt; 6  response  17.82154 1.9364843 13.854831  21.78825   8  96</span>
-<span class="co">#&gt; 7  response  19.72569 1.1892191 17.289682  22.16169   6 123</span>
-<span class="co">#&gt; 8  response  25.69334 1.1343184 23.369796  28.01689   4 123</span>
+<span class="co">#&gt; 7  response  25.69334 1.1343184 23.369796  28.01689   4 123</span>
+<span class="co">#&gt; 8  response  19.72569 1.1892191 17.289682  22.16169   6 123</span>
 <span class="co">#&gt; 9  response  17.17249 1.5721502 13.952087  20.39289   8 123</span>
-<span class="co">#&gt; 10 response  18.35547 1.4848895 15.313815  21.39713   6 180</span>
-<span class="co">#&gt; 11 response  24.32313 1.7749372 20.687334  27.95892   4 180</span>
+<span class="co">#&gt; 10 response  24.32313 1.7749372 20.687334  27.95892   4 180</span>
+<span class="co">#&gt; 11 response  18.35547 1.4848895 15.313815  21.39713   6 180</span>
 <span class="co">#&gt; 12 response  15.80228 0.9537705 13.848567  17.75599   8 180</span>
-<span class="co">#&gt; 13 response  14.62945 3.4865450  7.487590  21.77132   6 335</span>
-<span class="co">#&gt; 14 response  20.59711 4.0024363 12.398490  28.79573   4 335</span>
+<span class="co">#&gt; 13 response  20.59711 4.0024363 12.398490  28.79573   4 335</span>
+<span class="co">#&gt; 14 response  14.62945 3.4865450  7.487590  21.77132   6 335</span>
 <span class="co">#&gt; 15 response  12.07626 2.1126445  7.748702  16.40381   8 335</span></code></pre></div>
 <p>The <code>data.frame</code> produced by <code>predictions</code> is “tidy”, which makes it easy to manipulate with other <code>R</code> packages and functions:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -162,10 +162,10 @@ cyl
 hp
 </th>
 <th style="text-align:right;">
-6
+4
 </th>
 <th style="text-align:right;">
-4
+6
 </th>
 <th style="text-align:right;">
 8
@@ -178,10 +178,10 @@ hp
 52
 </td>
 <td style="text-align:right;">
-21.43244
+27.40010
 </td>
 <td style="text-align:right;">
-27.40010
+21.43244
 </td>
 <td style="text-align:right;">
 18.87925
@@ -192,10 +192,10 @@ hp
 96
 </td>
 <td style="text-align:right;">
-20.37474
+26.34239
 </td>
 <td style="text-align:right;">
-26.34239
+20.37474
 </td>
 <td style="text-align:right;">
 17.82154
@@ -206,10 +206,10 @@ hp
 123
 </td>
 <td style="text-align:right;">
-19.72569
+25.69334
 </td>
 <td style="text-align:right;">
-25.69334
+19.72569
 </td>
 <td style="text-align:right;">
 17.17249
@@ -220,10 +220,10 @@ hp
 180
 </td>
 <td style="text-align:right;">
-18.35547
+24.32313
 </td>
 <td style="text-align:right;">
-24.32313
+18.35547
 </td>
 <td style="text-align:right;">
 15.80228
@@ -234,10 +234,10 @@ hp
 335
 </td>
 <td style="text-align:right;">
-14.62945
+20.59711
 </td>
 <td style="text-align:right;">
-20.59711
+14.62945
 </td>
 <td style="text-align:right;">
 12.07626

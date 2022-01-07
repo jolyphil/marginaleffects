@@ -107,8 +107,13 @@ differ based on the model type, but will typically be a string such as:
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data.frame of marginal effect estimates with one row per observation per marginal effect.</p>
-    </div>
+    <p>A <code>data.frame</code> with one row per observation (per term/group) and several columns:</p><ul><li><p><code>rowid</code>: row number of the <code>newdata</code> data frame</p></li>
+<li><p><code>type</code>: prediction type, as defined by the <code>type</code> argument</p></li>
+<li><p><code>group</code>: (optional) value of the grouped outcome (e.g., categorical outcome models)</p></li>
+<li><p><code>term</code>: the variable whose marginal effect is computed</p></li>
+<li><p><code>dydx</code>: marginal effect of the term on the outcome for a given combination of regressor values</p></li>
+<li><p><code>std.error</code>: standard errors computed by via the delta method.</p></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>

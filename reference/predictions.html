@@ -126,7 +126,7 @@ Compute model-adjusted predictions (fitted values) for a "grid" of regressor val
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Predicted outcomes for every row of the original dataset</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># Adjusted Prediction for every row of the original dataset</span></span>
 <span class="r-in"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">pred</span> <span class="op">&lt;-</span> <span class="fu">predictions</span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pred</span><span class="op">)</span></span>
@@ -138,17 +138,13 @@ Compute model-adjusted predictions (fitted values) for a "grid" of regressor val
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 response  15.92247 0.9924560 13.88952  17.95543 18.7 175   8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 response  20.15839 1.2186288 17.66214  22.65463 18.1 105   6</span>
 <span class="r-in"></span>
-<span class="r-in"><span class="co"># Predicted outcomes for user-specified values of the regressors</span></span>
+<span class="r-in"><span class="co"># Adjusted Predictions at User-Specified Values of the Regressors</span></span>
 <span class="r-in"><span class="fu">predictions</span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">120</span><span class="op">)</span>, cyl <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       type predicted std.error conf.low conf.high  hp cyl</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 response  26.24623 0.9856325 24.22726  28.26521 100   4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 response  25.76546 1.1096486 23.49245  28.03847 120   4</span>
 <span class="r-in"></span>
-<span class="r-in"><span class="co"># Plot of predicted outcomes for different values of the regressor</span></span>
-<span class="r-in"><span class="fu"><a href="plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="st">"hp"</span><span class="op">)</span></span>
-<span class="r-plt img"><img src="predictions-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Average Adjusted Predictions</span></span>
+<span class="r-in"><span class="co"># Average Adjusted Predictions (AAP)</span></span>
 <span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘dplyr’</span>
@@ -173,6 +169,10 @@ Compute model-adjusted predictions (fitted values) for a "grid" of regressor val
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     0      18.1      1.54</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     1      22.8      1.41</span>
+<span class="r-in"></span>
+<span class="r-in"><span class="co"># Conditional Adjusted Predictions</span></span>
+<span class="r-in"><span class="fu"><a href="plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="st">"hp"</span><span class="op">)</span></span>
+<span class="r-plt img"><img src="predictions-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>

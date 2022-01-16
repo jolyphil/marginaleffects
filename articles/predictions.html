@@ -105,14 +105,14 @@
 <span class="co">#&gt; 5 response  15.92247 0.9924560 13.88952  17.95543 18.7 175   8</span>
 <span class="co">#&gt; 6 response  20.15839 1.2186288 17.66214  22.65463 18.1 105   6</span></code></pre></div>
 <p>In many cases, this is too limiting, and researchers will want to specify a grid of “typical” values over which to compute adjusted predictions.</p>
-<div class="section level1">
-<h1 id="predictions-over-a-typical-data-grid">Predictions over a “typical” data grid<a class="anchor" aria-label="anchor" href="#predictions-over-a-typical-data-grid"></a>
-</h1>
-<p>There are two main ways to select the reference grid over which we want to compute adjusted predictions. The first is using the <code>variables</code> argument. The second is with the <code>newdata</code> argument and the <a href="https://vincentarelbundock.github.io/marginaleffects/reference/datagrid.html" class="external-link"><code>datagrid()</code> function</a> that we already introduced in the <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">marginal effects vignette.</a></p>
 <div class="section level2">
-<h2 id="variables-levels-and-tukeys-5-numbers">
-<code>variables</code>: Levels and Tukey’s 5 numbers<a class="anchor" aria-label="anchor" href="#variables-levels-and-tukeys-5-numbers"></a>
+<h2 id="predictions-over-a-typical-data-grid">Predictions over a “typical” data grid<a class="anchor" aria-label="anchor" href="#predictions-over-a-typical-data-grid"></a>
 </h2>
+<p>There are two main ways to select the reference grid over which we want to compute adjusted predictions. The first is using the <code>variables</code> argument. The second is with the <code>newdata</code> argument and the <a href="https://vincentarelbundock.github.io/marginaleffects/reference/datagrid.html" class="external-link"><code>datagrid()</code> function</a> that we already introduced in the <a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link">marginal effects vignette.</a></p>
+<div class="section level3">
+<h3 id="variables-levels-and-tukeys-5-numbers">
+<code>variables</code>: Levels and Tukey’s 5 numbers<a class="anchor" aria-label="anchor" href="#variables-levels-and-tukeys-5-numbers"></a>
+</h3>
 <p>The <code>variables</code> argument is a handy shortcut to create grids of predictors. Each of the levels of factor/logical/character variables listed in the <code>variables</code> argument will be displayed. For numeric variables, <code>predictions</code> will compute adjusted predictions at Tukey’s 5 summary numbers. All other variables will be set at their means or modes.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cyl"</span>, <span class="st">"hp"</span><span class="op">)</span><span class="op">)</span>
@@ -246,10 +246,10 @@ hp
 </tbody>
 </table>
 </div>
-<div class="section level2">
-<h2 id="newdata-and-datagrid">
+<div class="section level3">
+<h3 id="newdata-and-datagrid">
 <code>newdata</code> and <code>datagrid</code><a class="anchor" aria-label="anchor" href="#newdata-and-datagrid"></a>
-</h2>
+</h3>
 <p>A second strategy to construct grids of predictors for adjusted predictions is to combine the <code>newdata</code> argument and the <code>datagrid</code> function. Recall that this function creates a “typical” dataset with all variables at their means or modes, except those we explicitly define:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/datagrid.html">datagrid</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">6</span>, <span class="fl">8</span><span class="op">)</span>, model <span class="op">=</span> <span class="va">mod</span><span class="op">)</span>
@@ -270,10 +270,10 @@ hp
 <span class="co">#&gt; 3 response  16.60307  1.278754 13.98366  19.22248 146.6875   8</span></code></pre></div>
 <p>Users can change the summary function used to summarize each type of variables using the <code>FUN.numeric</code>, <code>FUN.factor</code>, and related arguments, for example substituting the mean for the median.</p>
 </div>
-<div class="section level2">
-<h2 id="counterfactual-data-grid">
+<div class="section level3">
+<h3 id="counterfactual-data-grid">
 <code>counterfactual</code> data grid<a class="anchor" aria-label="anchor" href="#counterfactual-data-grid"></a>
-</h2>
+</h3>
 <p>An alternative approach to construct grids of predictors is to use <code>grid.type = "counterfactual"</code> argument value. This will duplicate the <em>whole</em> dataset, with the different values specified by the user.</p>
 <p>For example, the <code>mtcars</code> dataset has 32 rows. This command produces a new dataset with 64 rows, with each row of the original dataset duplicated with the two values of the <code>am</code> variable supplied (0 and 1):</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -300,9 +300,9 @@ hp
 <p>In this graph, each dot represents the predicted probability that <code>vs=1</code> for one observation of the dataset, in the counterfactual worlds where <code>am</code> is either 0 or 1.</p>
 </div>
 </div>
-<div class="section level1">
-<h1 id="average-adjusted-predictions-aap">Average Adjusted Predictions (AAP)<a class="anchor" aria-label="anchor" href="#average-adjusted-predictions-aap"></a>
-</h1>
+<div class="section level2">
+<h2 id="average-adjusted-predictions-aap">Average Adjusted Predictions (AAP)<a class="anchor" aria-label="anchor" href="#average-adjusted-predictions-aap"></a>
+</h2>
 <p>An “Average Adjusted Prediction” is the outcome of a two step process:</p>
 <ol style="list-style-type: decimal">
 <li>Create a new dataset with each of the original regressor values, but fixing some regressors to values of interest.</li>
@@ -325,18 +325,18 @@ hp
 <span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     0     0.526    0.042<span style="text-decoration: underline;">8</span></span>
 <span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     1     0.330    0.074<span style="text-decoration: underline;">0</span></span></code></pre></div>
 </div>
-<div class="section level1">
-<h1 id="adjusted-prediction-at-the-mean-apm">Adjusted Prediction at the Mean (APM)<a class="anchor" aria-label="anchor" href="#adjusted-prediction-at-the-mean-apm"></a>
-</h1>
+<div class="section level2">
+<h2 id="adjusted-prediction-at-the-mean-apm">Adjusted Prediction at the Mean (APM)<a class="anchor" aria-label="anchor" href="#adjusted-prediction-at-the-mean-apm"></a>
+</h2>
 <p>Some analysts may want to calculate an “Adjusted Prediction at the Mean,” that is, the predicted outcome when all the regressors are held at their mean (or mode). To achieve this, we use the <code>datagrid</code> function. By default, this function produces a grid of data with regressors at their means or modes, so all we need to do to get the APM is:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="../reference/datagrid.html">datagrid</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt;       type  predicted  std.error    conf.low conf.high       hp      am</span>
 <span class="co">#&gt; 1 response 0.06308965 0.08662801 0.003794253  0.543491 146.6875 0.40625</span></code></pre></div>
 </div>
-<div class="section level1">
-<h1 id="plot-conditional-predictions">Plot: Conditional Predictions<a class="anchor" aria-label="anchor" href="#plot-conditional-predictions"></a>
-</h1>
+<div class="section level2">
+<h2 id="plot-conditional-predictions">Plot: Conditional Predictions<a class="anchor" aria-label="anchor" href="#plot-conditional-predictions"></a>
+</h2>
 <p>First, we download the <code>ggplot2movies</code> dataset from the <a href="https://vincentarelbundock.github.io/Rdatasets/articles/data.html" class="external-link">RDatasets archive</a>. Then, we create a variable called <code>certified_fresh</code> for movies with a rating of at least 8. Finally, we discard some outliers and fit a logistic regression model:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span>
@@ -373,9 +373,9 @@ hp
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">type</span>, scales <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span></code></pre></div>
 <p><img src="predictions_files/figure-html/unnamed-chunk-15-1.png" width="576"></p>
 </div>
-<div class="section level1">
-<h1 id="prediction-types">Prediction types<a class="anchor" aria-label="anchor" href="#prediction-types"></a>
-</h1>
+<div class="section level2">
+<h2 id="prediction-types">Prediction types<a class="anchor" aria-label="anchor" href="#prediction-types"></a>
+</h2>
 <p>The <code>predictions</code> function computes model-adjusted means on the scale of the output of the <code>predict(model)</code> function. By default, <code>predict</code> produces predictions on the <code>"response"</code> scale, so the adjusted predictions should be interpreted on that scale. However, users can pass a string or a vector of strings to the <code>type</code> argument, and <code>predictions</code> will consider different outcomes.</p>
 <p>Typical values include <code>"response"</code> and <code>"link"</code>, but users should refer to the documentation of the <code>predict</code> of the package they used to fit the model to know what values are allowable. documentation.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
@@ -417,7 +417,7 @@ hp
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>

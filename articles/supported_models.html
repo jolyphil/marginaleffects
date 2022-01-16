@@ -83,14 +83,14 @@
 
     
     
-<div class="section level1">
-<h1 id="adjusted-predictions-and-marginal-means">Adjusted predictions and marginal means<a class="anchor" aria-label="anchor" href="#adjusted-predictions-and-marginal-means"></a>
-</h1>
+<div class="section level2">
+<h2 id="adjusted-predictions-and-marginal-means">Adjusted predictions and marginal means<a class="anchor" aria-label="anchor" href="#adjusted-predictions-and-marginal-means"></a>
+</h2>
 <p>Under the hood, <code>marginaleffects</code>’s <code>predictions</code> and <code>marginalmeans</code> functions use the <code>insight</code> package to retrieve adjusted predictions from a wide variety of models. Currently, <code>insight</code> <a href="https://easystats.github.io/insight/#list-of-supported-models-by-class" class="external-link">supports very many model types</a>, and most should work out-of-the-box with the <code>predictions</code> function. If you run into problems, do not hesitate to <a href="https://github.com/vincentarelbundock/marginaleffects/issues" class="external-link">report them on Github or via email.</a></p>
 </div>
-<div class="section level1">
-<h1 id="marginal-effects-and-contrasts">Marginal effects and contrasts<a class="anchor" aria-label="anchor" href="#marginal-effects-and-contrasts"></a>
-</h1>
+<div class="section level2">
+<h2 id="marginal-effects-and-contrasts">Marginal effects and contrasts<a class="anchor" aria-label="anchor" href="#marginal-effects-and-contrasts"></a>
+</h2>
 <p>This table shows the list of model types for which the <code>marginaleffects</code> function can compute slopes and contrasts. There are three main alternative software packages to compute such slopes (1) <code>Stata</code>’s <code>margins</code> command, (2) <code>R</code>’s <code><a href="https://rdrr.io/pkg/margins/man/margins.html" class="external-link">margins::margins</a></code> function, and (3) <code>R</code>’s <code><a href="https://rdrr.io/pkg/emmeans/man/emtrends.html" class="external-link">emmeans::emtrends</a></code> function. The <a href="https://github.com/vincentarelbundock/marginaleffects/tree/main/tests/testthat" class="external-link">test suite hosted on Github</a> compares the numerical equivalence of results produced by <code>marginaleffects</code> to those produced by all 3 alternative software packages:</p>
 <ul>
 <li>✓: a green check means that the results of at least one model are equal to a reasonable tolerance.</li>
@@ -1411,7 +1411,7 @@ U
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>

@@ -86,9 +86,9 @@
 <blockquote>
 <p>The difference between two adjusted predictions, calculated for meaningfully different regressor values (e.g., College graduates vs. Others).</p>
 </blockquote>
-<div class="section level1">
-<h1 id="simple-contrasts">Simple contrasts<a class="anchor" aria-label="anchor" href="#simple-contrasts"></a>
-</h1>
+<div class="section level2">
+<h2 id="simple-contrasts">Simple contrasts<a class="anchor" aria-label="anchor" href="#simple-contrasts"></a>
+</h2>
 <p>Consider a simple model with a logical and a factor variable:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/marginaleffects/" class="external-link">marginaleffects</a></span><span class="op">)</span>
@@ -129,9 +129,9 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Results are averaged over the levels of: cyl</span></code></pre></div>
 </div>
-<div class="section level1">
-<h1 id="contrasts-with-interactions">Contrasts with interactions<a class="anchor" aria-label="anchor" href="#contrasts-with-interactions"></a>
-</h1>
+<div class="section level2">
+<h2 id="contrasts-with-interactions">Contrasts with interactions<a class="anchor" aria-label="anchor" href="#contrasts-with-interactions"></a>
+</h2>
 <p>In models with multiplicative interactions, the contrasts of a categorical variable will depend on the values of the interacted variable:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mod_int</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">am</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span>, <span class="va">tmp</span><span class="op">)</span></code></pre></div>
@@ -158,9 +158,9 @@
 <span class="co">#&gt;  contrast     estimate   SE df t.ratio p.value</span>
 <span class="co">#&gt;  TRUE - FALSE     0.35 2.32 26   0.151  0.8810</span></code></pre></div>
 </div>
-<div class="section level1">
-<h1 id="complex-queries">Complex queries<a class="anchor" aria-label="anchor" href="#complex-queries"></a>
-</h1>
+<div class="section level2">
+<h2 id="complex-queries">Complex queries<a class="anchor" aria-label="anchor" href="#complex-queries"></a>
+</h2>
 <p>As described above, the <code>marginaleffects</code> package includes limited support to compute contrasts. Users who require more powerful features are encouraged to consider alternative packages such as <a href="https://cran.r-project.org/package=emmeans" class="external-link">emmeans</a>, <a href="https://github.com/easystats/modelbased" class="external-link">modelbased</a>, or <a href="https://strengejacke.github.io/ggeffects/index.html" class="external-link">ggeffects.</a> These packages offer useful features such as automatic back-transforms, p value correction for multiple comparisons, and more.</p>
 </div>
   </div>
@@ -182,7 +182,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>

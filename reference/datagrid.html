@@ -84,7 +84,7 @@ Examples below.)</p></dd>
 <dd><p>data.frame (one and only one of the <code>model</code> and <code>newdata</code> arguments</p></dd>
 <dt>grid.type</dt>
 <dd><p>character</p><ul><li><p>"typical": variables whose values are not explicitly specified by the user in <code>...</code> are set to their mean or mode, or to the output of the functions supplied to <code>FUN.type</code> arguments.</p></li>
-<li><p>"counterfactual": the entire dataset is duplicated for each combination of the variable values specified in <code>...</code>.</p></li>
+<li><p>"counterfactual": the entire dataset is duplicated for each combination of the variable values specified in <code>...</code>. Variables not explicitly supplied to <code>datagrid()</code> are set to their observed values in the original dataset.</p></li>
 </ul></dd>
 <dt>FUN.character</dt>
 <dd><p>the function to be applied to character variables.</p></dd>

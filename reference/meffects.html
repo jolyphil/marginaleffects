@@ -157,16 +157,23 @@ be found on the package website:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1 response   hp  0.008523328 0.007847339 146.6875 3.21725</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2     1 response   wt -1.746094406 1.587749850 146.6875 3.21725</span>
 <span class="r-in"></span>
-<span class="r-in"><span class="co"># Marginal Effect at User-Specified Values (Counterfactual)</span></span>
-<span class="r-in"><span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="co"># Marginal Effect at User-Specified Values</span></span>
+<span class="r-in"><span class="co"># Variables not explicitly included in `datagrid()` are held at their means</span></span>
+<span class="r-in"><span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>,</span>
+<span class="r-in">                newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   rowid     type term         dydx   std.error      wt  hp</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1 response   hp  0.001165863 0.001753306 3.21725 100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2     2 response   hp  0.001894129 0.002415076 3.21725 110</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3     1 response   wt -0.194911082 0.307492808 3.21725 100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4     2 response   wt -0.331939457 0.436422720 3.21725 110</span>
 <span class="r-in"></span>
-<span class="r-in"><span class="co"># Marginal Effects at User-Specified Values (Counterfactual)</span></span>
-<span class="r-in"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span>, grid.type <span class="op">=</span> <span class="st">"counterfactual"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="co"># Marginal Effects at User-Specified Values (counterfactual)</span></span>
+<span class="r-in"><span class="co"># Variables not explicitly included in `datagrid()` are held at their</span></span>
+<span class="r-in"><span class="co"># original values, and the whole dataset is duplicated once for each</span></span>
+<span class="r-in"><span class="co"># combination of the values in `datagrid()`</span></span>
+<span class="r-in"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span>,</span>
+<span class="r-in">                       newdata <span class="op">=</span> <span class="fu"><a href="datagrid.html">datagrid</a></span><span class="op">(</span>hp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">110</span><span class="op">)</span>,</span>
+<span class="r-in">                                          grid.type <span class="op">=</span> <span class="st">"counterfactual"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   rowid     type term         dydx    std.error rowid_original    wt  hp</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1 response   hp 0.0120424494 0.0099959936              1 2.620 100</span>

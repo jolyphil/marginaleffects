@@ -112,10 +112,16 @@
     <loc>/reference/summary.marginalmeans.html</loc>
   </url>
   <url>
+    <loc>/reference/summary.predictions.html</loc>
+  </url>
+  <url>
     <loc>/reference/tidy.marginaleffects.html</loc>
   </url>
   <url>
     <loc>/reference/tidy.marginalmeans.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tidy.predictions.html</loc>
   </url>
   <url>
     <loc>/reference/typical.html</loc>

@@ -125,6 +125,20 @@ Uncertainty estimates are computed using the delta method.</p>
 be found on the package website:</p>
 <p>https://vincentarelbundock.github.io/marginaleffects/</p>
     </div>
+    <div id="model-specific-arguments">
+    <h2>Model-specific arguments</h2>
+    
+
+
+<p>Some model types allow model-specific arguments to modify the nature of
+marginal effects, predictions, marginal means, and contrasts.</p><ul><li><p><code>brms</code>:</p><ul><li><p><code>re_formula</code></p></li>
+<li><p><code>ndraws</code></p></li>
+<li><p>See <a href="brms::posterior_predict">?brms::posterior_predict</a></p></li>
+</ul></li>
+<li><p><code>lme4</code>:</p><ul><li><p><code>include_random</code></p></li>
+<li><p>See <a href="insight::get_predicted">?insight::get_predicted</a></p></li>
+</ul></li>
+</ul></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
@@ -139,6 +153,7 @@ be found on the package website:</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4     4 response   hp 0.0019335745 0.0024498352  0 110 3.215</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5     5 response   hp 0.0029913468 0.0033764304  0 175 3.440</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6     6 response   hp 0.0001475603 0.0003451131  0 105 3.460</span>
+<span class="r-in"></span>
 <span class="r-in"><span class="co"># Average Marginal Effect (AME)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Average marginal effects </span>

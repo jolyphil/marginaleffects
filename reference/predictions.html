@@ -97,11 +97,11 @@ No interval is computed if <code>conf.int=NULL</code>.  Must be strictly greater
 and less than 1. Defaults to 0.95, which corresponds to a 95 percent
 confidence interval.</p></dd>
 <dt>type</dt>
-<dd><p>Type(s) of prediction as string or vector This can
+<dd><p>Type(s) of prediction as string or character vector. This can
 differ based on the model type, but will typically be a string such as:
 "response", "link", "probs", or "zero".</p></dd>
 <dt>...</dt>
-<dd><p>Additional arguments are pushed forward to <code><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict()</a></code>.</p></dd>
+<dd><p>The "Model-Specific Arguments" section below gives a list of arguments which can modify the behavior of this function for certain models (e.g., mixed-effects or bayesian).</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -125,6 +125,13 @@ website:</p>
 <p>https://vincentarelbundock.github.io/marginaleffects/
 Compute model-adjusted predictions (fitted values) for a "grid" of regressor values.</p>
     </div>
+    <div id="model-specific-arguments">
+    <h2>Model-Specific Arguments</h2>
+    
+
+
+<p>Some model types allow model-specific arguments to modify the nature of
+marginal effects, predictions, marginal means, and contrasts.</p><table class="table table"><tr><td>Package</td><td>Class</td><td>Argument</td><td>Documentation</td></tr><tr><td><code>brms</code></td><td><code>brmsfit</code></td><td><code>ndraws</code></td><td><a href="https://rdrr.io/pkg/brms/man/posterior_predict.brmsfit.html" class="external-link">brms::posterior_predict</a></td></tr><tr><td></td><td></td><td><code>re_formula</code></td><td></td></tr><tr><td><code>lme4</code></td><td><code>merMod</code></td><td><code>include_random</code></td><td><a href="https://easystats.github.io/insight/reference/get_predicted.html" class="external-link">insight::get_predicted</a></td></tr></table></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>

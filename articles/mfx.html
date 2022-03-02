@@ -179,8 +179,8 @@
 <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">glance</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span>
 <span class="co">#&gt;   null.deviance df.null    logLik      AIC      BIC deviance df.residual nobs</span>
 <span class="co">#&gt; 1      473.8202     341 -84.92257 179.8451 199.0192 169.8451         337  342</span>
-<span class="co">#&gt;          F</span>
-<span class="co">#&gt; 1 15.66122</span></code></pre></div>
+<span class="co">#&gt;          F      rmse</span>
+<span class="co">#&gt; 1 15.66122 0.7099236</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="marginal-effect-at-user-specified-values">Marginal Effect at User-Specified Values<a class="anchor" aria-label="anchor" href="#marginal-effect-at-user-specified-values"></a>
@@ -297,11 +297,11 @@
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>truth <span class="op">=</span> <span class="fl">1</span> <span class="op">+</span> <span class="fl">4</span> <span class="op">*</span> <span class="va">x</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">dydx</span>, <span class="va">truth</span><span class="op">)</span>
 <span class="co">#&gt;        dydx truth</span>
-<span class="co">#&gt; 1 -7.009096    -7</span>
-<span class="co">#&gt; 2 -3.003383    -3</span>
-<span class="co">#&gt; 3  1.002329     1</span>
-<span class="co">#&gt; 4  5.008042     5</span>
-<span class="co">#&gt; 5  9.013754     9</span></code></pre></div>
+<span class="co">#&gt; 1 -7.010057    -7</span>
+<span class="co">#&gt; 2 -3.004807    -3</span>
+<span class="co">#&gt; 3  1.000442     1</span>
+<span class="co">#&gt; 4  5.005691     5</span>
+<span class="co">#&gt; 5  9.010940     9</span></code></pre></div>
 <p>We can also plot the result with the <code>plot_cme</code> function (see section below):</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plot_cme.html">plot_cme</a></span><span class="op">(</span><span class="va">mod</span>, effect <span class="op">=</span> <span class="st">"x"</span>, condition <span class="op">=</span> <span class="st">"x"</span><span class="op">)</span></code></pre></div>
@@ -393,6 +393,11 @@
 <td align="left">F</td>
 <td align="center">94.415</td>
 <td align="center">45.936</td>
+</tr>
+<tr class="even">
+<td align="left">RMSE</td>
+<td align="center">0.80</td>
+<td align="center">0.80</td>
 </tr>
 </tbody>
 </table>
@@ -506,6 +511,12 @@
 <td align="left"></td>
 <td align="center">19.252</td>
 <td align="center">389.713</td>
+</tr>
+<tr class="even">
+<td align="left">RMSE</td>
+<td align="left"></td>
+<td align="center">0.75</td>
+<td align="center">340.11</td>
 </tr>
 </tbody>
 </table>

@@ -239,8 +239,8 @@ Marginal means of am
 <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">glance</a></span><span class="op">(</span><span class="va">mm</span><span class="op">)</span>
 <span class="co">#&gt;   r.squared adj.r.squared   sigma statistic      p.value df    logLik      AIC</span>
 <span class="co">#&gt; 1  0.824875     0.7989306 2.70253   31.7939 7.400614e-10  4 -74.50167 161.0033</span>
-<span class="co">#&gt;        BIC deviance df.residual nobs       F</span>
-<span class="co">#&gt; 1 169.7978  197.199          27   32 31.7939</span>
+<span class="co">#&gt;        BIC deviance df.residual nobs       F    rmse</span>
+<span class="co">#&gt; 1 169.7978  197.199          27   32 31.7939 2.70253</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">mm</span><span class="op">)</span>
 <span class="co">#&gt; Estimated marginal means </span>
@@ -396,6 +396,16 @@ F
 </td>
 <td style="text-align:center;">
 31.794
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+2.70
 </td>
 </tr>
 </tbody>

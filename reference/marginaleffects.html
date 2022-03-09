@@ -103,7 +103,14 @@ calculates marginal effects for all terms in the model object.</p></dd>
 differ based on the model type, but will typically be a string such as:
 "response", "link", "probs", or "zero".</p></dd>
 <dt>...</dt>
-<dd><p>The "Model-Specific Arguments" section below gives a list of arguments which can modify the behavior of this function for certain models (e.g., mixed-effects or bayesian).</p></dd>
+<dd><p>Additional arguments are passed to the <code><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict()</a></code> method used to
+compute adjusted predictions. These arguments are particularly useful for
+mixed-effects or bayesian models (see the online vignettes on the
+<code>marginaleffects</code> website). Available arguments can vary from model to
+model, depending on the range of supported arguments by each modeling
+package. See the "Model-Specific Arguments" section of the
+<code>?marginaleffects</code> document for a non-exhaustive list of available
+arguments.</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>

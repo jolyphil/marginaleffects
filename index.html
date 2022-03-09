@@ -82,27 +82,31 @@
 <p>The <code>marginaleffects</code> package allows <code>R</code> users to compute and plot four principal quantities of interest for <a href="https://vincentarelbundock.github.io/marginaleffects/articles/supported_models.html" class="external-link">a very wide variety of models:</a></p>
 <ul>
 <li>
-<a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link"><em>Marginal Effect</em> (Vignette)</a>
+<a href="https://vincentarelbundock.github.io/marginaleffects/articles/mfx.html" class="external-link"><em>Marginal Effect</em>(Vignette)</a>
 <ul>
 <li>A partial derivative (slope) of the regression equation with respect to a regressor of interest.</li>
+<li><a href="https://vincentarelbundock.github.io/marginaleffects/reference/marginaleffects.html" class="external-link"><code>marginaleffects()</code> function documentation</a></li>
 </ul>
 </li>
 <li>
 <a href="https://vincentarelbundock.github.io/marginaleffects/articles/predictions.html" class="external-link"><em>Adjusted Prediction</em> (Vignette)</a>
 <ul>
 <li>The outcome predicted by a model for some combination of the regressors’ values, such as their observed values, their means, or factor levels (a.k.a. “reference grid”).</li>
+<li><a href="https://vincentarelbundock.github.io/marginaleffects/reference/predictions.html" class="external-link"><code>predictions()</code> function documentation</a></li>
 </ul>
 </li>
 <li>
 <a href="https://vincentarelbundock.github.io/marginaleffects/articles/contrasts.html" class="external-link"><em>Contrast</em> (Vignette)</a>
 <ul>
 <li>The difference between two adjusted predictions, calculated for meaningfully different regressor values (e.g., College graduates vs. Others).</li>
+<li><a href="https://vincentarelbundock.github.io/marginaleffects/reference/comparisons.html" class="external-link"><code>comparisons()</code> function documentation</a></li>
 </ul>
 </li>
 <li>
 <a href="https://vincentarelbundock.github.io/marginaleffects/articles/marginalmeans.html" class="external-link"><em>Marginal Mean</em> (Vignette)</a>
 <ul>
 <li>Adjusted predictions of a model, averaged across a “reference grid” of categorical predictors.</li>
+<li><a href="https://vincentarelbundock.github.io/marginaleffects/reference/marginalmeans.html" class="external-link"><code>marginalmeans()</code> function documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -215,23 +219,23 @@
 <p>Beyond marginal effects, we can also use the <code>predictions</code> function to estimate – you guessed it – adjusted predicted values. We use the <code>variables</code> argument to select the categorical variables that will form a “grid” of predictor values over which to compute means/predictions:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"am"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;        type predicted std.error  conf.low conf.high       hp am     wt</span>
-<span class="co">#&gt; 1  response 23.259500 2.7059342 17.674726  28.84427 146.6875  0 1.5130</span>
-<span class="co">#&gt; 2  response 27.148334 2.8518051 21.262498  33.03417 146.6875  1 1.5130</span>
-<span class="co">#&gt; 3  response 20.504387 1.3244556 17.770845  23.23793 146.6875  0 2.5425</span>
-<span class="co">#&gt; 4  response 21.555612 1.0723852 19.342318  23.76891 146.6875  1 2.5425</span>
-<span class="co">#&gt; 5  response 18.410286 0.6151016 17.140779  19.67979 146.6875  0 3.3250</span>
-<span class="co">#&gt; 6  response 17.304709 1.5528055 14.099876  20.50954 146.6875  1 3.3250</span>
-<span class="co">#&gt; 7  response 17.540532 0.7293676 16.035192  19.04587 146.6875  0 3.6500</span>
-<span class="co">#&gt; 8  response 15.539158 2.1453449 11.111383  19.96693 146.6875  1 3.6500</span>
-<span class="co">#&gt; 9  response 12.793013 2.9784942  6.645703  18.94032 146.6875  0 5.4240</span>
-<span class="co">#&gt; 10 response  5.901966 5.8149853 -6.099574  17.90351 146.6875  1 5.4240</span></code></pre></div>
+<span class="co">#&gt;    rowid     type predicted std.error  conf.low conf.high       hp am     wt</span>
+<span class="co">#&gt; 1      1 response 23.259500 2.7059342 17.674726  28.84427 146.6875  0 1.5130</span>
+<span class="co">#&gt; 2      2 response 27.148334 2.8518051 21.262498  33.03417 146.6875  1 1.5130</span>
+<span class="co">#&gt; 3      3 response 20.504387 1.3244556 17.770845  23.23793 146.6875  0 2.5425</span>
+<span class="co">#&gt; 4      4 response 21.555612 1.0723852 19.342318  23.76891 146.6875  1 2.5425</span>
+<span class="co">#&gt; 5      5 response 18.410286 0.6151016 17.140779  19.67979 146.6875  0 3.3250</span>
+<span class="co">#&gt; 6      6 response 17.304709 1.5528055 14.099876  20.50954 146.6875  1 3.3250</span>
+<span class="co">#&gt; 7      7 response 17.540532 0.7293676 16.035192  19.04587 146.6875  0 3.6500</span>
+<span class="co">#&gt; 8      8 response 15.539158 2.1453449 11.111383  19.96693 146.6875  1 3.6500</span>
+<span class="co">#&gt; 9      9 response 12.793013 2.9784942  6.645703  18.94032 146.6875  0 5.4240</span>
+<span class="co">#&gt; 10    10 response  5.901966 5.8149853 -6.099574  17.90351 146.6875  1 5.4240</span></code></pre></div>
 <p>The <a href="https://vincentarelbundock.github.io/marginaleffects/reference/datagrid.html" class="external-link"><code>datagrid</code> function gives us an even more powerful way</a> to customize the grid:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/predictions.html">predictions</a></span><span class="op">(</span><span class="va">mod</span>, newdata <span class="op">=</span> <span class="fu"><a href="reference/datagrid.html">datagrid</a></span><span class="op">(</span>am <span class="op">=</span> <span class="fl">0</span>, wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;       type predicted std.error conf.low conf.high       hp am wt</span>
-<span class="co">#&gt; 1 response  21.95621  2.038630 17.74868  26.16373 146.6875  0  2</span>
-<span class="co">#&gt; 2 response  16.60387  1.083201 14.36826  18.83949 146.6875  0  4</span></code></pre></div>
+<span class="co">#&gt;   rowid     type predicted std.error conf.low conf.high       hp am wt</span>
+<span class="co">#&gt; 1     1 response  21.95621  2.038630 17.74868  26.16373 146.6875  0  2</span>
+<span class="co">#&gt; 2     2 response  16.60387  1.083201 14.36826  18.83949 146.6875  0  4</span></code></pre></div>
 <p>We can plot the adjusted predictions with the <code>plot_cap</code> function:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/plot_cap.html">plot_cap</a></span><span class="op">(</span><span class="va">mod</span>, condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"hp"</span>, <span class="st">"wt"</span><span class="op">)</span><span class="op">)</span></code></pre></div>

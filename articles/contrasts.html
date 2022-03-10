@@ -133,17 +133,15 @@
 <span class="co">#&gt; 2 -3.146156</span>
 <span class="co">#&gt; 3 -7.221530</span>
 <span class="co">#&gt; 4 -1.029797</span>
-<span class="fu"><a href="../reference/comparisons.html">comparisons</a></span><span class="op">(</span><span class="va">mod</span>, contrast_factor <span class="op">=</span> <span class="st">"revpairwise"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;   term     contrast  estimate std.error statistic      p.value   conf.low</span>
-<span class="co">#&gt; 1   am TRUE - FALSE  2.559954  1.297579  1.972869 4.851044e-02 0.01674586</span>
-<span class="co">#&gt; 2  cyl        4 - 6  6.156118  1.535723  4.008612 6.107658e-05 3.14615618</span>
-<span class="co">#&gt; 3  cyl        4 - 8 10.067560  1.452082  6.933187 4.114709e-12 7.22153028</span>
-<span class="co">#&gt; 4  cyl        6 - 8  3.911442  1.470254  2.660385 7.805144e-03 1.02979652</span>
+<span class="fu"><a href="../reference/comparisons.html">comparisons</a></span><span class="op">(</span><span class="va">mod</span>, contrast_factor <span class="op">=</span> <span class="st">"reference"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;   term     contrast   estimate std.error statistic      p.value     conf.low</span>
+<span class="co">#&gt; 1   am TRUE - FALSE   2.559954  1.297579  1.972869 4.851044e-02   0.01674586</span>
+<span class="co">#&gt; 2  cyl        6 - 4  -6.156118  1.535723 -4.008612 6.107658e-05  -9.16607927</span>
+<span class="co">#&gt; 3  cyl        8 - 4 -10.067560  1.452082 -6.933187 4.114709e-12 -12.91358877</span>
 <span class="co">#&gt;   conf.high</span>
 <span class="co">#&gt; 1  5.103162</span>
-<span class="co">#&gt; 2  9.166079</span>
-<span class="co">#&gt; 3 12.913589</span>
-<span class="co">#&gt; 4  6.793087</span></code></pre></div>
+<span class="co">#&gt; 2 -3.146156</span>
+<span class="co">#&gt; 3 -7.221530</span></code></pre></div>
 <p>For comparison, this code produces the same results using the <code>emmeans</code> package:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rvlenth/emmeans" class="external-link">emmeans</a></span><span class="op">)</span>

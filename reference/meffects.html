@@ -94,7 +94,7 @@ the original data used to fit the model.</p></dd>
 <dd><p>Variables to consider (character vector). <code>NULL</code>
 calculates marginal effects for all terms in the model object.</p></dd>
 <dt>vcov</dt>
-<dd><p>Matrix or boolean</p><ul><li><p>FALSE: does not compute unit-level standard errors.</p></li>
+<dd><p>Matrix or boolean</p><ul><li><p>FALSE: does not compute unit-level standard errors. This can speed up computation considerably.</p></li>
 <li><p>TRUE: computes unit-level standard errors using the default <code>vcov(model)</code> variance-covariance matrix.</p></li>
 <li><p>Named square matrix: computes standard errors with a user-supplied variance-covariance matrix. This matrix must be square and have dimensions equal to the number of coefficients in <code>get_coef(model)</code>.</p></li>
 </ul></dd>
@@ -142,7 +142,9 @@ marginal effects, predictions, marginal means, and contrasts.</p><table class="t
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># interactive()</span></span>
+<span class="r-in"><span class="op">}</span></span>
+<span class="r-in"></span>
 <span class="r-in"><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">am</span> <span class="op">~</span> <span class="va">hp</span> <span class="op">*</span> <span class="va">wt</span>, data <span class="op">=</span> <span class="va">mtcars</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">mfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="marginaleffects.html">marginaleffects</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mfx</span><span class="op">)</span></span>
